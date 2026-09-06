@@ -1,5 +1,8 @@
-README.md
+# Private working notes — never publish (contains internal to-dos and review prompts)
+NOTES.private.md
+
 .DS_Store
 **/.DS_Store
-build.js
+
+# Build output. Deploy it, don't commit it.
 dist/

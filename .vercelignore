@@ -1,5 +1,7 @@
+# Vercel runs `node build.js` and serves dist/ (see vercel.json), so build.js
+# MUST NOT be listed here — without it the build cannot run.
+NOTES.private.md
 README.md
 .DS_Store
 **/.DS_Store
-build.js
 dist/

@@ -1,5 +1,7 @@
+# If deploying via Netlify, set: build command `node build.js`, publish dir `dist`.
+# build.js must NOT be ignored — the build needs it.
+NOTES.private.md
 README.md
 .DS_Store
 **/.DS_Store
-build.js
 dist/
