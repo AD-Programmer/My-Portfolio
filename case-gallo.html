@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'none'; form-action 'none'; base-uri 'self'; object-src 'none'; upgrade-insecure-requests">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="color-scheme" content="dark light">
+<meta name="theme-color" content="#06080b" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#fbfaf8" media="(prefers-color-scheme: light)">
+<title>Gallo Gateway — Xamarin.iOS field sales enablement at scale | {{name}}</title>
+<meta name="description" content="Xamarin.iOS work on Gallo Gateway for E. & J. Gallo Winery: offline access to a large digital asset library, iBeacon in-market triggers, a full design system rebuild, international market rollout and migration to Microsoft Azure authentication.">
+<link rel="canonical" href="{{siteUrl}}/case-gallo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Gallo Gateway — Xamarin.iOS field sales enablement at scale">
+<meta property="og:description" content="Offline asset access, iBeacon proximity, Azure AD migration and multi-market rollout on a long-lived enterprise iOS app.">
+<meta property="og:image" content="{{siteUrl}}/assets/og.png">
+<meta property="og:url" content="{{siteUrl}}/case-gallo.html">
+<meta name="twitter:title" content="Gallo Gateway — Xamarin.iOS field sales enablement at scale">
+<meta name="twitter:description" content="Offline asset access, iBeacon proximity, Azure AD migration and multi-market rollout on a long-lived enterprise iOS app.">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<script src="assets/js/theme.js"></script>
+<link rel="stylesheet" href="assets/css/main.css">
+<script defer src="assets/js/site.js"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "{{siteUrl}}/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Case Studies",
+          "item": "{{siteUrl}}/work.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Gallo Gateway — Xamarin.iOS field sales enablement at scale",
+          "item": "{{siteUrl}}/case-gallo.html"
+        }
+      ]
+    },
+    {
+      "@type": "TechArticle",
+      "headline": "Gallo Gateway — Xamarin.iOS field sales enablement at scale",
+      "description": "Xamarin.iOS work on Gallo Gateway for E. & J. Gallo Winery: offline access to a large digital asset library, iBeacon in-market triggers, a full design system rebuild, international market rollout and migration to Microsoft Azure authentication.",
+      "inLanguage": "en",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "{{siteUrl}}/case-gallo.html"
+      },
+      "image": "{{siteUrl}}/assets/og.png",
+      "author": {
+        "@type": "Person",
+        "name": "{{name}}",
+        "url": "{{siteUrl}}/"
+      },
+      "publisher": {
+        "@type": "Person",
+        "name": "{{name}}",
+        "url": "{{siteUrl}}/"
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="field-bg"></div><div class="field-grid"></div>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav">
+  <div class="nav__in">
+    <a class="nav__brand" href="/"><span class="nav__dot"></span>{{name}}<span class="dim"> / mobile architecture</span></a>
+    <button class="theme-toggle" type="button" aria-label="Switch theme" aria-pressed="false">
+      <svg class="i-moon" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M17 10.8A7.5 7.5 0 0 1 9.2 3 7.5 7.5 0 1 0 17 10.8Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+      <svg class="i-sun" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="3.6" stroke="currentColor" stroke-width="1.5"/><path d="M10 1.8v2M10 16.2v2M18.2 10h-2M3.8 10h-2M15.6 4.4l-1.4 1.4M5.8 14.2l-1.4 1.4M15.6 15.6l-1.4-1.4M5.8 5.8 4.4 4.4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </button>
+    <button class="nav__burger" type="button" aria-label="Toggle navigation" aria-expanded="false">
+      <svg viewBox="0 0 20 20" width="18" height="18" aria-hidden="true"><path d="M2 5h16M2 10h16M2 15h16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" fill="none"/></svg>
+    </button>
+    <nav class="nav__links" aria-label="Primary">
+      <a href="/">Home</a>
+      <a href="work">Case Studies</a>
+      <a href="playbook">SME Playbook</a>
+      <a href="stack">Stack</a>
+      <a href="contact">Availability</a>
+      <a class="nav__cta" href="{{resume}}" target="_blank" rel="noopener noreferrer">Résumé ↗</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="case-hero">
+  <div class="wrap">
+    <nav class="crumb" aria-label="Breadcrumb"><a href="work">Case Studies</a> <span class="dim" aria-hidden="true">/</span> <span aria-current="page">Gallo Gateway</span></nav>
+    <span class="eyebrow mt-s">{{co_a}} · {{co_a_desc}}</span>
+    <h1>Field sales enablement at enterprise scale, in Xamarin.iOS</h1>
+    <p class="case-hero__sub">
+      Gallo Gateway puts E. &amp; J. Gallo Winery's entire sales, marketing and training library in a
+      rep's hand — one-sheets, presentations, point-of-sale visuals, brand standards, podcasts and
+      training material. The reps using it are standing in a retailer's back room or a restaurant
+      basement, and the connectivity there is exactly as good as you would expect.
+    </p>
+
+    <div class="twoclick">
+      <a class="btn btn--primary btn--sm" href="{{a_live}}" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M6 10 10 6M7 3.5 8.6 2a3.4 3.4 0 1 1 4.8 4.8L11.8 8.4M9 12.5 7.4 14a3.4 3.4 0 0 1-4.8-4.8L4.2 7.6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        {{a_live_name}} — App Store
+      </a>
+      <a class="btn btn--ghost btn--sm" href="#blueprint">↓ Architecture blueprint</a>
+    </div>
+
+    <div class="note">
+      <p><strong>On source code:</strong> Gallo Gateway is an E. &amp; J. Gallo Winery product, delivered
+      while I was at {{co_a}}. Client IP, no public repository. The architecture description below is
+      my own.</p>
+    </div>
+
+    <dl class="case-meta">
+      <div><dt>Role</dt><dd>Mobile Engineer — client delivery</dd></div>
+      <div><dt>Period</dt><dd>{{co_a_dates}}</dd></div>
+      <div><dt>Platform</dt><dd>Xamarin.iOS · iPhone &amp; iPad</dd></div>
+      <div><dt>Client</dt><dd>E. &amp; J. Gallo Winery</dd></div>
+      <div><dt>Users</dt><dd>Field sales representatives</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+
+    <!-- 01 -->
+    <div class="block rv">
+      <div class="block__h"><span class="block__n">01</span><h2>Context &amp; Scope</h2></div>
+      <div class="prose">
+        <p>
+          This was my early-career era, and it was the right kind of hard: a long-lived enterprise iOS
+          application, already several major versions in, serving a large field sales organisation across
+          multiple markets — delivered from a small, resource-constrained startup where I was one of very
+          few people touching mobile. There was no luxury of a greenfield decision. The job was to extend,
+          modernise and keep stable an app that real revenue-generating people used every day.
+        </p>
+        <p>
+          Over my time on it the product went through a full visual and structural redesign, gained
+          international markets and localisation, moved its authentication to Microsoft Azure, took on
+          iBeacon-driven in-market experiences, and steadily upgraded a large surface of native plugin
+          dependencies. Each of those is an ordinary-sounding line item that is genuinely difficult on a
+          shipped enterprise app with users who cannot afford a bad release.
+        </p>
+        <h3>The interesting constraints</h3>
+        <ul class="bullets">
+          <li><strong>The library is large and the network is not reliable.</strong> A rep about to walk into a meeting needs their materials to be there. Offline availability of favourited content was a core feature, not a nicety.</li>
+          <li><strong>Heavy media on constrained devices.</strong> Presentations, videos, 3D interactive brand tours and podcasts with background playback — all of it competing for memory and storage on devices that were not new.</li>
+          <li><strong>Xamarin.iOS, not Xamarin.Forms.</strong> The app is built against UIKit directly through Xamarin's bindings. That means real iOS platform knowledge — view controller lifecycle, ARC and retain cycles across the managed/native boundary, UIKit navigation — rather than working through a cross-platform abstraction.</li>
+          <li><strong>Authentication migration on a live user base.</strong> Moving sign-in to Microsoft Azure on an app people use daily is a change where every edge case is somebody's blocked morning.</li>
+          <li><strong>Multi-market rollout.</strong> International regions and language support layered onto an app originally built for a domestic sales force.</li>
+        </ul>
+      </div>
+
+      <figure class="blueprint">
+        <figcaption class="blueprint__bar">SCREENS — <b>{{a_live_name}}</b></figcaption>
+        <div class="blueprint__body shots">
+          <img src="assets/shots/gallo/01-onboarding.webp" width="460" height="996" loading="lazy" decoding="async" alt="Gallo Gateway onboarding screen introducing easy access to sales and marketing materials.">
+          <img src="assets/shots/gallo/02-brands.webp" width="460" height="996" loading="lazy" decoding="async" alt="Wines and Spirits brand directory with a searchable, alphabetised brand list.">
+          <img src="assets/shots/gallo/03-accolade-filters.webp" width="460" height="996" loading="lazy" decoding="async" alt="Accolade filter screen for narrowing 653 results by brand, country, publication, rating and varietal.">
+        </div>
+        <p class="blueprint__cap">App Store listing screenshots.</p>
+      </figure>
+    </div>
+
+    <!-- 02 -->
+    <div class="block rv" id="blueprint">
+      <div class="block__h"><span class="block__n">02</span><h2>Architectural Blueprint</h2></div>
+      <div class="prose">
+        <p>
+          The organising idea is a <strong>content pipeline with an offline tier</strong>. The remote
+          library is the source of truth; the device holds a bounded, user-directed subset of it —
+          favourites — that must be complete and openable with no network. Everything else streams.
+        </p>
+      </div>
+
+      <figure class="blueprint">
+        <figcaption class="blueprint__bar">
+          <b>FIG 3.0</b> — CONTENT PIPELINE · OFFLINE FAVOURITES, PROXIMITY TRIGGERS, FEDERATED IDENTITY
+        </figcaption>
+        <div class="blueprint__body">
+          <svg viewBox="0 0 900 450" width="900" height="450" role="img" aria-label="Diagram of Gallo Gateway: a Xamarin.iOS UIKit client with a media cache and offline favourites tier, iBeacon proximity triggers, Azure federated identity, and a content hub backend serving brand assets across markets.">
+            <text class="d-l" x="26" y="26">XAMARIN.iOS CLIENT — UIKit</text>
+            <text class="d-l" x="630" y="26">PLATFORM &amp; BACKEND</text>
+
+            <rect class="d-box" x="20" y="42" width="286" height="74" rx="9"/>
+            <text class="d-t" x="36" y="66">UIKit view controllers</text>
+            <text class="d-s" x="36" y="84">brand browse · search · social feed</text>
+            <text class="d-s" x="36" y="98">iPhone and iPad layouts</text>
+            <text class="d-s" x="36" y="110">lifecycle + retain-cycle discipline</text>
+
+            <rect class="d-box-hi" x="20" y="130" width="286" height="74" rx="9"/>
+            <text class="d-t" x="36" y="154">Content coordinator</text>
+            <text class="d-s" x="36" y="172">asset types: sheets · video · POS · 3D</text>
+            <text class="d-s" x="36" y="186">filtered search across content types</text>
+            <text class="d-s" x="36" y="198">market + business-unit scoping</text>
+
+            <rect class="d-box-hi" x="20" y="218" width="286" height="84" rx="9"/>
+            <text class="d-t" x="36" y="242">Offline favourites tier</text>
+            <text class="d-s" x="36" y="260">user-directed, bounded local subset</text>
+            <text class="d-s" x="36" y="274">complete + openable with no network</text>
+            <text class="d-s" x="36" y="288">eviction policy under storage pressure</text>
+            <text class="d-s" x="36" y="298">— the feature reps actually depend on</text>
+
+            <rect class="d-box" x="20" y="316" width="286" height="74" rx="9"/>
+            <text class="d-t" x="36" y="340">Media playback</text>
+            <text class="d-s" x="36" y="358">podcasts with background audio</text>
+            <text class="d-s" x="36" y="372">large video upload from device</text>
+            <text class="d-s" x="36" y="384">memory-conscious asset handling</text>
+
+            <rect class="d-box-cy" x="20" y="404" width="286" height="40" rx="9"/>
+            <text class="d-t" x="36" y="428">Analytics — content &amp; notifications</text>
+
+            <!-- middle -->
+            <rect class="d-box-cy" x="352" y="130" width="196" height="86" rx="9"/>
+            <text class="d-t" x="368" y="154">iBeacon proximity</text>
+            <text class="d-s" x="368" y="172">in-market POS triggers</text>
+            <text class="d-s" x="368" y="186">region monitoring lifecycle</text>
+            <text class="d-s" x="368" y="200">battery-aware ranging</text>
+
+            <rect class="d-box-hi" x="352" y="238" width="196" height="86" rx="9"/>
+            <text class="d-t" x="368" y="262">Identity migration</text>
+            <text class="d-s" x="368" y="280">legacy login → Microsoft Azure</text>
+            <text class="d-s" x="368" y="294">token handling + refresh</text>
+            <text class="d-s" x="368" y="308">live user base, no forced reset</text>
+
+            <!-- backend -->
+            <rect class="d-box" x="594" y="60" width="286" height="80" rx="9"/>
+            <text class="d-t" x="610" y="84">Content hub</text>
+            <text class="d-s" x="610" y="102">brand assets, collections, one-sheets</text>
+            <text class="d-s" x="610" y="116">combined brands and brand splits</text>
+            <text class="d-s" x="610" y="130">wines and spirits ranges</text>
+
+            <rect class="d-box" x="594" y="156" width="286" height="80" rx="9"/>
+            <text class="d-t" x="610" y="180">Market configuration</text>
+            <text class="d-s" x="610" y="198">domestic + international regions</text>
+            <text class="d-s" x="610" y="212">localisation, per-market catalogues</text>
+            <text class="d-s" x="610" y="226">business-unit driven filtering</text>
+
+            <rect class="d-box-cy" x="594" y="252" width="286" height="80" rx="9"/>
+            <text class="d-t" x="610" y="276">Azure identity</text>
+            <text class="d-s" x="610" y="294">federated enterprise sign-in</text>
+            <text class="d-s" x="610" y="308">replaces bespoke credential flow</text>
+            <text class="d-s" x="610" y="322">aligns app with corporate IT</text>
+
+            <rect class="d-box" x="594" y="348" width="286" height="80" rx="9"/>
+            <text class="d-t" x="610" y="372">Rep collaboration</text>
+            <text class="d-s" x="610" y="390">market-scoped social feed</text>
+            <text class="d-s" x="610" y="404">photo and video posts</text>
+            <text class="d-s" x="610" y="418">sell-sheet creation and sharing</text>
+
+            <!-- links -->
+            <path class="d-line-hi" d="M163 116 L163 130"/>
+            <path class="d-line-hi" d="M163 204 L163 218"/>
+            <path class="d-line" d="M163 302 L163 316"/>
+            <path class="d-line-dash" d="M163 390 L163 404"/>
+            <path class="d-line-dash" d="M306 167 L352 167"/>
+            <path class="d-line-hi" d="M306 262 L328 262 L328 276 L352 276"/>
+            <path class="d-line-hi" d="M548 173 L570 173 L570 100 L594 100"/>
+            <path class="d-line" d="M306 180 L328 180 L328 196 L594 196"/>
+            <path class="d-line-hi" d="M548 288 L594 290"/>
+            <path class="d-line" d="M306 340 L570 340 L570 388 L594 388"/>
+          </svg>
+        </div>
+        <p class="blueprint__cap">
+          Amber = the paths that must not fail in front of a customer: offline favourites and sign-in.
+          Everything else can degrade.
+        </p>
+      </figure>
+
+      <div class="prose">
+        <h3>Decisions worth defending</h3>
+        <ul class="bullets">
+          <li><strong>Bounded, user-directed offline rather than aggressive prefetch.</strong> Letting the rep mark what they need keeps the local footprint predictable and, more importantly, makes the guarantee explicit: what you favourited is definitely there. A background prefetcher guessing on their behalf produces an app that is <em>usually</em> ready, which in front of a customer is the same as not ready.</li>
+          <li><strong>Retain cycles are the recurring hazard in Xamarin.iOS.</strong> A managed delegate held by a native UIKit object crosses a boundary that neither garbage collector fully sees on its own. Disciplined weak references at that seam and deliberate teardown in view controller lifecycle are what keep a media-heavy app from degrading over a long session — the class of bug that only appears after an hour of real use.</li>
+          <li><strong>Beacons are a lifecycle problem, not an API problem.</strong> The CoreLocation call is trivial; the difficulty is region monitoring that behaves correctly across backgrounding, app termination and OS relaunch, without turning proximity awareness into a battery complaint from the sales force.</li>
+          <li><strong>The identity migration was staged, not switched.</strong> Moving sign-in to Azure on a live daily-use app meant keeping the legacy path viable while the new one proved itself, and designing token handling so an expiry never dumped a rep out mid-meeting. The correct measure of success for an auth migration is that nobody notices it happened.</li>
+          <li><strong>Plugin upgrades treated as first-class work.</strong> The app depended on a wide surface of native plugins. Keeping those current — rather than deferring until an OS release forced it — is unglamorous, and it is the single largest determinant of whether a long-lived mobile app stays shippable.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 03 -->
+    <div class="block rv">
+      <div class="block__h"><span class="block__n">03</span><h2>What This Era Taught Me</h2></div>
+      <div class="prose">
+        <p>
+          This is the earliest work on this site and I would not claim it as architectural leadership —
+          I was learning. What it gave me is the foundation everything since has been built on:
+        </p>
+        <ul class="bullets">
+          <li><strong>Real iOS, not an abstraction over it.</strong> Working in Xamarin.iOS against UIKit directly meant learning the platform itself — view controller lifecycle, memory semantics, navigation, background execution. That knowledge transferred completely to Xamarin.Forms and then to .NET MAUI, and it is why I can debug a cross-platform framework's behaviour instead of just using it.</li>
+          <li><strong>Offline is a promise you make to a user.</strong> Watching a sales rep rely on favourited content in a room with no signal is where the conviction in the rest of this site came from. It is not a technical preference; it is the difference between software someone trusts and software they route around.</li>
+          <li><strong>Long-lived enterprise apps are won on maintenance.</strong> Dependency currency, staged migrations, and not breaking the thing people use daily matter more over five years than any individual feature does.</li>
+          <li><strong>Small team, big client.</strong> Delivering into a large enterprise from a small startup taught me to communicate in writing, scope honestly, and treat a client's production users as my responsibility rather than someone else's problem.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 04 -->
+    <div class="block rv">
+      <div class="block__h"><span class="block__n">04</span><h2>Scope &amp; Impact</h2></div>
+      <dl class="metrics">
+        <div><dt>2.5 yrs</dt><dd>Continuous delivery on a live enterprise iOS product used daily by a field sales organisation.</dd></div>
+        <div><dt>4.x</dt><dd>Shipped through a full major-version redesign — new visual system, onboarding, and content model.</dd></div>
+        <div><dt>Azure</dt><dd>Sign-in migrated to Microsoft Azure federated identity on a live user base.</dd></div>
+        <div><dt>{{m_a_regions}}</dt><dd>Markets and regions supported after the international rollout — my estimate, not an instrumented figure.</dd></div>
+      </dl>
+      <div class="prose mt-m">
+        <p class="dim mono">
+          Version history and feature milestones are verifiable from the public App Store listing linked
+          at the top of this page.
+        </p>
+      </div>
+    </div>
+
+    <div class="pagenav">
+      <a class="btn btn--ghost btn--sm" href="case-smartsite">← Infosys — SmartSite SGRE</a>
+      <a class="btn btn--sm" href="playbook">Read the SME Playbook →</a>
+    </div>
+
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot__in">
+      <div class="foot__col">
+        <h2>{{name}}</h2>
+        <p class="dim">{{role}}</p>
+        <p class="dim">{{location}} · {{overlap}} overlap with {{overlapZones}}</p>
+      </div>
+      <div class="foot__col">
+        <h2>Site</h2>
+        <a href="work">Case Studies</a>
+        <a href="playbook">SME Playbook</a>
+        <a href="stack">Tech Stack</a>
+        <a href="contact">Availability</a>
+      </div>
+      <div class="foot__col">
+        <h2>Direct</h2>
+        <a data-mail="akshaydixits96|gmail.com" data-mail-text href="#">email</a>
+        <a href="{{github}}" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+        <a href="{{linkedin}}" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+        <a href="{{resume}}" target="_blank" rel="noopener noreferrer">Résumé (PDF) ↗</a>
+      </div>
+    </div>
+    <div class="foot__bot">
+      <span>© <span class="mono">2026</span> {{name}} — built from scratch, no template, no tracker.</span>
+      <span>Static site · strict CSP · zero third-party JavaScript</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

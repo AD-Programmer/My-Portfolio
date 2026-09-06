@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'none'; form-action 'none'; base-uri 'self'; object-src 'none'; upgrade-insecure-requests">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="color-scheme" content="dark light">
+<meta name="theme-color" content="#06080b" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#fbfaf8" media="(prefers-color-scheme: light)">
+<title>Availability, logistics &amp; contact | {{name}}</title>
+<meta name="description" content="Engagement type, work authorization, timezone overlap with US teams, notice period and how to reach me. Everything a hiring manager needs before the first call.">
+<link rel="canonical" href="{{siteUrl}}/contact">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Availability &amp; contact | {{name}}">
+<meta property="og:description" content="Senior mobile IC / SME — remote US startups and enterprise product teams in industrial technology.">
+<meta property="og:image" content="{{siteUrl}}/assets/og.png">
+<meta property="og:url" content="{{siteUrl}}/contact.html">
+<meta name="twitter:title" content="Availability &amp; contact | {{name}}">
+<meta name="twitter:description" content="Senior mobile IC / SME — remote US startups and enterprise product teams in industrial technology.">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<script src="assets/js/theme.js"></script>
+<link rel="stylesheet" href="assets/css/main.css">
+<script defer src="assets/js/site.js"></script>
+</head>
+<body>
+<div class="field-bg"></div><div class="field-grid"></div>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav">
+  <div class="nav__in">
+    <a class="nav__brand" href="/"><span class="nav__dot"></span>{{name}}<span class="dim"> / mobile architecture</span></a>
+    <button class="theme-toggle" type="button" aria-label="Switch theme" aria-pressed="false">
+      <svg class="i-moon" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M17 10.8A7.5 7.5 0 0 1 9.2 3 7.5 7.5 0 1 0 17 10.8Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+      <svg class="i-sun" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="3.6" stroke="currentColor" stroke-width="1.5"/><path d="M10 1.8v2M10 16.2v2M18.2 10h-2M3.8 10h-2M15.6 4.4l-1.4 1.4M5.8 14.2l-1.4 1.4M15.6 15.6l-1.4-1.4M5.8 5.8 4.4 4.4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </button>
+    <button class="nav__burger" type="button" aria-label="Toggle navigation" aria-expanded="false">
+      <svg viewBox="0 0 20 20" width="18" height="18" aria-hidden="true"><path d="M2 5h16M2 10h16M2 15h16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" fill="none"/></svg>
+    </button>
+    <nav class="nav__links" aria-label="Primary">
+      <a href="/">Home</a>
+      <a href="work">Case Studies</a>
+      <a href="playbook">SME Playbook</a>
+      <a href="stack">Stack</a>
+      <a href="contact">Availability</a>
+      <a class="nav__cta" href="{{resume}}" target="_blank" rel="noopener noreferrer">Résumé ↗</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="case-hero">
+  <div class="wrap">
+    <span class="hero__status"><i></i>{{availability}}</span>
+    <h1>The logistics, up front.</h1>
+    <p class="case-hero__sub">
+      Remote hiring stalls on unanswered practicalities more often than on technical fit.
+      Everything a hiring manager or recruiter needs before the first call is on this page,
+      so the first call can be about engineering instead.
+    </p>
+  </div>
+</section>
+
+<section class="section section--tight">
+  <div class="wrap">
+    <div class="bento rv">
+      <div class="tile tile--feature tile--6">
+        <span class="eyebrow eyebrow--plain">Engagement</span>
+        <h2 class="mt-s">What I'm looking for</h2>
+        <p>
+          Senior individual contributor or subject-matter-expert roles where I own a mobile surface
+          end to end — architecture, delivery pipeline, and the technical standard the team works
+          inside. Best fit: <strong>remote US startups and enterprise product companies</strong> building
+          for industrial, manufacturing, construction, field-service or logistics operations.
+        </p>
+        <ul class="bullets mt-s">
+          <li><strong>Engagement type:</strong> {{engagement}}</li>
+          <li><strong>Location &amp; authorization:</strong> {{workAuth}}</li>
+          <li><strong>Notice period:</strong> {{noticePeriod}}</li>
+          <li><strong>Not looking for:</strong> people-management tracks, or roles where mobile is a ticket queue rather than an owned surface.</li>
+        </ul>
+      </div>
+
+      <div class="tile tile--cyan tile--6">
+        <span class="eyebrow eyebrow--cyan eyebrow--plain">Remote operating model</span>
+        <h2 class="mt-s">How I work with a US team</h2>
+        <ul class="bullets mt-s">
+          <li><strong>{{overlap}} of guaranteed daily overlap</strong> with {{overlapZones}} — real overlap for standups, pairing, incident response and design review, not just an async handoff.</li>
+          <li><strong>Written-first by default.</strong> Architecture decision records, annotated pull requests, and design docs before implementation — so a reviewer three timezones away has full context without a meeting.</li>
+          <li><strong>Proactive status, not requested status.</strong> Nobody should have to ask what happened yesterday or what is blocked today.</li>
+          <li><strong>Comfortable with zero supervision.</strong> My most recent role had no engineer above me on the mobile surface. I set the standard, held it, and shipped against it.</li>
+        </ul>
+      </div>
+
+      <div class="tile tile--12">
+        <span class="eyebrow eyebrow--plain">Fastest path</span>
+        <h2 class="mt-s">Skip the screening call — here's my technical depth in advance</h2>
+        <p>
+          If you'd rather evaluate before scheduling: the <a href="work">case studies</a> cover four
+          architectures in detail with diagrams, the <a href="playbook">SME playbook</a> is a
+          defensible position on cross-platform framework selection, and the
+          <a href="stack">stack page</a> annotates every technology with actual depth of use.
+          Read any one of them and you'll know whether we should talk.
+        </p>
+        <div class="btn-row mt-m">
+          <a class="btn btn--primary" data-mail="akshaydixits96|gmail.com" href="#">
+            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M1.5 4.5h13v9h-13z" stroke="currentColor" stroke-width="1.4"/><path d="m1.5 5 6.5 4.5L14.5 5" stroke="currentColor" stroke-width="1.4"/></svg>
+            Email me
+          </a>
+          <a class="btn" href="{{calendar}}" target="_blank" rel="noopener noreferrer">Book a call</a>
+          <a class="btn" href="{{resume}}" target="_blank" rel="noopener noreferrer">Download résumé (PDF)</a>
+          <a class="btn btn--ghost" href="{{linkedin}}" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+          <a class="btn btn--ghost" href="{{github}}" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head rv">
+      <span class="eyebrow">Screening shortcuts</span>
+      <h2>Questions you were going to ask anyway</h2>
+    </div>
+    <div class="grid-2 rv">
+      <div class="tile">
+        <h3>Will you write code, or just architect?</h3>
+        <p>Write code. I am an IC by preference and by design — architecture without implementation
+           degrades into slideware, and I want to be the person who writes the reference implementation
+           that everyone else copies.</p>
+      </div>
+      <div class="tile">
+        <h3>How do you handle a stack you haven't used?</h3>
+        <p>The transferable knowledge sits below the framework — concurrency, memory, persistence,
+           platform lifecycle. I carried real apps through Xamarin.iOS → Xamarin.Forms → .NET MAUI and
+           picked up Kotlin/Compose and Swift/SwiftUI by mapping them onto that foundation. Ask me to
+           reason about an unfamiliar framework in the interview; it's a fair test and I'd rather take it
+           than pad a skills list.</p>
+      </div>
+      <div class="tile">
+        <h3>Greenfield or existing codebase?</h3>
+        <p>Mostly existing, and I'm good at it — retrofitting offline durability into a live product at
+           Siemens Gamesa, migrating authentication on a daily-use app at Gallo, carrying codebases
+           through two framework generations. Rescue and evolution work is where a senior hire usually
+           pays for itself fastest.</p>
+      </div>
+      <div class="tile">
+        <h3>What about mentorship and team leadership?</h3>
+        <p>Yes, as a senior IC — review standards, reference implementations, architectural guardrails,
+           onboarding paths. I have scaled junior and intern output this way. What I am not looking for
+           is a people-management track.</p>
+      </div>
+      <div class="tile">
+        <h3>Can you work with a codebase you disagree with?</h3>
+        <p>Yes. Inherited decisions usually had reasons, and the first job is to find them. I document
+           the disagreement, propose an incremental path, and keep delivery running while it happens —
+           see the incremental Compose/SwiftUI migration in <a href="case-gallo">Era 03</a>.</p>
+      </div>
+      <div class="tile">
+        <h3>What's your interview preference?</h3>
+        <p>Architecture and system design discussion, code review of a real pull request, or a scoped
+           take-home I can walk you through. All three tell you far more than an algorithm puzzle about
+           how I'd behave on your codebase.</p>
+      </div>
+    </div>
+
+    <div class="cta rv mt-l">
+      <span class="eyebrow eyebrow--plain">{{availability}}</span>
+      <h2>Let's talk.</h2>
+      <p>Tell me what your mobile surface looks like and what's currently painful about it.
+         I'll tell you honestly whether I'm the right person for it.</p>
+      <div class="btn-row">
+        <a class="btn btn--primary" data-mail="akshaydixits96|gmail.com" href="#">Email me</a>
+        <a class="btn" href="{{calendar}}" target="_blank" rel="noopener noreferrer">Book a call</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot__in">
+      <div class="foot__col">
+        <h2>{{name}}</h2>
+        <p class="dim">{{role}}</p>
+        <p class="dim">{{location}} · {{overlap}} overlap with {{overlapZones}}</p>
+      </div>
+      <div class="foot__col">
+        <h2>Site</h2>
+        <a href="work">Case Studies</a>
+        <a href="playbook">SME Playbook</a>
+        <a href="stack">Tech Stack</a>
+        <a href="contact">Availability</a>
+      </div>
+      <div class="foot__col">
+        <h2>Direct</h2>
+        <a data-mail="akshaydixits96|gmail.com" data-mail-text href="#">email</a>
+        <a href="{{github}}" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+        <a href="{{linkedin}}" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+        <a href="{{resume}}" target="_blank" rel="noopener noreferrer">Résumé (PDF) ↗</a>
+      </div>
+    </div>
+    <div class="foot__bot">
+      <span>© <span class="mono">2026</span> {{name}} — built from scratch, no template, no tracker.</span>
+      <span>Static site · strict CSP · zero third-party JavaScript</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

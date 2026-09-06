@@ -1,0 +1,47 @@
+# Netlify / Cloudflare Pages security headers.
+# THREE COPIES OF THIS POLICY EXIST — keep them in sync:
+#   _headers      (Netlify / Cloudflare Pages)  <- this file
+#   vercel.json   (Vercel)
+#   <meta http-equiv="Content-Security-Policy"> in each .html
+#     — GitHub Pages fallback only. It deliberately OMITS frame-ancestors:
+#       the directive is ignored in a <meta> by spec and logs a console
+#       error for it, which cost a Lighthouse Best-Practices point. The
+#       real protection lives in this file, vercel.json, and X-Frame-Options.
+#
+# connect-src 'none' costs a Lighthouse SEO point — DO NOT "fix" it.
+#   Lighthouse fetches /robots.txt from inside the page, so the directive
+#   blocks its probe and the robots-txt audit fails (SEO 92 instead of 100).
+#   Verified: relaxing it to 'self' is the only thing that moves that score.
+#   It is a measurement artifact, not an SEO defect — real crawlers request
+#   robots.txt as a top-level HTTP fetch, never subject to a page CSP, and
+#   the file serves 200 with valid content. This site makes zero fetch/XHR
+#   calls, so 'none' costs nothing real. Keeping the control beats the score.
+
+/*
+  Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'none'; form-action 'none'; frame-ancestors 'none'; base-uri 'self'; object-src 'none'; upgrade-insecure-requests
+  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(), camera=(), microphone=(), payment=(), usb=(), interest-cohort=()
+  Cross-Origin-Opener-Policy: same-origin
+  Cross-Origin-Resource-Policy: same-origin
+  X-Permitted-Cross-Domain-Policies: none
+
+# Filenames are NOT content-hashed, so nothing here may be immutable
+# unless its bytes genuinely never change.
+
+/assets/css/*
+  Cache-Control: public, max-age=600, must-revalidate
+
+/assets/js/*
+  Cache-Control: public, max-age=600, must-revalidate
+
+/assets/resume.pdf
+  Cache-Control: public, max-age=3600, must-revalidate
+
+/assets/og.png
+  Cache-Control: public, max-age=31536000, immutable
+
+/assets/favicon.svg
+  Cache-Control: public, max-age=31536000, immutable

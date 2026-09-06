@@ -1,0 +1,387 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'none'; form-action 'none'; base-uri 'self'; object-src 'none'; upgrade-insecure-requests">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="color-scheme" content="dark light">
+<meta name="theme-color" content="#06080b" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#fbfaf8" media="(prefers-color-scheme: light)">
+<title>SmartSite SGRE — offline-first timesheets for wind farm construction | {{name}}</title>
+<meta name="description" content="Xamarin.Forms field app for Siemens Gamesa wind farm construction: offline timesheet capture with deferred sync, deviation and progress reporting, and a single-factor to multi-factor authentication upgrade.">
+<link rel="canonical" href="{{siteUrl}}/case-smartsite">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SmartSite SGRE — offline-first timesheets for wind farm construction">
+<meta property="og:description" content="Subcontractors reporting labour from wind farm sites with no coverage. The offline write path is the product.">
+<meta property="og:image" content="{{siteUrl}}/assets/og.png">
+<meta property="og:url" content="{{siteUrl}}/case-smartsite.html">
+<meta name="twitter:title" content="SmartSite SGRE — offline-first timesheets for wind farm construction">
+<meta name="twitter:description" content="Subcontractors reporting labour from wind farm sites with no coverage. The offline write path is the product.">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<script src="assets/js/theme.js"></script>
+<link rel="stylesheet" href="assets/css/main.css">
+<script defer src="assets/js/site.js"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "{{siteUrl}}/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Case Studies",
+          "item": "{{siteUrl}}/work.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "SmartSite SGRE — offline-first timesheets for wind farm construction",
+          "item": "{{siteUrl}}/case-smartsite.html"
+        }
+      ]
+    },
+    {
+      "@type": "TechArticle",
+      "headline": "SmartSite SGRE — offline-first timesheets for wind farm construction",
+      "description": "Xamarin.Forms field app for Siemens Gamesa wind farm construction: offline timesheet capture with deferred sync, deviation and progress reporting, and a single-factor to multi-factor authentication upgrade.",
+      "inLanguage": "en",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "{{siteUrl}}/case-smartsite.html"
+      },
+      "image": "{{siteUrl}}/assets/og.png",
+      "author": {
+        "@type": "Person",
+        "name": "{{name}}",
+        "url": "{{siteUrl}}/"
+      },
+      "publisher": {
+        "@type": "Person",
+        "name": "{{name}}",
+        "url": "{{siteUrl}}/"
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="field-bg"></div><div class="field-grid"></div>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav">
+  <div class="nav__in">
+    <a class="nav__brand" href="/"><span class="nav__dot"></span>{{name}}<span class="dim"> / mobile architecture</span></a>
+    <button class="theme-toggle" type="button" aria-label="Switch theme" aria-pressed="false">
+      <svg class="i-moon" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M17 10.8A7.5 7.5 0 0 1 9.2 3 7.5 7.5 0 1 0 17 10.8Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+      <svg class="i-sun" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="3.6" stroke="currentColor" stroke-width="1.5"/><path d="M10 1.8v2M10 16.2v2M18.2 10h-2M3.8 10h-2M15.6 4.4l-1.4 1.4M5.8 14.2l-1.4 1.4M15.6 15.6l-1.4-1.4M5.8 5.8 4.4 4.4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </button>
+    <button class="nav__burger" type="button" aria-label="Toggle navigation" aria-expanded="false">
+      <svg viewBox="0 0 20 20" width="18" height="18" aria-hidden="true"><path d="M2 5h16M2 10h16M2 15h16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" fill="none"/></svg>
+    </button>
+    <nav class="nav__links" aria-label="Primary">
+      <a href="/">Home</a>
+      <a href="work">Case Studies</a>
+      <a href="playbook">SME Playbook</a>
+      <a href="stack">Stack</a>
+      <a href="contact">Availability</a>
+      <a class="nav__cta" href="{{resume}}" target="_blank" rel="noopener noreferrer">Résumé ↗</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="case-hero">
+  <div class="wrap">
+    <nav class="crumb" aria-label="Breadcrumb"><a href="work">Case Studies</a> <span class="dim" aria-hidden="true">/</span> <span aria-current="page">SmartSite SGRE</span></nav>
+    <span class="eyebrow mt-s">{{co_b}} · {{co_b_desc}}</span>
+    <h1>Offline-first labour reporting for wind farm construction</h1>
+    <p class="case-hero__sub">
+      SmartSite gives Siemens Gamesa real-time visibility over wind farm construction — activity
+      reporting, progress tracking, deviation capture and lead-time comparison across regions. The people
+      producing that data are subcontractor crews standing at the base of a turbine, frequently with no
+      usable network. Everything interesting about this build follows from that one fact.
+    </p>
+
+    <div class="twoclick">
+      <a class="btn btn--primary btn--sm" href="{{b_live}}" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M6 10 10 6M7 3.5 8.6 2a3.4 3.4 0 1 1 4.8 4.8L11.8 8.4M9 12.5 7.4 14a3.4 3.4 0 0 1-4.8-4.8L4.2 7.6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        {{b_live_name}} — App Store
+      </a>
+      <a class="btn btn--ghost btn--sm" href="#blueprint">↓ Architecture blueprint</a>
+    </div>
+
+    <div class="note">
+      <p><strong>On source code:</strong> SmartSite is a Siemens Gamesa product delivered through
+      Infosys — the source is client IP and there is no public repository. The architecture description
+      below is my own, written from scratch.</p>
+    </div>
+
+    <dl class="case-meta">
+      <div><dt>Role</dt><dd>Mobile Engineer — client delivery</dd></div>
+      <div><dt>Period</dt><dd>{{co_b_dates}}</dd></div>
+      <div><dt>Platform</dt><dd>Xamarin.Forms · iOS &amp; Android</dd></div>
+      <div><dt>Client</dt><dd>Siemens Gamesa Renewable Energy</dd></div>
+      <div><dt>Users</dt><dd>Subcontractor crews, site supervisors</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+
+    <!-- 01 -->
+    <div class="block rv">
+      <div class="block__h"><span class="block__n">01</span><h2>Context &amp; Scope</h2></div>
+      <div class="prose">
+        <p>
+          Wind farms are built where the wind is, which is to say: on ridgelines, offshore approaches,
+          open plains and other places chosen for their meteorology rather than their cellular coverage.
+          The construction programme is long, the subcontractor mix changes across phases, and the whole
+          commercial model depends on knowing what work actually happened, when, and where it deviated
+          from plan.
+        </p>
+        <p>
+          SmartSite is the capture layer for that. Crews report activities and timesheets; supervisors
+          track progress against the construction sequence and log deviations with cause; the organisation
+          gets lead-time transparency and the ability to compare execution across regions. It shipped
+          initially as an online product — and the field immediately made clear that an online-only
+          reporting tool at a wind farm is a tool that gets filled in from memory in a hotel room three
+          days later, which is exactly the data quality problem the product existed to solve.
+        </p>
+        <h3>What made it hard</h3>
+        <ul class="bullets">
+          <li><strong>Offline was retrofitted into a live product, not designed in.</strong> The app was already deployed and in use. Adding durable offline capture meant changing the write path underneath users without breaking the online behaviour they depended on.</li>
+          <li><strong>Timesheets are money.</strong> A lost or duplicated timesheet is a subcontractor payment dispute. This is not a domain where "eventually consistent, probably" is acceptable — a crew needs to know their submission is safe the moment they tap save.</li>
+          <li><strong>The data shape is nested and editable.</strong> An activity contains multiple tasks; a task can carry multiple timeframes. All of it has to be creatable, editable and deletable offline, then reconciled — which is materially harder than queueing flat append-only events.</li>
+          <li><strong>Security compliance moved mid-flight.</strong> The product had to move from single-factor to multi-factor authentication to meet compliance requirements, on an app whose users are often offline and whose sessions have to survive that.</li>
+          <li><strong>Enterprise client delivery.</strong> Fixed release trains, client-side acceptance, and a long-lived Xamarin.Forms codebase serving a global operation.</li>
+        </ul>
+      </div>
+
+      <figure class="blueprint">
+        <figcaption class="blueprint__bar">SCREENS — <b>{{b_live_name}}</b></figcaption>
+        <div class="blueprint__body shots">
+          <img src="assets/shots/smartsite/01-sites.webp" width="460" height="996" loading="lazy" decoding="async" alt="Site selector listing three subcontractor sites with their start dates.">
+          <img src="assets/shots/smartsite/02-report-status.webp" width="460" height="996" loading="lazy" decoding="async" alt="Reporting screen grouping entries by Unsubmitted, Rejected and Validated status.">
+          <img src="assets/shots/smartsite/03-task-hours.webp" width="460" height="996" loading="lazy" decoding="async" alt="Task detail for a nacelle roof lift: hours per timeframe, crane allocation and night-shift and extra-work flags.">
+        </div>
+        <p class="blueprint__cap">App Store listing screenshots.</p>
+      </figure>
+    </div>
+
+    <!-- 02 -->
+    <div class="block rv" id="blueprint">
+      <div class="block__h"><span class="block__n">02</span><h2>Architectural Blueprint</h2></div>
+      <div class="prose">
+        <p>
+          The governing rule: <strong>the local database is the system of record for the crew, and the
+          network is an eventual detail.</strong> A timesheet save is a local transactional commit that
+          returns immediately. Sync is a separate, explicitly user-visible act — the app shows what is
+          pending and the user presses sync when they have signal. Making that boundary visible rather
+          than magical was a deliberate product decision as much as a technical one.
+        </p>
+      </div>
+
+      <figure class="blueprint">
+        <figcaption class="blueprint__bar">
+          <b>FIG 2.0</b> — OFFLINE WRITE PATH · LOCAL COMMIT, EXPLICIT SYNC, SERVER RECONCILE
+        </figcaption>
+        <div class="blueprint__body">
+          <svg viewBox="0 0 900 470" width="900" height="470" role="img" aria-label="Diagram of the SmartSite offline write path: timesheet edits commit locally to SQLite through a change journal, surface a pending count in the UI, and are drained by an explicit user-triggered sync into the SGRE backend with idempotent reconciliation.">
+            <text class="d-l" x="26" y="26">DEVICE — AUTHORITATIVE WHILE OFFLINE</text>
+            <text class="d-l" x="628" y="26">SGRE BACKEND</text>
+
+            <rect class="d-box" x="20" y="42" width="290" height="76" rx="9"/>
+            <text class="d-t" x="36" y="66">Timesheet &amp; activity UI</text>
+            <text class="d-s" x="36" y="84">activity → tasks → multiple timeframes</text>
+            <text class="d-s" x="36" y="98">create · edit · delete, online or offline</text>
+            <text class="d-s" x="36" y="112">Xamarin.Forms + MVVM</text>
+
+            <rect class="d-box-hi" x="20" y="132" width="290" height="76" rx="9"/>
+            <text class="d-t" x="36" y="156">Validation &amp; domain rules</text>
+            <text class="d-s" x="36" y="174">overlap checks · activity/task integrity</text>
+            <text class="d-s" x="36" y="188">runs identically offline and online</text>
+            <text class="d-s" x="36" y="202">no rule depends on connectivity</text>
+
+            <rect class="d-box-hi" x="20" y="222" width="290" height="86" rx="9"/>
+            <text class="d-t" x="36" y="246">SQLite — local system of record</text>
+            <text class="d-s" x="36" y="264">transactional commit before any I/O</text>
+            <text class="d-s" x="36" y="278">survives process death and power loss</text>
+            <text class="d-s" x="36" y="292">save returns instantly, always</text>
+            <text class="d-s" x="36" y="302">— the crew is never blocked on signal</text>
+
+            <rect class="d-box" x="20" y="322" width="290" height="76" rx="9"/>
+            <text class="d-t" x="36" y="346">Change journal</text>
+            <text class="d-s" x="36" y="364">ordered create / edit / delete intents</text>
+            <text class="d-s" x="36" y="378">client key per record for dedupe</text>
+            <text class="d-s" x="36" y="392">tombstones for offline deletions</text>
+
+            <rect class="d-box-cy" x="20" y="412" width="290" height="46" rx="9"/>
+            <text class="d-t" x="36" y="432">Pending badge in the UI</text>
+            <text class="d-s" x="36" y="448">the crew can see what is not yet safe</text>
+
+            <!-- sync -->
+            <rect class="d-box-hi" x="356" y="180" width="200" height="120" rx="9"/>
+            <text class="d-t" x="372" y="206">EXPLICIT SYNC</text>
+            <text class="d-s" x="372" y="226">user-triggered, not silent</text>
+            <text class="d-s" x="372" y="242">drains journal in order</text>
+            <text class="d-s" x="372" y="258">retries on transient failure</text>
+            <text class="d-s" x="372" y="274">partial success is safe —</text>
+            <text class="d-s" x="372" y="288">unsent intents simply remain</text>
+
+            <path class="d-line-hi" d="M310 80 L310 132"/>
+            <path class="d-line-hi" d="M164 118 L164 132"/>
+            <path class="d-line-hi" d="M164 208 L164 222"/>
+            <path class="d-line-hi" d="M164 308 L164 322"/>
+            <path class="d-line-dash" d="M164 398 L164 412"/>
+            <path class="d-line-hi" d="M310 360 L332 360 L332 240 L356 240"/>
+            <text class="d-l" x="316" y="300">DRAIN</text>
+
+            <!-- backend -->
+            <rect class="d-box" x="602" y="70" width="278" height="80" rx="9"/>
+            <text class="d-t" x="618" y="94">Ingest &amp; reconcile</text>
+            <text class="d-s" x="618" y="112">idempotent on client key</text>
+            <text class="d-s" x="618" y="126">replayed batch is a no-op</text>
+            <text class="d-s" x="618" y="140">no duplicate timesheets, by construction</text>
+
+            <rect class="d-box" x="602" y="166" width="278" height="80" rx="9"/>
+            <text class="d-t" x="618" y="190">Construction programme data</text>
+            <text class="d-s" x="618" y="208">activities · progress · deviations</text>
+            <text class="d-s" x="618" y="222">deviation clustering and cause</text>
+            <text class="d-s" x="618" y="236">lead-time visibility across regions</text>
+
+            <rect class="d-box-cy" x="602" y="262" width="278" height="80" rx="9"/>
+            <text class="d-t" x="618" y="286">Identity — MFA</text>
+            <text class="d-s" x="618" y="304">upgraded from single-factor</text>
+            <text class="d-s" x="618" y="318">token lifetime tuned for field use</text>
+            <text class="d-s" x="618" y="332">offline work survives session expiry</text>
+
+            <rect class="d-box" x="602" y="358" width="278" height="80" rx="9"/>
+            <text class="d-t" x="618" y="382">Reporting layer</text>
+            <text class="d-s" x="618" y="400">project visibility for the programme office</text>
+            <text class="d-s" x="618" y="414">cross-region execution comparison</text>
+            <text class="d-s" x="618" y="428">the reason the capture layer exists</text>
+
+            <path class="d-line-hi" d="M556 226 L578 226 L578 110 L602 110"/>
+            <path class="d-line" d="M741 150 L741 166"/>
+            <path class="d-line" d="M741 246 L741 262"/>
+            <path class="d-line" d="M741 342 L741 358"/>
+          </svg>
+        </div>
+        <p class="blueprint__cap">
+          Amber = the write path that must never lose a record. The sync step is deliberately explicit —
+          a crew that can see a pending count trusts the app; one that can't, doesn't.
+        </p>
+      </figure>
+
+      <div class="prose">
+        <h3>Decisions worth defending</h3>
+        <ul class="bullets">
+          <li><strong>Intents, not dirty rows.</strong> Offline edits are recorded as an ordered journal of create / edit / delete intents carrying a client-generated key, rather than mutating a row and flagging it dirty. Deletion is the case that breaks the naive approach — a row you deleted locally has nothing left to carry the "I was deleted" flag, so tombstones and an intent log are the only honest way to reconcile it.</li>
+          <li><strong>Idempotency by client key.</strong> Because every intent carries a stable key generated on the device, a retried batch after a mid-flight drop is a no-op server-side. Duplicate submission — the most damaging failure mode in a labour-reporting product — is eliminated by construction rather than by careful retry logic.</li>
+          <li><strong>Identical validation on both paths.</strong> The domain rules run the same whether the device is online or offline. If validation only ran server-side, a crew could fill in a full shift offline and have it rejected on sync, at which point they no longer remember the detail. Rejecting at the point of entry is the only version that respects the user's time.</li>
+          <li><strong>Explicit sync over silent background sync.</strong> Contrarian, and deliberate. In a payment-relevant workflow, a visible pending count and a user-pressed sync button build trust that a silent background process does not. The crew knows exactly what is safe and what is not.</li>
+          <li><strong>MFA that does not punish offline users.</strong> Moving from single-factor to multi-factor on an app used in dead zones meant token lifetimes and re-authentication behaviour had to be designed so that a session expiring in the field never puts locally committed work at risk. Authentication state and data durability are separate concerns and had to stay that way.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 03 -->
+    <div class="block rv">
+      <div class="block__h"><span class="block__n">03</span><h2>Engineering Breakthrough</h2></div>
+      <div class="prose">
+        <h3>Retrofitting durability into a shipped product</h3>
+        <p>
+          The hard part was not writing an offline layer. It was inserting one beneath a live application
+          whose users were mid-programme, without a rewrite freeze and without a migration that could lose
+          in-flight data.
+        </p>
+        <ul class="bullets">
+          <li><strong>Route every write through one seam first.</strong> Before any offline behaviour existed, the scattered calls that wrote timesheet data were consolidated behind a single repository interface. That refactor shipped on its own, changed no behaviour, and was independently revertible — and it turned "add offline support" from a cross-cutting rewrite into a change with one implementation site.</li>
+          <li><strong>Make the local store authoritative, then make sync catch up.</strong> Once the seam existed, the local database became the write target and the network became a downstream consumer of the journal. The online path did not disappear; it became the fast case of the same path.</li>
+          <li><strong>Ship the nested cases deliberately.</strong> Multiple tasks per activity and multiple timeframes per task were introduced alongside the offline work because the two interact — the reconciliation model has to handle a child record created offline under a parent that itself was created offline and has no server identity yet. Client-generated keys are what make that resolvable.</li>
+          <li><strong>Prove it with scripted network faults.</strong> A fake connectivity provider driving clean drops, flapping cells, high-latency lossy links and mid-flight disconnects, plus a process-kill test during a write transaction. "It works offline" is a claim that needs a test suite behind it, otherwise it is a hope.</li>
+        </ul>
+
+        <div class="callout">
+          <div class="callout__t">What I would tell a team facing the same problem</div>
+          <p>
+            Retrofitting offline support is mostly a refactoring problem wearing a distributed-systems
+            costume. Find the write path, collapse it to one seam, ship that seam with no behaviour change,
+            and only then change what sits behind it. Teams that skip the boring first step end up doing
+            the distributed-systems part in a dozen places at once.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 04 -->
+    <div class="block rv">
+      <div class="block__h"><span class="block__n">04</span><h2>Scope &amp; Impact</h2></div>
+      <dl class="metrics">
+        <div><dt>Offline</dt><dd>Full create, edit and delete of timesheets with no connectivity, reconciled on explicit sync — shipped into a live, already-deployed product.</dd></div>
+        <div><dt>MFA</dt><dd>Authentication upgraded from single-factor to multi-factor for security compliance, without compromising offline usability.</dd></div>
+        <div><dt>Global</dt><dd>Used across Siemens Gamesa wind farm construction sites, with cross-region execution comparison in the reporting layer.</dd></div>
+        <div><dt>{{m_b_offline}}</dt><dd>Share of timesheets captured while offline — an estimate from the field, not an instrumented figure. Ask me how I arrived at it.</dd></div>
+      </dl>
+      <div class="prose mt-m">
+        <p class="dim mono">
+          The offline and MFA milestones are visible in the app's public release history. The last tile is
+          my own estimate and is labelled as such.
+        </p>
+      </div>
+    </div>
+
+    <div class="pagenav">
+      <a class="btn btn--ghost btn--sm" href="case-hilti">← Hilti — multi-region compliance</a>
+      <a class="btn btn--sm" href="case-gallo">OVE — Gallo Gateway →</a>
+    </div>
+
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot__in">
+      <div class="foot__col">
+        <h2>{{name}}</h2>
+        <p class="dim">{{role}}</p>
+        <p class="dim">{{location}} · {{overlap}} overlap with {{overlapZones}}</p>
+      </div>
+      <div class="foot__col">
+        <h2>Site</h2>
+        <a href="work">Case Studies</a>
+        <a href="playbook">SME Playbook</a>
+        <a href="stack">Tech Stack</a>
+        <a href="contact">Availability</a>
+      </div>
+      <div class="foot__col">
+        <h2>Direct</h2>
+        <a data-mail="akshaydixits96|gmail.com" data-mail-text href="#">email</a>
+        <a href="{{github}}" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+        <a href="{{linkedin}}" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+        <a href="{{resume}}" target="_blank" rel="noopener noreferrer">Résumé (PDF) ↗</a>
+      </div>
+    </div>
+    <div class="foot__bot">
+      <span>© <span class="mono">2026</span> {{name}} — built from scratch, no template, no tracker.</span>
+      <span>Static site · strict CSP · zero third-party JavaScript</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

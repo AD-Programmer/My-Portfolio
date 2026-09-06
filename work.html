@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'none'; form-action 'none'; base-uri 'self'; object-src 'none'; upgrade-insecure-requests">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="color-scheme" content="dark light">
+<meta name="theme-color" content="#06080b" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#fbfaf8" media="(prefers-color-scheme: light)">
+<title>Case Studies — shipped industrial &amp; field applications | {{name}}</title>
+<meta name="description" content="Four shipped applications with public App Store listings: Hilti Firestop Selector and Volume Calculator, SmartSite SGRE for Siemens Gamesa, and Gallo Gateway for E. & J. Gallo Winery.">
+<link rel="canonical" href="{{siteUrl}}/work">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Case Studies | {{name}}">
+<meta property="og:description" content="Shipped apps you can download, with the architecture written out in full.">
+<meta property="og:image" content="{{siteUrl}}/assets/og.png">
+<meta property="og:url" content="{{siteUrl}}/work.html">
+<meta name="twitter:title" content="Case Studies | {{name}}">
+<meta name="twitter:description" content="Shipped apps you can download, with the architecture written out in full.">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<script src="assets/js/theme.js"></script>
+<link rel="stylesheet" href="assets/css/main.css">
+<script defer src="assets/js/site.js"></script>
+</head>
+<body>
+<div class="field-bg"></div><div class="field-grid"></div>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav">
+  <div class="nav__in">
+    <a class="nav__brand" href="/"><span class="nav__dot"></span>{{name}}<span class="dim"> / mobile architecture</span></a>
+    <button class="theme-toggle" type="button" aria-label="Switch theme" aria-pressed="false">
+      <svg class="i-moon" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M17 10.8A7.5 7.5 0 0 1 9.2 3 7.5 7.5 0 1 0 17 10.8Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+      <svg class="i-sun" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="3.6" stroke="currentColor" stroke-width="1.5"/><path d="M10 1.8v2M10 16.2v2M18.2 10h-2M3.8 10h-2M15.6 4.4l-1.4 1.4M5.8 14.2l-1.4 1.4M15.6 15.6l-1.4-1.4M5.8 5.8 4.4 4.4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </button>
+    <button class="nav__burger" type="button" aria-label="Toggle navigation" aria-expanded="false">
+      <svg viewBox="0 0 20 20" width="18" height="18" aria-hidden="true"><path d="M2 5h16M2 10h16M2 15h16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" fill="none"/></svg>
+    </button>
+    <nav class="nav__links" aria-label="Primary">
+      <a href="/">Home</a>
+      <a href="work">Case Studies</a>
+      <a href="playbook">SME Playbook</a>
+      <a href="stack">Stack</a>
+      <a href="contact">Availability</a>
+      <a class="nav__cta" href="{{resume}}" target="_blank" rel="noopener noreferrer">Résumé ↗</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="case-hero">
+  <div class="wrap">
+    <span class="eyebrow">Shipped work</span>
+    <h1>Four applications. All of them public. All of them downloadable.</h1>
+    <p class="case-hero__sub">
+      Every case study links the live App Store listing, so you can verify the product exists and read
+      its release history before you read a word I wrote about it. Each is structured the same way —
+      <strong>Context &amp; Scope</strong>, <strong>Architectural Blueprint</strong>,
+      <strong>Engineering Breakthrough</strong>, <strong>Scope &amp; Impact</strong> — with a real
+      architecture diagram.
+    </p>
+    <div class="note">
+      <p><strong>Why there are no repository links on these.</strong> All four are employer or client
+      products and the source is assigned IP. Publishing it would be a breach, so I don't. What I can
+      offer instead is the architecture in my own words, in depth, plus a whiteboard session any time.
+      Public repositories appear only under <a href="#also-built">Also built</a>, where the code is mine.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section--tight">
+  <div class="wrap">
+
+    <figure class="blueprint rv">
+      <figcaption class="blueprint__bar">SCREENS — <b>all four, live on the App Store</b></figcaption>
+      <div class="blueprint__body shots">
+        <img src="assets/shots/firestop-selector/02-filter-by-product.webp" width="460" height="995" loading="lazy" decoding="async" alt="Hilti Firestop Selector: search results filtered by product with an approval detail sheet open.">
+        <img src="assets/shots/volume-calculator/03-mortar-result.webp" width="460" height="996" loading="lazy" decoding="async" alt="Hilti Volume Calculator: mortar volume calculation result for 100 anchors.">
+        <img src="assets/shots/smartsite/02-report-status.webp" width="460" height="996" loading="lazy" decoding="async" alt="SmartSite SGRE reporting screen grouped by Unsubmitted, Rejected and Validated status.">
+        <img src="assets/shots/gallo/03-accolade-filters.webp" width="460" height="996" loading="lazy" decoding="async" alt="Gallo Gateway accolade filter screen narrowing 653 results.">
+      </div>
+      <p class="blueprint__cap">App Store listing screenshots.</p>
+    </figure>
+
+    <!-- FLAGSHIP -->
+    <a class="case-card rv" href="case-hilti">
+      <span class="case-card__no">FLAGSHIP · {{co_c_dates}}</span>
+      <h2>Hilti — multi-region firestop compliance in .NET MAUI</h2>
+      <p class="case-card__role">{{co_c}} — {{co_c_desc}}<br>Senior Developer &amp; Mentor</p>
+      <p>
+        One codebase resolving into {{f_regions}} regulatory variants — UL (US), ETA (Europe),
+        DIN (Germany) — each with its own approvals corpus, selection logic and independently shipped
+        features. Backed by an offline library of {{f_approvals}} digitised approvals with local
+        full-text search, cloud-backed projects with an Owner/Editor/Viewer permission model, and
+        engineering judgment requests submitted from the jobsite. Two shipped Hilti apps.
+      </p>
+      <div class="case-card__stack">
+        <span class="stack-tag">.NET MAUI</span><span class="stack-tag">C#</span>
+        <span class="stack-tag">MVVM Toolkit</span><span class="stack-tag">SQLite + FTS</span>
+        <span class="stack-tag">Build-time variants</span><span class="stack-tag">App Center · TestFlight</span>
+      </div>
+    </a>
+    <div class="storelinks">
+      <a class="btn btn--sm" href="{{c_live}}" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M6 10 10 6M7 3.5 8.6 2a3.4 3.4 0 1 1 4.8 4.8L11.8 8.4M9 12.5 7.4 14a3.4 3.4 0 0 1-4.8-4.8L4.2 7.6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>{{c_live_name}} — App Store</a>
+      <a class="btn btn--sm" href="{{c_live2}}" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M6 10 10 6M7 3.5 8.6 2a3.4 3.4 0 1 1 4.8 4.8L11.8 8.4M9 12.5 7.4 14a3.4 3.4 0 0 1-4.8-4.8L4.2 7.6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>{{c_live2_name}} — App Store</a>
+    </div>
+
+    <div class="grid-2 mt-m">
+
+      <div class="case-cell">
+      <a class="case-card rv" href="case-smartsite">
+        <span class="case-card__no">{{co_b_dates}}</span>
+        <h2>SmartSite SGRE — offline-first labour reporting for wind farms</h2>
+        <p class="case-card__role">{{co_b}} — {{co_b_desc}}<br>Mobile Engineer · client delivery</p>
+        <p>
+          Subcontractor crews reporting timesheets and construction progress from wind farm sites with no
+          coverage. Full offline create, edit and delete over a nested activity/task/timeframe model,
+          reconciled through an ordered change journal with client-keyed idempotency — retrofitted into a
+          live, already-deployed product. Plus a single-factor to multi-factor authentication upgrade
+          that had to not break offline users.
+        </p>
+        <div class="case-card__stack">
+          <span class="stack-tag">Xamarin.Forms</span><span class="stack-tag">C#</span>
+          <span class="stack-tag">SQLite</span><span class="stack-tag">Offline sync</span>
+          <span class="stack-tag">MFA</span>
+        </div>
+      </a>
+      <div class="storelinks">
+        <a class="btn btn--sm" href="{{b_live}}" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M6 10 10 6M7 3.5 8.6 2a3.4 3.4 0 1 1 4.8 4.8L11.8 8.4M9 12.5 7.4 14a3.4 3.4 0 0 1-4.8-4.8L4.2 7.6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>{{b_live_name}} — App Store</a>
+      </div>
+      </div>
+
+      <div class="case-cell">
+      <a class="case-card rv" href="case-gallo">
+        <span class="case-card__no">{{co_a_dates}}</span>
+        <h2>Gallo Gateway — field sales enablement in Xamarin.iOS</h2>
+        <p class="case-card__role">{{co_a}} — {{co_a_desc}}<br>Mobile Engineer · client delivery</p>
+        <p>
+          A long-lived enterprise iOS app putting E. &amp; J. Gallo Winery's full sales and training
+          library in a rep's hand, with a bounded offline favourites tier that has to be complete in a
+          retailer's back room. Shipped through a full major-version redesign, international market
+          rollout, iBeacon in-market triggers, and a live migration of sign-in to Microsoft Azure.
+        </p>
+        <div class="case-card__stack">
+          <span class="stack-tag">Xamarin.iOS</span><span class="stack-tag">UIKit</span>
+          <span class="stack-tag">C#</span><span class="stack-tag">iBeacon</span>
+          <span class="stack-tag">Azure identity</span>
+        </div>
+      </a>
+      <div class="storelinks">
+        <a class="btn btn--sm" href="{{a_live}}" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M6 10 10 6M7 3.5 8.6 2a3.4 3.4 0 1 1 4.8 4.8L11.8 8.4M9 12.5 7.4 14a3.4 3.4 0 0 1-4.8-4.8L4.2 7.6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>{{a_live_name}} — App Store</a>
+      </div>
+      </div>
+
+      <div class="case-cell">
+      <a class="case-card rv" href="case-averiq">
+        <span class="case-card__no">CURRENT · {{co_d_dates}}</span>
+        <h2>AverIQ — owning the mobile surface</h2>
+        <p class="case-card__role">{{co_d}} — {{co_d_desc}}<br>Senior IC · fully remote</p>
+        <p>
+          Current role. Enterprise inventory management, construction and fleet products in .NET MAUI,
+          with no engineer above me on the mobile layer. Deliberately written as scope and ownership
+          rather than a deep case study — I have not been here long enough to have earned one, and
+          pretending otherwise would be the wrong signal.
+        </p>
+        <div class="case-card__stack">
+          <span class="stack-tag">.NET MAUI</span><span class="stack-tag">C#</span>
+          <span class="stack-tag">Offline-first</span><span class="stack-tag">Remote / async</span>
+        </div>
+      </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── TIMELINE ── -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-head rv">
+      <span class="eyebrow eyebrow--cyan">The through-line</span>
+      <h2>One platform lineage, one problem, six years.</h2>
+      <p>Xamarin.iOS → Xamarin.Forms → .NET MAUI, applied the whole way to field software for people
+         who cannot rely on a network. The framework changed twice; the problem never did.</p>
+    </div>
+    <ul class="tl rv">
+      <li>
+        <span class="tl__yr">{{co_a_dates}} · {{co_a_short}} → E. &amp; J. GALLO WINERY</span>
+        <h3>Learn the platform, not the abstraction</h3>
+        <p>Xamarin.iOS against UIKit directly — lifecycle, memory semantics, retain cycles across the
+           managed/native boundary. The foundation that made every later framework legible rather than magical.</p>
+      </li>
+      <li>
+        <span class="tl__yr">{{co_b_dates}} · {{co_b_short}} → SIEMENS GAMESA</span>
+        <h3>Learn offline-first for real</h3>
+        <p>Retrofitting durable offline capture into a live product where a lost timesheet is a payment
+           dispute. Where the conviction about local-first correctness stopped being theoretical.</p>
+      </li>
+      <li>
+        <span class="tl__yr">{{co_c_dates}} · {{co_c_short}}</span>
+        <h3>Learn product-scale architecture and how to transfer it</h3>
+        <p>A codebase resolving into three regulatory regions, a compliance-grade offline corpus, and a
+           review standard and reference implementations that other engineers built inside.</p>
+      </li>
+      <li>
+        <span class="tl__yr">{{co_d_dates}} · {{co_d_short}}</span>
+        <h3>Own it end to end</h3>
+        <p>Full ownership of the mobile surface at a remote US startup, in the same industrial domains.
+           This is the mode I want to keep working in.</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ── ALSO BUILT ── -->
+<section class="section" id="also-built">
+  <div class="wrap">
+    <div class="section-head rv">
+      <span class="eyebrow">Also built</span>
+      <h2>Personal projects — the only code here that's mine to show.</h2>
+      <p>Smaller and less polished than the shipped work above, and listed honestly rather than dressed
+         up. Some are mobile, some are web. They're here because they're the one place you can actually
+         read my code.</p>
+    </div>
+    <div class="proj-grid rv" data-projects></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="cta rv">
+      <span class="eyebrow eyebrow--plain">{{availability}}</span>
+      <h2>Pick any one of these and go deep.</h2>
+      <p>Download the app, read the release history, then ask me the hardest question you have about
+         how it works. That's the interview I want.</p>
+      <div class="btn-row">
+        <a class="btn btn--primary" href="contact">Availability &amp; contact</a>
+        <a class="btn" href="playbook">Read the SME Playbook</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot__in">
+      <div class="foot__col">
+        <h2>{{name}}</h2>
+        <p class="dim">{{role}}</p>
+        <p class="dim">{{location}} · {{overlap}} overlap with {{overlapZones}}</p>
+      </div>
+      <div class="foot__col">
+        <h2>Site</h2>
+        <a href="work">Case Studies</a>
+        <a href="playbook">SME Playbook</a>
+        <a href="stack">Tech Stack</a>
+        <a href="contact">Availability</a>
+      </div>
+      <div class="foot__col">
+        <h2>Direct</h2>
+        <a data-mail="akshaydixits96|gmail.com" data-mail-text href="#">email</a>
+        <a href="{{github}}" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+        <a href="{{linkedin}}" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+        <a href="{{resume}}" target="_blank" rel="noopener noreferrer">Résumé (PDF) ↗</a>
+      </div>
+    </div>
+    <div class="foot__bot">
+      <span>© <span class="mono">2026</span> {{name}} — built from scratch, no template, no tracker.</span>
+      <span>Static site · strict CSP · zero third-party JavaScript</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
