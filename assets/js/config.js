@@ -24,6 +24,12 @@ window.SITE = {
   resume:          "assets/resume.pdf",
   siteUrl:         "https://akshaydixit.com",
 
+  // Headshot shown in the nav and the home page intro. Drop a square
+  // photo (at least 480×480, face centred) at this path, e.g.
+  // "assets/img/akshay.jpg". Leave it empty and the site shows your
+  // initials in a circle instead.
+  photo:           "",
+
   /* ---------- 2. AVAILABILITY ---------- */
   availability:    "Open to senior IC / SME roles",
   engagement:      "Full-time remote · Contract (C2C) · Open to both",

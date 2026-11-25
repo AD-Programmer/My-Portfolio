@@ -1,5 +1,11 @@
 # Akshay Dixit Portfolio — Design System (MASTER)
 
+> **Nov 2026 redesign:** the site moved to an editorial single-column layout. See
+> [`PATTERNS.md`](PATTERNS.md) for the rules it follows. The token *names* below still
+> exist, but their values changed: the palette is a warm neutral with amber as the only accent,
+> labels are sentence-case sans, and gradient text, glows, the grid backdrop and the
+> pulsing status dots are gone. Where this file disagrees with `main.css`, the CSS wins.
+
 Source of truth: [`assets/css/main.css`](../../assets/css/main.css). This document explains
 the tokens; the CSS is authoritative if the two ever disagree.
 

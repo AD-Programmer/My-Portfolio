@@ -66,6 +66,19 @@ function projectsHtml() {
     .join("");
 }
 
+/* ---------- 2b. portrait ---------- */
+// {{avatar}} (nav, 32px) and {{portrait}} (home intro) come from CFG.photo.
+// With no photo set, both fall back to an initials monogram so the layout
+// never shows a broken image.
+function face(cls, size) {
+  if (CFG.photo) {
+    return `<img class="${cls}" src="${esc(CFG.photo)}" width="${size}" height="${size}" alt="${esc(CFG.name)}" decoding="async">`;
+  }
+  return `<span class="${cls} ${cls}--mono" aria-hidden="true">${esc(CFG.initials || "")}</span>`;
+}
+CFG.avatar = face("avatar", 32);
+CFG.portrait = face("portrait", 168);
+
 /* ---------- 3. build ---------- */
 fs.rmSync(OUT, { recursive: true, force: true });
 fs.mkdirSync(OUT, { recursive: true });
@@ -109,6 +122,14 @@ fs.cpSync(path.join(SRC, "assets/shots"), path.join(OUT, "assets/shots"), {
   recursive: true,
   filter: (src) => !path.basename(src).startsWith("."),
 });
+
+// Optional photos (headshot etc.) live in assets/img.
+if (fs.existsSync(path.join(SRC, "assets/img"))) {
+  fs.cpSync(path.join(SRC, "assets/img"), path.join(OUT, "assets/img"), {
+    recursive: true,
+    filter: (src) => !path.basename(src).startsWith("."),
+  });
+}
 
 /* ---------- 5. sitemap with lastmod from source mtime ---------- */
 const sitemap = fs
