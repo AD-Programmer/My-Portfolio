@@ -8,16 +8,16 @@
 <meta name="color-scheme" content="dark light">
 <meta name="theme-color" content="#06080b" media="(prefers-color-scheme: dark)">
 <meta name="theme-color" content="#fbfaf8" media="(prefers-color-scheme: light)">
-<title>SME Playbook — .NET MAUI vs React Native vs True Native | {{name}}</title>
-<meta name="description" content="An enterprise architectural framework for choosing between .NET MAUI, React Native and true native — evaluated on performance overhead, code shareability, ecosystem maturity and long-term maintainability, through the lens of industrial offline-first applications.">
+<title>SME Playbook: .NET MAUI vs React Native vs native | {{name}}</title>
+<meta name="description" content="How I choose between .NET MAUI, React Native and native for industrial, offline-first apps, compared on performance, code sharing, ecosystem and long-term maintenance.">
 <link rel="canonical" href="{{siteUrl}}/playbook">
 <meta property="og:type" content="article">
-<meta property="og:title" content=".NET MAUI vs React Native vs True Native: An Enterprise Architectural Framework">
-<meta property="og:description" content="A rigorous, opinionated evaluation for industrial and offline-first mobile applications.">
+<meta property="og:title" content=".NET MAUI vs React Native vs native for enterprise field apps">
+<meta property="og:description" content="How I choose a mobile stack for industrial and offline-first apps.">
 <meta property="og:image" content="{{siteUrl}}/assets/og.png">
 <meta property="og:url" content="{{siteUrl}}/playbook.html">
-<meta name="twitter:title" content=".NET MAUI vs React Native vs True Native: An Enterprise Architectural Framework">
-<meta name="twitter:description" content="A rigorous, opinionated evaluation for industrial and offline-first mobile applications.">
+<meta name="twitter:title" content=".NET MAUI vs React Native vs native for enterprise field apps">
+<meta name="twitter:description" content="How I choose a mobile stack for industrial and offline-first apps.">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <script src="assets/js/theme.js"></script>
@@ -43,15 +43,15 @@
         {
           "@type": "ListItem",
           "position": 2,
-          "name": "SME Playbook — .NET MAUI vs React Native vs True Native",
+          "name": "SME Playbook: .NET MAUI vs React Native vs native",
           "item": "{{siteUrl}}/playbook.html"
         }
       ]
     },
     {
       "@type": "TechArticle",
-      "headline": "SME Playbook — .NET MAUI vs React Native vs True Native",
-      "description": "An enterprise architectural framework for choosing between .NET MAUI, React Native and true native — evaluated on performance overhead, code shareability, ecosystem maturity and long-term maintainability, through the lens of industrial offline-first applications.",
+      "headline": "SME Playbook: .NET MAUI vs React Native vs native",
+      "description": "How I choose between .NET MAUI, React Native and native, compared on performance, code sharing, ecosystem and long-term maintenance for industrial, offline-first apps.",
       "inLanguage": "en",
       "mainEntityOfPage": {
         "@type": "WebPage",
@@ -103,11 +103,10 @@
 <section class="case-hero">
   <div class="wrap">
     <span class="eyebrow">Subject matter expert playbook</span>
-    <h1>Opinions I hold, and the evidence behind them.</h1>
+    <h1>What I believe about mobile architecture, and why</h1>
     <p class="case-hero__sub">
-      A senior engineer who has no opinions is a contractor. A senior engineer with opinions they cannot
-      defend is a liability. Here are mine, stated plainly, with the conditions under which I would
-      abandon each one.
+      These are the opinions I've formed from building field apps, with the reasoning behind each one.
+      Where I can, I've also said what would make me change my mind.
     </p>
   </div>
 </section>
@@ -118,81 +117,82 @@
     <div class="section-head rv">
       <span class="eyebrow eyebrow--cyan">Part I</span>
       <h2>Technical philosophy</h2>
-      <p>Eight positions that shape every architecture I put my name on.</p>
+      <p>Eight things I believe that shape how I design apps.</p>
     </div>
 
     <div class="bento">
       <div class="tile tile--6 rv">
         <span class="verdict v-win">01</span>
-        <h3>Offline is a correctness problem, not a feature</h3>
-        <p>Teams ship "offline support" as a cache and a spinner, then discover in the field that they
-           built a system with no defined behaviour under partition. Offline-first means you have
-           <em>decided</em>, explicitly, what happens to every mutation when the network is gone: where
-           it is durably stored, in what order it replays, how it is deduplicated, and what happens when
-           the server disagrees. If you cannot answer those four questions, you do not support offline —
-           you tolerate it until a user loses data.</p>
+        <h3>Offline support is about correctness</h3>
+        <p>A lot of teams ship "offline support" as a cache and a loading spinner. Then they find out in the
+           field that nobody decided what the app should do when it can't reach the server. Offline-first
+           means you've <em>decided</em> what happens to every change when there's no network: where it's
+           saved, in what order it's sent, how duplicates are caught, and what happens when the server
+           disagrees. If you can't answer those four questions, your app only copes with being offline
+           until someone loses data.</p>
       </div>
 
       <div class="tile tile--6 rv">
         <span class="verdict v-win">02</span>
-        <h3>The framework is chosen by the environment, not the résumé</h3>
-        <p>The most expensive mobile decisions I have been brought in to unwind were made for hiring
-           convenience or team familiarity rather than deployment physics. Continuous sensor capture,
-           a strict power budget, a vendor peripheral SDK, or a two-day offline window each push hard in
-           a specific direction. Start from the constraints of the environment, and let the stack fall
-           out of them.</p>
+        <h3>Let the environment pick the framework</h3>
+        <p>The most expensive mobile decisions I've been brought in to undo were made because a framework
+           was easy to hire for or the team already knew it. Nobody had looked hard at where the app would
+           run. Continuous sensor capture, a strict battery budget, a vendor hardware SDK or a two-day
+           offline window each push you strongly one way. Start from those constraints and the right stack
+           usually becomes obvious.</p>
       </div>
 
       <div class="tile tile--4 rv">
         <span class="verdict v-mid">03</span>
-        <h3>Boundaries beat conventions</h3>
-        <p>A layer boundary that only exists in the README will be violated within two sprints. Encode it:
-           module dependencies, lint rules, analyzer errors, CI gates. Architecture that a tired engineer
-           cannot accidentally break on a Friday is the only architecture that survives.</p>
+        <h3>Enforce boundaries in code</h3>
+        <p>If a layer boundary only exists in the README, someone will break it within two sprints. Put it in
+           the code instead: module dependencies, lint rules, analyzer errors and CI checks. The architecture
+           that lasts is the one a tired engineer can't break by accident on a Friday afternoon.</p>
       </div>
 
       <div class="tile tile--4 rv">
         <span class="verdict v-mid">04</span>
-        <h3>Threading is a contract, not a habit</h3>
-        <p>Most "random" mobile crashes are concurrency defects wearing a costume. Declare thread
-           confinement explicitly, make the scheduler an injected abstraction, and enforce it with
-           analyzers. "It worked on my device" is how a race condition reaches a factory floor.</p>
+        <h3>Write down the threading rules</h3>
+        <p>Most "random" mobile crashes turn out to be concurrency bugs. Say explicitly which code runs on
+           which thread, inject the scheduler so it can be swapped in tests, and check it with analyzers. "It
+           worked on my phone" is how a race condition ends up on a factory floor.</p>
       </div>
 
       <div class="tile tile--4 rv">
         <span class="verdict v-mid">05</span>
-        <h3>Measure the sequence, not the total</h3>
-        <p>"Startup is slow" is not actionable. Time-to-first-frame, time-to-interactive, and
-           time-to-usable-data are three different numbers with three different causes — JIT warm-up,
-           eager graph construction, blocking I/O. Fix the one that dominates, not the one you noticed.</p>
+        <h3>Break startup time into steps</h3>
+        <p>"Startup is slow" doesn't tell you what to fix. Time to first frame, time until the user can tap
+           something, and time until real data shows up are three numbers with three usual causes: JIT
+           warm-up, building the whole object graph up front, and blocking I/O. Fix whichever one is biggest,
+           which may not be the one you noticed first.</p>
       </div>
 
       <div class="tile tile--6 rv">
         <span class="verdict v-win">06</span>
-        <h3>Instrument before you optimize, and gate on it after</h3>
-        <p>Crashlytics, custom keys, non-fatals and funnel analytics are not post-launch chores — they are
-           how you find out that OOM terminations cluster at hour four, or that a screen is abandoned at
-           82%. Then close the loop: a release that regresses crash-free rate does not advance its
-           rollout, regardless of what the calendar says.</p>
+        <h3>Measure before you optimise, then use the data to gate releases</h3>
+        <p>Crashlytics, custom keys, non-fatal errors and funnel analytics belong in the app from the start.
+           They're how you learn that out-of-memory crashes pile up around hour four of a shift, or that 82%
+           of people abandon a particular screen. Then use that data: if a release makes the crash-free rate
+           worse, its rollout stops, whatever the calendar says.</p>
       </div>
 
       <div class="tile tile--6 rv">
         <span class="verdict v-win">07</span>
-        <h3>Write for the person maintaining it in year three</h3>
-        <p>Cleverness has a maintenance tax, and in a six-year industrial codebase somebody always pays it.
-           I optimize for the diff being obvious, the failure mode being explicit, and the architectural
-           decision being recorded with its rationale — so the next engineer can tell the difference
-           between a deliberate constraint and an accident.</p>
+        <h3>Write for whoever maintains it in year three</h3>
+        <p>Clever code costs more to maintain, and in an industrial codebase that lives for six years
+           someone always pays for it. I aim for diffs that are easy to read, failures that are handled in
+           plain sight, and architecture decisions written down with the reason. Then the next engineer can
+           tell a deliberate constraint from an accident.</p>
       </div>
 
       <div class="tile tile--12 rv">
         <span class="verdict v-win">08</span>
-        <h3>Field software is judged by its worst moment, not its best</h3>
-        <p>Consumer apps are judged on the happy path. Industrial field software is judged on the moment
-           a supervisor is standing in the rain, on 1%, out of coverage, trying to close out a shift.
-           Every architecture decision I make is stress-tested against that moment: what does the operator
-           see, what is durably saved, what happens when the process is killed mid-write, and can they
-           finish their job anyway. If the answer is "it depends on the network," the design is wrong.</p>
+        <h3>Field apps are judged on their worst moment</h3>
+        <p>People judge consumer apps on the happy path. They judge field software on the moment a
+           supervisor is standing in the rain with 1% battery and no coverage, trying to close out a shift.
+           I check every architecture decision against that moment. What does the user see? What's safely
+           saved? What happens if the app is killed in the middle of a write? Can they still finish the job?
+           If the answer depends on the network, I change the design.</p>
       </div>
     </div>
   </div>
@@ -203,29 +203,29 @@
   <div class="wrap">
     <div class="section-head rv">
       <span class="eyebrow">Part II</span>
-      <h2>.NET MAUI vs. React Native vs. True Native:<br>An Enterprise Architectural Framework</h2>
-      <p>Evaluated on four axes that actually predict outcomes at enterprise scale — specifically through
-         the lens of industrial, offline-first, field-deployed applications. Not a general-purpose
-         framework comparison; a domain-specific one.</p>
+      <h2>.NET MAUI vs. React Native vs. native<br>for enterprise field apps</h2>
+      <p>I compare them on the four things that I've found decide how an enterprise app turns out. This is
+         specifically about industrial, offline-first apps used in the field. It isn't a general framework
+         comparison.</p>
     </div>
 
     <div class="prose rv">
       <p>
-        Every comparison of these three is worthless without a stated context, because the ranking
-        genuinely inverts depending on what you are building. My context here is fixed and explicit:
-        <strong>a long-lived line-of-business application deployed to field or shop-floor devices,
-        operating offline for meaningful periods, integrating with industrial hardware, maintained by a
-        team over a multi-year horizon.</strong> Change that context and my answers change with it.
+        A comparison of these three only means something if you say what you're building, because the
+        ranking can flip completely. Here I'm assuming <strong>a business app that will be around for years,
+        runs on field or shop-floor devices, works offline for long stretches, connects to industrial
+        hardware, and is maintained by a team.</strong> If your situation is different, my answers will be
+        too.
       </p>
     </div>
 
     <div class="note rv">
-      <p><strong>Where this assessment comes from, honestly.</strong> My production depth is in the
-      .NET mobile lineage — Xamarin.iOS, Xamarin.Forms and .NET MAUI — plus native Kotlin and Swift.
-      I have <strong>not</strong> shipped a production React Native codebase. The React Native column
-      below is an analytical assessment built from evaluating it for real projects, from solving the same
-      class of problem in other stacks, and from reading its architecture and failure reports — not from
-      having maintained one. I would rather tell you that than have you find out in the interview.</p>
+      <p><strong>Where my view comes from.</strong> My production experience is in Xamarin.iOS,
+      Xamarin.Forms and .NET MAUI, plus native Kotlin and Swift. I have <strong>not</strong> shipped a
+      production React Native app. The React Native column below comes from evaluating it for real
+      projects, solving the same problems in other stacks, and reading about its architecture and the
+      problems people have reported. I haven't maintained a React Native app myself, and I'd rather say
+      so here than have you find out in an interview.</p>
     </div>
 
     <!-- AXIS 1 -->
@@ -233,50 +233,49 @@
       <div class="block__h"><span class="block__n">AXIS 1</span><h2>Performance overhead</h2></div>
       <div class="tbl-scroll">
         <table class="cmp">
-          <caption class="sr-only">Performance overhead — .NET MAUI vs React Native vs True Native</caption>
+          <caption class="sr-only">Performance overhead: .NET MAUI vs React Native vs native</caption>
           <thead>
-            <tr><th scope="col">Dimension</th><th scope="col">.NET MAUI</th><th scope="col">React Native</th><th scope="col">True Native</th></tr>
+            <tr><th scope="col">Dimension</th><th scope="col">.NET MAUI</th><th scope="col">React Native</th><th scope="col">Native</th></tr>
           </thead>
           <tbody>
             <tr>
               <th scope="row">Execution model</th>
-              <td>Compiled IL; AOT on iOS, AOT/R8-optimized on Android. No interpreter on the hot path. Compute-heavy domain logic runs at genuinely native-adjacent speed.</td>
-              <td>JS engine (Hermes) with precompiled bytecode. Business logic runs in a separate runtime from the UI it drives — fine for orchestration, poor for sustained computation.</td>
+              <td>Compiled IL, with AOT on iOS and AOT plus R8 on Android. No interpreter on the hot path, so heavy domain logic runs close to native speed.</td>
+              <td>A JS engine (Hermes) running precompiled bytecode. Business logic runs in a separate runtime from the UI it controls. That's fine for coordinating work and poor for long-running computation.</td>
               <td>Direct platform execution. The baseline everything else is measured against.</td>
             </tr>
             <tr>
               <th scope="row">Cross-boundary cost</th>
-              <td>P/Invoke and binding-layer marshalling. Real, but explicit and predictable — you can see where it happens in the code.</td>
-              <td>JSI removes the old async JSON bridge, but the boundary still exists. High-frequency crossings are where the memory and threading defects live .</td>
-              <td>None. This is the entire structural advantage.</td>
+              <td>P/Invoke and marshalling in the binding layer. It costs something, but you can see exactly where it happens in the code.</td>
+              <td>JSI replaced the old async JSON bridge, but there's still a boundary. Crossing it very often is where the memory and threading bugs show up.</td>
+              <td>None. That's the whole advantage.</td>
             </tr>
             <tr>
               <th scope="row">Memory &amp; GC</th>
-              <td>Managed GC with a mobile-tuned collector. Requires deliberate allocation discipline on hot paths, and awareness of the managed/native object lifetime interaction.</td>
-              <td>Two memory systems (JS heap + native heap) with retention that can span both. Leaks are correspondingly harder to diagnose — a JS heap snapshot shows you half the picture.</td>
-              <td>One memory model — ARC or the JVM/ART collector. Diagnosable with first-party tooling that actually understands the whole graph.</td>
+              <td>A garbage collector tuned for mobile. You have to be careful about allocations on hot paths, and about how C# and native object lifetimes affect each other.</td>
+              <td>Two memory systems (the JS heap and the native heap), and an object can be kept alive across both. That makes leaks harder to find, because a JS heap snapshot only shows half of it.</td>
+              <td>One memory model, either ARC or the JVM/ART collector, and the platform's own tools can see all of it.</td>
             </tr>
             <tr>
               <th scope="row">Cold start</th>
-              <td>Historically the weak point; substantially controllable with AOT, curated trimming, lazy DI construction and compiled bindings. Tunable to acceptable — see the <a href="case-hilti">the Hilti work</a>.</td>
-              <td>Hermes bytecode precompilation and lazy bundle evaluation help materially, but runtime initialization is still on the critical path.</td>
-              <td>Fastest achievable. No runtime to warm.</td>
+              <td>This used to be the weak spot. AOT, careful trimming, lazy DI and compiled bindings get it to an acceptable level. See <a href="case-hilti">the Hilti work</a>.</td>
+              <td>Precompiled Hermes bytecode and lazy bundle loading help a lot, but starting the runtime still sits on the critical path.</td>
+              <td>As fast as it gets. There's no runtime to start.</td>
             </tr>
             <tr>
               <th scope="row">Sustained background load</th>
               <td>Reliable for background sync and scheduled work via platform services.</td>
-              <td>Requires native modules for anything continuous. The JS runtime is the wrong place to own long-running capture.</td>
-              <td><span class="verdict v-win">Clear winner</span> Continuous GPS, sensor streams and tight power budgets belong here, full stop.</td>
+              <td>Anything continuous needs native modules. Long-running capture shouldn't live in the JS runtime.</td>
+              <td><span class="verdict v-win">Clear winner</span> Continuous GPS, sensor streams and tight battery budgets belong here.</td>
             </tr>
           </tbody>
         </table>
       </div>
       <div class="prose mt-s">
-        <p><strong>Verdict:</strong> for a data-heavy line-of-business app, MAUI's overhead is
-        engineering-manageable and largely a startup-path concern. React Native's overhead is
-        concentrated at the boundary and scales with crossing frequency — which is precisely wrong for
-        continuous telemetry. Native wins outright on sustained load, and only there does the win
-        justify writing everything twice.</p>
+        <p><strong>Verdict:</strong> for a data-heavy business app, MAUI's overhead can be managed and mostly
+        affects startup. React Native's overhead sits at the boundary and grows with how often you cross
+        it, which is exactly the wrong shape for continuous telemetry. Native wins clearly on sustained load,
+        and that's the only place where the win is worth writing everything twice.</p>
       </div>
     </div>
 
@@ -285,44 +284,44 @@
       <div class="block__h"><span class="block__n">AXIS 2</span><h2>Code shareability</h2></div>
       <div class="tbl-scroll">
         <table class="cmp">
-          <caption class="sr-only">Code shareability — .NET MAUI vs React Native vs True Native</caption>
+          <caption class="sr-only">Code shareability: .NET MAUI vs React Native vs native</caption>
           <thead>
-            <tr><th scope="col">Dimension</th><th scope="col">.NET MAUI</th><th scope="col">React Native</th><th scope="col">True Native</th></tr>
+            <tr><th scope="col">Dimension</th><th scope="col">.NET MAUI</th><th scope="col">React Native</th><th scope="col">Native</th></tr>
           </thead>
           <tbody>
             <tr>
               <th scope="row">Realistic UI sharing</th>
-              <td>High for forms, lists, dashboards and data entry — which is the entire surface of an MES or inspection app. Drops sharply for custom graphics.</td>
-              <td>High, with more per-platform divergence than teams expect once accessibility and platform idioms are taken seriously.</td>
-              <td>Zero by definition. Share the specification, not the implementation.</td>
+              <td>High for forms, lists, dashboards and data entry, which is nearly all of an MES or inspection app. Much lower for custom graphics.</td>
+              <td>High, though the platforms differ more than teams expect once you take accessibility and platform conventions seriously.</td>
+              <td>None. You can share the spec, but each platform gets its own code.</td>
             </tr>
             <tr>
               <th scope="row">Domain &amp; persistence sharing</th>
-              <td><span class="verdict v-win">Strongest of the three</span> One language from the ViewModel down through the domain to EF Core/SQLite — and frequently the same language as the backend team, so DTOs and validation rules are genuinely shared artifacts.</td>
-              <td>TypeScript domain logic shares well and shares with the web app. Persistence and background work still need native ownership.</td>
-              <td>Shared only via KMP or a hand-maintained parallel implementation. Both are real costs.</td>
+              <td><span class="verdict v-win">Strongest of the three</span> One language from the ViewModel through the domain to EF Core and SQLite. Often it's the backend team's language too, so DTOs and validation rules can actually be shared.</td>
+              <td>TypeScript domain logic shares well, including with the web app. Storage and background work still need native code someone owns.</td>
+              <td>Only through KMP or by maintaining two implementations by hand. Both cost real effort.</td>
             </tr>
             <tr>
               <th scope="row">Where sharing breaks</th>
-              <td>Custom rendering, deep platform integration, and any capability newer than the abstraction that wraps it.</td>
-              <td>Anything continuous, hardware-adjacent, or performance-critical — all of which need a native module you own and maintain.</td>
-              <td>N/A — nothing to break.</td>
+              <td>Custom rendering, deep platform integration, and any platform feature newer than the framework's support for it.</td>
+              <td>Anything continuous, close to the hardware or performance-critical. Each of those needs a native module you write and maintain.</td>
+              <td>N/A. Nothing is shared, so nothing breaks.</td>
             </tr>
             <tr>
-              <th scope="row">Honest expectation</th>
-              <td>Very high share on line-of-business surfaces. The remainder is handlers and platform services.</td>
-              <td>High share on the JS layer, with a native tail that is consistently underestimated in planning.</td>
-              <td>Plan for two implementations and budget accordingly. The upside is that neither fights an abstraction.</td>
+              <th scope="row">What to expect</th>
+              <td>Very high sharing on business screens. The rest is handlers and platform services.</td>
+              <td>High sharing in the JS layer, plus native code that teams keep underestimating when they plan.</td>
+              <td>Plan and budget for two implementations. The upside is that neither one fights a framework.</td>
             </tr>
           </tbody>
         </table>
       </div>
       <div class="prose mt-s">
-        <p><strong>Verdict:</strong> shareability is not a single number, and quoting one is how projects
-        get mis-planned. Ask separately: how much <em>UI</em> shares, how much <em>domain</em> shares,
-        and how large is the <em>native tail</em>. For industrial line-of-business work MAUI's
-        domain-and-persistence sharing is the strongest of the three, and it is the layer where sharing
-        actually pays compound interest.</p>
+        <p><strong>Verdict:</strong> code sharing can't be summed up in one percentage, and projects that
+        plan around one usually get it wrong. Ask three questions: how much of the <em>UI</em> is shared,
+        how much of the <em>domain</em> is shared, and how much <em>native code</em> is left over. For
+        industrial business apps, MAUI shares the domain and storage layers best, and that's the sharing
+        that saves the most over the years.</p>
       </div>
     </div>
 
@@ -331,50 +330,49 @@
       <div class="block__h"><span class="block__n">AXIS 3</span><h2>Ecosystem maturity</h2></div>
       <div class="tbl-scroll">
         <table class="cmp">
-          <caption class="sr-only">Ecosystem maturity — .NET MAUI vs React Native vs True Native</caption>
+          <caption class="sr-only">Ecosystem maturity: .NET MAUI vs React Native vs native</caption>
           <thead>
-            <tr><th scope="col">Dimension</th><th scope="col">.NET MAUI</th><th scope="col">React Native</th><th scope="col">True Native</th></tr>
+            <tr><th scope="col">Dimension</th><th scope="col">.NET MAUI</th><th scope="col">React Native</th><th scope="col">Native</th></tr>
           </thead>
           <tbody>
             <tr>
               <th scope="row">Library breadth</th>
-              <td>Narrower for UI/consumer packages; excellent for enterprise concerns — data access, serialization, resilience, validation, identity.</td>
-              <td><span class="verdict v-win">Widest by a distance</span> Something exists for nearly everything. Quality and maintenance status vary enormously.</td>
-              <td>Full first-party platform surface plus every vendor SDK, which ship native-first.</td>
+              <td>Fewer UI and consumer packages. Very good for enterprise needs like data access, serialization, resilience, validation and identity.</td>
+              <td><span class="verdict v-win">Widest by far</span> There's a package for nearly everything. How good and how well maintained they are varies a lot.</td>
+              <td>The whole platform, plus every vendor SDK, since vendors ship native SDKs first.</td>
             </tr>
             <tr>
               <th scope="row">Industrial hardware SDKs</th>
               <td>Usually needs a binding or a thin wrapper you write and own.</td>
               <td>Usually needs a native module you write and own.</td>
-              <td><span class="verdict v-win">First-class</span> Scanner, printer, RFID and inspection-camera vendors ship Android and iOS SDKs. Everyone else wraps them.</td>
+              <td><span class="verdict v-win">First-class</span> Scanner, printer, RFID and inspection camera vendors ship Android and iOS SDKs. Everyone else wraps those.</td>
             </tr>
             <tr>
               <th scope="row">Tooling &amp; diagnostics</th>
-              <td>Visual Studio, dotnet-trace, and .NET's profiling ecosystem — strong, if you know it.</td>
-              <td>Flipper/Hermes debugging plus platform tools. Cross-boundary diagnosis remains genuinely hard.</td>
-              <td>Xcode Instruments and Android Studio profiler — the best diagnostic tooling available on either platform, by a wide margin.</td>
+              <td>Visual Studio, dotnet-trace and the rest of .NET's profiling tools. Strong, if you know them.</td>
+              <td>Flipper and Hermes debugging plus the platform tools. Bugs that cross the JS/native boundary are still hard to track down.</td>
+              <td>Xcode Instruments and the Android Studio profiler. By a wide margin the best diagnostic tools on either platform.</td>
             </tr>
             <tr>
               <th scope="row">Hiring pool</th>
-              <td>Smaller mobile pool, but large adjacent .NET pool that ramps quickly on a well-structured codebase.</td>
-              <td><span class="verdict v-win">Largest</span> and overlaps directly with web hiring.</td>
+              <td>Fewer mobile developers, but lots of .NET developers who get up to speed quickly on a well-organised codebase.</td>
+              <td><span class="verdict v-win">Largest</span> It overlaps directly with web hiring.</td>
               <td>Two separate specialist hires, or one generalist per platform.</td>
             </tr>
             <tr>
               <th scope="row">Platform-feature lag</th>
-              <td>Lags platform releases; abstraction layer must catch up.</td>
-              <td>Lags, mitigated by writing the native module yourself.</td>
-              <td><span class="verdict v-win">Zero lag</span> Day-one access to every new capability.</td>
+              <td>Behind platform releases until the framework catches up.</td>
+              <td>Behind too, though you can write the native module yourself.</td>
+              <td><span class="verdict v-win">No lag</span> Every new feature is available on day one.</td>
             </tr>
           </tbody>
         </table>
       </div>
       <div class="prose mt-s">
-        <p><strong>Verdict:</strong> React Native wins breadth and hiring; native wins hardware and
-        diagnostics; MAUI wins the specific enterprise-data ecosystem that industrial line-of-business
-        apps actually live in. If your app's differentiator is a vendor hardware integration, that single
-        fact should dominate the decision — the ecosystem question is really "who ships an SDK for the
-        thing my product depends on."</p>
+        <p><strong>Verdict:</strong> React Native wins on breadth and hiring. Native wins on hardware and
+        debugging tools. MAUI wins on the enterprise data libraries that industrial business apps rely on.
+        If what sets your app apart is a vendor hardware integration, that should decide it. The real
+        ecosystem question is who ships an SDK for the thing your product depends on.</p>
       </div>
     </div>
 
@@ -383,71 +381,71 @@
       <div class="block__h"><span class="block__n">AXIS 4</span><h2>Long-term maintainability</h2></div>
       <div class="tbl-scroll">
         <table class="cmp">
-          <caption class="sr-only">Long-term maintainability — .NET MAUI vs React Native vs True Native</caption>
+          <caption class="sr-only">Long-term maintainability: .NET MAUI vs React Native vs native</caption>
           <thead>
-            <tr><th scope="col">Dimension</th><th scope="col">.NET MAUI</th><th scope="col">React Native</th><th scope="col">True Native</th></tr>
+            <tr><th scope="col">Dimension</th><th scope="col">.NET MAUI</th><th scope="col">React Native</th><th scope="col">Native</th></tr>
           </thead>
           <tbody>
             <tr>
               <th scope="row">Upgrade burden</th>
-              <td>Annual .NET cadence with a predictable, documented migration path and LTS releases. Enterprise-friendly and plannable.</td>
-              <td>Frequent releases with genuine breaking changes; the transitive dependency tree is the real maintenance cost, not the framework.</td>
+              <td>A yearly .NET release with documented migration steps and LTS versions. Easy for an enterprise to plan around.</td>
+              <td>Frequent releases with real breaking changes. Most of the maintenance cost comes from the dependency tree, more than from the framework itself.</td>
               <td>Annual OS cycles with long deprecation windows and first-party migration guidance.</td>
             </tr>
             <tr>
               <th scope="row">Dependency risk</th>
-              <td><span class="verdict v-win">Low</span> Small, mostly first-party or well-maintained dependency surface.</td>
-              <td><span class="verdict v-low">Highest</span> Deep transitive trees where an abandoned package four levels down can block a platform upgrade for a quarter.</td>
+              <td><span class="verdict v-win">Low</span> A small set of dependencies, mostly from Microsoft or well maintained.</td>
+              <td><span class="verdict v-low">Highest</span> Deep dependency trees, where an abandoned package four levels down can hold up a platform upgrade for months.</td>
               <td><span class="verdict v-win">Lowest</span> Mostly first-party frameworks with vendor-supported SDKs.</td>
             </tr>
             <tr>
               <th scope="row">Type safety end to end</th>
-              <td>Strong: nullable reference types, analyzers, compiled bindings. Whole classes of defect become build errors.</td>
-              <td>Strong with disciplined TypeScript — but the native module boundary is only as typed as you make it, and nothing enforces that.</td>
+              <td>Strong. Nullable reference types, analyzers and compiled bindings turn whole kinds of bugs into build errors.</td>
+              <td>Strong if you're strict with TypeScript. But the native module boundary is only as typed as you make it, and nothing checks that.</td>
               <td>Strong on both platforms (Kotlin null safety, Swift optionals), enforced by the compiler.</td>
             </tr>
             <tr>
               <th scope="row">Onboarding a new engineer</th>
-              <td>One language, one mental model, one debugger. A .NET backend engineer is productive fast on a clean codebase.</td>
-              <td>Fast for web engineers on the JS layer; slow and often avoided at the native boundary — which is where the hard bugs are.</td>
+              <td>One language, one way of thinking, one debugger. A .NET backend engineer gets productive quickly on a clean codebase.</td>
+              <td>Quick for web engineers in the JS layer. Slow at the native boundary, which people tend to avoid, and that's where the hard bugs are.</td>
               <td>Slowest overall, but the mental model is the platform itself, which never becomes obsolete knowledge.</td>
             </tr>
             <tr>
               <th scope="row">Five-year outlook</th>
-              <td>Microsoft-backed with a clear enterprise story. Ecosystem evolution is a real consideration; the mitigation is disciplined layering, which you should be doing regardless.</td>
-              <td>Large community, active architecture evolution. Historically the migrations have been real work.</td>
+              <td>Backed by Microsoft with a clear enterprise focus. The ecosystem will keep changing, and clean layering protects you from that. You should be doing that anyway.</td>
+              <td>A large community and an architecture that keeps changing. Past migrations have been a lot of work.</td>
               <td>Safest possible bet. The platforms are not going anywhere.</td>
             </tr>
           </tbody>
         </table>
       </div>
       <div class="prose mt-s">
-        <p><strong>Verdict:</strong> over a five-year horizon, dependency surface area is the strongest
-        predictor of maintenance cost I have observed — stronger than language, stronger than framework
-        choice. MAUI and native both keep it small. React Native's breadth advantage is the same property
-        as its maintenance liability, viewed from a different year.</p>
+        <p><strong>Verdict:</strong> over five years, the number of dependencies is the best predictor of
+        maintenance cost I've seen. It matters more than the language or the framework. MAUI and native both
+        keep that number small. React Native's huge package ecosystem is its biggest strength in year one and
+        its biggest maintenance cost a few years later.</p>
       </div>
     </div>
 
     <!-- DECISION -->
     <div class="block rv">
-      <div class="block__h"><span class="block__n">→</span><h2>The decision framework I actually use</h2></div>
+      <div class="block__h"><span class="block__n">→</span><h2>How I actually decide</h2></div>
       <div class="prose">
         <p>Four questions, in order. The first one that returns a hard answer decides it.</p>
         <ul class="bullets">
-          <li><strong>1 — Does the product depend on continuous sensor capture, a vendor hardware SDK, custom high-performance rendering, or a strict power budget?</strong> → <strong>True native</strong> for that surface, without further debate. It may be native for that module and cross-platform for the rest; a hybrid boundary drawn deliberately is a legitimate architecture, not a compromise.</li>
-          <li><strong>2 — Is this a long-lived, data-heavy line-of-business application with a substantial offline domain model, and does the organization already run on .NET?</strong> → <strong>.NET MAUI.</strong> The domain-and-persistence sharing, the small dependency surface and the LTS cadence compound over years, and the team you already have can maintain it.</li>
-          <li><strong>3 — Is time-to-market and iteration speed the dominant constraint, with a web codebase and web engineers already in place?</strong> → <strong>React Native</strong>, with one non-negotiable condition: someone on the team owns the native modules properly. The React Native projects I have seen struggle in this domain struggled at the native boundary, not in JavaScript.</li>
-          <li><strong>4 — None of the above cleanly?</strong> → Prototype the single riskiest technical requirement in two candidates for a week each. A week of evidence is cheaper than a year of regret, and the prototype answers questions that no comparison table can.</li>
+          <li><strong>1. Does the product depend on continuous sensor capture, a vendor hardware SDK, custom high-performance rendering, or a strict battery budget?</strong> Then I use <strong>native</strong> for that part. It can be native for that module and cross-platform for the rest. A hybrid split that's drawn on purpose is a perfectly good architecture.</li>
+          <li><strong>2. Is it a business app that will live for years, with lots of data and a big offline data model, at a company that already runs on .NET?</strong> Then <strong>.NET MAUI</strong>. Sharing the domain and storage code, having few dependencies and the LTS releases all pay off more each year, and your existing team can maintain it.</li>
+          <li><strong>3. Is getting to market and iterating quickly the main constraint, and do you already have a web codebase and web engineers?</strong> Then <strong>React Native</strong>, on one condition: someone on the team properly owns the native modules. The React Native projects I've seen struggle in this domain struggled at the native boundary. The JavaScript was fine.</li>
+          <li><strong>4. None of these fit cleanly?</strong> Then I prototype the riskiest technical requirement in two of the options, a week each. A week of evidence costs less than a year of regret, and a prototype answers questions a comparison table can't.</li>
         </ul>
 
         <div class="callout">
           <div class="callout__t">What would change my mind</div>
           <p>
-            If Kotlin Multiplatform's shared-domain story continues to mature at its current rate, question 2
-            gets a serious fourth answer — native UI on both platforms over a genuinely shared domain layer
-            is architecturally the most honest version of what everyone actually wants. I track it
-            deliberately, and I would rather update a position than defend one.
+            If Kotlin Multiplatform keeps improving at its current pace, question 2 gets a serious fourth
+            answer. Native UI on both platforms on top of a shared domain layer is, architecturally, what most
+            teams actually want. I'm following it closely, and I'm happy to change my answer when the evidence
+            changes.
           </p>
         </div>
       </div>
@@ -455,9 +453,9 @@
 
     <div class="cta rv mt-l">
       <span class="eyebrow eyebrow--plain">{{availability}}</span>
-      <h2>Want to argue with any of this?</h2>
-      <p>Good — that's the most useful conversation we could have, and it doubles as a technical screen
-         for both of us.</p>
+      <h2>Disagree with any of this?</h2>
+      <p>I'd like to hear why. It's a useful conversation to have, and it works as a technical screen for
+         both of us.</p>
       <div class="btn-row">
         <a class="btn btn--primary" data-mail="akshaydixits96|gmail.com" href="contact">Get in touch</a>
         <a class="btn" href="work">Read the case studies</a>
@@ -492,8 +490,8 @@
       </div>
     </div>
     <div class="foot__bot">
-      <span>© <span class="mono">2026</span> {{name}} — built from scratch, no template, no tracker.</span>
-      <span>Static site · strict CSP · zero third-party JavaScript</span>
+      <span>© <span class="mono">2026</span> {{name}}. I built this site by hand, without a template.</span>
+      <span>Plain HTML, CSS and a little JavaScript. No framework.</span>
     </div>
   </div>
 </footer>

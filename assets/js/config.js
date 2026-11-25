@@ -27,7 +27,7 @@ window.SITE = {
   /* ---------- 2. AVAILABILITY ---------- */
   availability:    "Open to senior IC / SME roles",
   engagement:      "Full-time remote · Contract (C2C) · Open to both",
-  workAuth:        "India-based. Remote today as an independent contractor or via employer of record — no US visa or sponsorship required. Open to US relocation with sponsorship for the right role.",
+  workAuth:        "India-based. Remote today as an independent contractor or via employer of record, with no US visa or sponsorship required. Open to US relocation with sponsorship for the right role.",
   workAuthShort:   "Remote from India today · open to US relocation with sponsorship",
   overlap:         "4+ hours",
   overlapZones:    "PT / MT / CT / ET",
@@ -38,25 +38,25 @@ window.SITE = {
   co_d:            "AverIQ LLC",
   co_d_short:      "AverIQ",
   co_d_desc:       "Remote US Startup · Inventory, Construction & Fleet Management",
-  co_d_dates:      "May 2026 — Present",
+  co_d_dates:      "May 2026 – Present",
 
   // Era 2 — flagship case study
   co_c:            "Hilti Technology Solutions India Pvt. Ltd.",
   co_c_short:      "Hilti",
   co_c_desc:       "Product Enterprise · Construction Tools & Jobsite Software",
-  co_c_dates:      "May 2024 — Apr 2026",
+  co_c_dates:      "May 2024 – Apr 2026",
 
   // Era 3
   co_b:            "Infosys Ltd.",
   co_b_short:      "Infosys",
   co_b_desc:       "Global Services · Siemens Gamesa Renewable Energy",
-  co_b_dates:      "Aug 2022 — Apr 2024",
+  co_b_dates:      "Aug 2022 – Apr 2024",
 
   // Era 4
   co_a:            "Optimal Virtual Employee",
   co_a_short:      "OVE",
   co_a_desc:       "Early-Stage Startup · Client: E. & J. Gallo Winery",
-  co_a_dates:      "Dec 2019 — Jul 2022",
+  co_a_dates:      "Dec 2019 – Jul 2022",
 
   /* ---------- 4. SHIPPED APPS (public store listings) ---------- */
   // Employer work links to the live store listing only — never source.
@@ -66,7 +66,7 @@ window.SITE = {
   c_live2:         "https://apps.apple.com/us/app/hilti-volume-calculator/id722816215",
   c_live2_name:    "Hilti Volume Calculator",
   b_live:          "https://apps.apple.com/us/app/smartsite-sgre/id1611744330",
-  b_live_name:     "SmartSite — SGRE",
+  b_live_name:     "SmartSite SGRE",
   a_live:          "https://apps.apple.com/us/app/gallo-gateway/id1018942913",
   a_live_name:     "Gallo Gateway",
   //d_live:          "[AVERIQ_APP_URL_WHEN_LIVE]",

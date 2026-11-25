@@ -8,15 +8,15 @@
 <meta name="color-scheme" content="dark light">
 <meta name="theme-color" content="#06080b" media="(prefers-color-scheme: dark)">
 <meta name="theme-color" content="#fbfaf8" media="(prefers-color-scheme: light)">
-<title>Core Engine — tech stack &amp; depth of use | {{name}}</title>
-<meta name="description" content="Languages, frameworks, CI/CD tooling and architecture patterns — with honest depth-of-use annotations rather than a logo wall.">
+<title>Stack: what I use and how deeply | {{name}}</title>
+<meta name="description" content="The languages, frameworks, CI/CD tools and architecture patterns I use, with a note on how much I've used each one.">
 <link rel="canonical" href="{{siteUrl}}/stack">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Core Engine — tech stack | {{name}}">
+<meta property="og:title" content="Stack | {{name}}">
 <meta property="og:description" content="What I use, how deeply, and what I've actually shipped with it.">
 <meta property="og:image" content="{{siteUrl}}/assets/og.png">
 <meta property="og:url" content="{{siteUrl}}/stack.html">
-<meta name="twitter:title" content="Core Engine — tech stack | {{name}}">
+<meta name="twitter:title" content="Stack | {{name}}">
 <meta name="twitter:description" content="What I use, how deeply, and what I've actually shipped with it.">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
@@ -57,12 +57,12 @@
 
 <section class="case-hero">
   <div class="wrap">
-    <span class="eyebrow">Core engine</span>
-    <h1>The stack, annotated with actual depth of use.</h1>
+    <span class="eyebrow">Stack</span>
+    <h1>What I use, and how much I've used it</h1>
     <p class="case-hero__sub">
-      A logo wall tells you nothing. Every entry below says what I have shipped with it and how far
-      into it I have gone — because a recruiter's keyword match and an engineer's screening question
-      are two different tests, and this page is written to pass the second one.
+      Each entry below says what I've shipped with it and how far into it I've gone. A keyword list is
+      enough for a recruiter's search. An engineer screening me will want to know how deep each one goes, so
+      that's what I've written down.
     </p>
   </div>
 </section>
@@ -73,13 +73,13 @@
     <div class="section-head rv">
       <span class="eyebrow">01</span>
       <h2>Languages</h2>
-      <p>Where the thinking happens. Depth here is what makes framework knowledge transferable.</p>
+      <p>Knowing the languages well is what lets me move between frameworks.</p>
     </div>
     <div class="stack-grid rv">
       <div class="stack-item stack-item--core"><b>C#</b><span>Primary language. Async/await and task scheduling, span/memory APIs on hot paths, source generators, nullable reference types, allocation-conscious domain code.</span></div>
       <div class="stack-item stack-item--core"><b>Kotlin</b><span>Coroutines and structured concurrency, Flow, sealed hierarchies for state modelling, Jetpack Compose UI.</span></div>
       <div class="stack-item stack-item--core"><b>Swift</b><span>Protocol-oriented design, generics, Combine publishers, async/await, ARC and retain-cycle discipline, SwiftUI.</span></div>
-      <div class="stack-item"><b>TypeScript</b><span>Used on personal web projects — strict mode, discriminated unions for state modelling. Working knowledge, not production mobile depth.</span></div>
+      <div class="stack-item"><b>TypeScript</b><span>Used on personal web projects, with strict mode and discriminated unions for state. I know it well enough to work in it, but I haven't used it in production mobile work.</span></div>
       <div class="stack-item"><b>SQL</b><span>Schema design and migration strategy, index tuning for mobile query paths, transaction isolation, WAL behaviour.</span></div>
       <div class="stack-item"><b>XAML</b><span>Compiled bindings with x:DataType, control templates, resource dictionaries, custom handler mapping.</span></div>
       <div class="stack-item"><b>Java</b><span>Legacy Android maintenance, interop with Kotlin, older vendor SDK surfaces.</span></div>
@@ -94,17 +94,17 @@
     <div class="section-head rv">
       <span class="eyebrow">02</span>
       <h2>Frameworks</h2>
-      <p>Ordered by real depth, not by what looks good in a keyword scan. The .NET mobile lineage is
-         where I am a genuine subject matter expert; everything below it is honestly labelled.</p>
+      <p>Listed by how deeply I know them. Xamarin and .NET MAUI are where I'm an expert. Everything else
+         is labelled with how much I've used it.</p>
     </div>
     <div class="bento rv">
       <div class="tile tile--feature tile--6">
         <span class="verdict v-win">PRIMARY SME SURFACE</span>
         <h3 class="mt-s">.NET MAUI</h3>
-        <p>Custom handlers and mapper overrides, AOT and trimming with explicit preserve descriptors,
-           DI lifetime design and lazy graph construction, compiled bindings with <code>x:DataType</code>,
-           and build-time variant resolution producing multiple regulatory builds from one source tree.
-           Shipped to production at Hilti across three regional markets.</p>
+        <p>Custom handlers and mapper overrides, AOT and trimming with explicit preserve rules, DI
+           lifetimes and lazy object graphs, compiled bindings with <code>x:DataType</code>, and build-time
+           variants that produce several regulatory builds from one source tree. Shipped to production at
+           Hilti in three regional markets.</p>
         <div class="case-card__stack">
           <span class="stack-tag">MVVM Toolkit</span><span class="stack-tag">Custom handlers</span>
           <span class="stack-tag">AOT + trimming</span><span class="stack-tag">Shell navigation</span>
@@ -113,12 +113,11 @@
       </div>
       <div class="tile tile--feature tile--6">
         <span class="verdict v-win">PRIMARY SME SURFACE</span>
-        <h3 class="mt-s">Xamarin — Forms &amp; iOS</h3>
-        <p>Xamarin.iOS against UIKit directly for two and a half years — view controller lifecycle,
-           ARC and retain cycles across the managed/native boundary, bindings to native SDKs. Then
-           Xamarin.Forms with custom renderers, effects and DependencyService. This is legacy depth that
-           is still commercially valuable to anyone maintaining one, and it is why I can debug MAUI rather
-           than only use it.</p>
+        <h3 class="mt-s">Xamarin.Forms and Xamarin.iOS</h3>
+        <p>Two and a half years of Xamarin.iOS working directly against UIKit: the view controller
+           lifecycle, ARC and retain cycles between C# and native objects, and bindings to native SDKs.
+           Then Xamarin.Forms with custom renderers, effects and DependencyService. Plenty of companies
+           still maintain Xamarin apps and need this. It's also why I can debug MAUI and not just use it.</p>
         <div class="case-card__stack">
           <span class="stack-tag">Xamarin.iOS</span><span class="stack-tag">UIKit interop</span>
           <span class="stack-tag">Xamarin.Forms</span><span class="stack-tag">Custom renderers</span>
@@ -127,25 +126,23 @@
       </div>
       <div class="tile tile--6">
         <span class="verdict v-mid">WORKING DEPTH</span>
-        <h3 class="mt-s">Native Android — Kotlin &amp; Jetpack Compose</h3>
-        <p>Coroutines and structured concurrency, Flow, sealed hierarchies for state modelling,
-           recomposition scoping and stability, state hoisting, and interop via <code>ComposeView</code>
-           for incremental migration. Production Kotlin, not just custom renderers viewed from C#.</p>
+        <h3 class="mt-s">Native Android: Kotlin and Jetpack Compose</h3>
+        <p>Coroutines and structured concurrency, Flow, sealed hierarchies for state, recomposition scope
+           and stability, state hoisting, and <code>ComposeView</code> interop for migrating a screen at a
+           time. I've written Kotlin for production, beyond looking at it from C# custom renderers.</p>
       </div>
       <div class="tile tile--6">
         <span class="verdict v-mid">WORKING DEPTH</span>
-        <h3 class="mt-s">Native iOS — Swift &amp; SwiftUI</h3>
-        <p>Protocol-oriented design, optionals and ARC discipline, Combine publishers, async/await,
-           view identity and diffing behaviour in SwiftUI, and <code>UIHostingController</code> interop
-           inside UIKit navigation. Built on years of UIKit work through Xamarin.iOS.</p>
+        <h3 class="mt-s">Native iOS: Swift and SwiftUI</h3>
+        <p>Protocol-oriented design, optionals and careful ARC use, Combine publishers, async/await, view
+           identity and diffing in SwiftUI, and <code>UIHostingController</code> inside UIKit navigation. It
+           builds on years of UIKit work through Xamarin.iOS.</p>
       </div>
       <div class="tile tile--12">
         <div class="note">
-          <p><strong>What I have not shipped:</strong> React Native. I have evaluated it seriously and I
-          hold a defensible position on where it belongs — see the
-          <a href="playbook">SME Playbook</a> — but I have not run a production React Native
-          codebase and I am not going to claim otherwise on a page whose entire purpose is that you can
-          trust it. Same for Flutter.</p>
+          <p><strong>What I haven't shipped:</strong> React Native. I've evaluated it properly and I have a
+          view on where it fits (it's in the <a href="playbook">SME Playbook</a>), but I haven't run a
+          production React Native codebase, and I won't pretend I have. The same goes for Flutter.</p>
         </div>
       </div>
     </div>
@@ -158,19 +155,19 @@
     <div class="section-head rv">
       <span class="eyebrow">03</span>
       <h2>Tooling &amp; CI/CD</h2>
-      <p>The pipeline is part of the architecture. I have owned this chain end to end on more than one team.</p>
+      <p>I treat the release pipeline as part of the architecture. I've owned this whole chain on more than one team.</p>
     </div>
     <div class="bento rv">
       <div class="tile tile--feature tile--8">
-        <span class="eyebrow eyebrow--plain">Owned pipeline</span>
+        <span class="eyebrow eyebrow--plain">A pipeline I own</span>
         <h3 class="mt-s">App Center → Firebase App Distribution → TestFlight</h3>
         <p>
-          The full release chain, built and maintained by me: branch-triggered builds with centralized
-          signing and provisioning in <strong>App Center</strong>; automatic distribution to mapped QA
-          tester groups via <strong>Firebase App Distribution</strong> with release notes generated from
-          commit trailers; staged external beta through <strong>TestFlight</strong> for plant and site
-          pilot groups; and <strong>Crashlytics + Analytics</strong> as the promotion gate — a rollout
-          advances only if crash-free rate and key funnel metrics hold against the previous release.
+          I built and maintain the whole release chain. <strong>App Center</strong> builds each branch and
+          handles signing and provisioning in one place. <strong>Firebase App Distribution</strong> sends
+          builds to the right QA tester groups automatically, with release notes generated from commit
+          trailers. <strong>TestFlight</strong> runs a staged external beta for pilot groups at plants and
+          sites. <strong>Crashlytics and Analytics</strong> decide promotion: a rollout only moves forward if
+          the crash-free rate and key funnel numbers are at least as good as the previous release.
         </p>
         <div class="case-card__stack">
           <span class="stack-tag">Signing &amp; provisioning automation</span>
@@ -182,9 +179,9 @@
       </div>
       <div class="tile tile--4">
         <h3>Observability</h3>
-        <p>Crashlytics with custom keys and non-fatal reporting for silent failures; Firebase Analytics
-           funnels per workflow step; Cloud Messaging as an idempotent command channel rather than a
-           data channel.</p>
+        <p>Crashlytics with custom keys, and non-fatal reports to catch silent failures. Firebase Analytics
+           funnels for each step of a workflow. Cloud Messaging used to send commands that are safe to
+           repeat, and never to carry data.</p>
       </div>
       <div class="tile tile--12">
         <div class="stack-grid">
@@ -197,7 +194,7 @@
           <div class="stack-item"><b>Xcode</b><span>Instruments, allocations, time profiler, leaks</span></div>
           <div class="stack-item"><b>Android Studio</b><span>Profiler, heap dumps, Layout Inspector, systrace</span></div>
           <div class="stack-item"><b>Gradle</b><span>Flavour dimensions, R8, build cache, convention plugins</span></div>
-          <div class="stack-item"><b>Fastlane</b><span>match, gym, deliver — release automation</span></div>
+          <div class="stack-item"><b>Fastlane</b><span>match, gym and deliver for release automation</span></div>
           <div class="stack-item"><b>GitHub Actions</b><span>Matrix fan-out, cached toolchains, gates</span></div>
           <div class="stack-item"><b>Azure DevOps</b><span>Enterprise pipelines, artifact feeds</span></div>
           <div class="stack-item"><b>Sentry</b><span>Alternative crash + performance monitoring</span></div>
@@ -214,18 +211,18 @@
     <div class="section-head rv">
       <span class="eyebrow">04</span>
       <h2>Architecture &amp; data</h2>
-      <p>The part that survives every framework migration — and therefore the part worth being expert in.</p>
+      <p>This is the part that carries over from one framework to the next, so it's the part most worth knowing well.</p>
     </div>
     <div class="stack-grid rv">
-      <div class="stack-item stack-item--core"><b>Clean Architecture</b><span>Genuine dependency inversion with a zero-reference domain layer, enforced by project references and CI, not convention.</span></div>
+      <div class="stack-item stack-item--core"><b>Clean Architecture</b><span>Real dependency inversion, with a domain layer that references nothing. Project references and CI enforce it.</span></div>
       <div class="stack-item stack-item--core"><b>MVVM</b><span>Source-generated observables, compiled bindings, command lifecycle, testable ViewModels with no platform dependencies.</span></div>
       <div class="stack-item stack-item--core"><b>Offline-first sync</b><span>Durable outbox, idempotency keys, vector-clock ordering, field-level merge, tombstones, watermark delta pull.</span></div>
       <div class="stack-item stack-item--core"><b>SQLite</b><span>WAL mode, transaction scoping, index tuning for mobile access patterns, SQLCipher encryption at rest, migration strategy.</span></div>
-      <div class="stack-item stack-item--core"><b>Full-text search</b><span>Local FTS indexes over large document corpora so search works with no network — the approvals library at Hilti.</span></div>
+      <div class="stack-item stack-item--core"><b>Full-text search</b><span>Local FTS indexes over large document sets so search works with no network, as in the approvals library at Hilti.</span></div>
       <div class="stack-item"><b>Coroutines &amp; Flow</b><span>Structured concurrency, dispatcher confinement, cancellation propagation, cold vs hot stream selection.</span></div>
       <div class="stack-item"><b>Combine</b><span>Publisher composition, backpressure handling, cancellable lifetime management, bridging to async/await.</span></div>
       <div class="stack-item"><b>Dependency injection</b><span>Lifetime design, lazy factory registration, graph construction cost, testability as a first-order constraint.</span></div>
-      <div class="stack-item"><b>Resilience patterns</b><span>Retry with jitter, circuit breaker, timeout, bulkhead isolation, request coalescing — composed as one policy layer.</span></div>
+      <div class="stack-item"><b>Resilience patterns</b><span>Retry with jitter, circuit breaker, timeout, bulkhead isolation and request coalescing, combined in one policy layer.</span></div>
       <div class="stack-item"><b>Modular architecture</b><span>Feature slicing, enforced boundaries, public interface surfaces, build-time violation detection.</span></div>
       <div class="stack-item"><b>Memory management</b><span>Leak diagnosis across managed/native boundaries, retain-cycle analysis, GC pressure reduction, bounded buffers.</span></div>
       <div class="stack-item"><b>Performance engineering</b><span>AOT compilation, trimming, startup sequence attribution, recomposition and layout-pass profiling.</span></div>
@@ -235,9 +232,9 @@
 
     <div class="cta rv mt-l">
       <span class="eyebrow eyebrow--plain">{{availability}}</span>
-      <h2>Screen me on any line above.</h2>
-      <p>Every entry is something I have shipped with, not something I have read about.
-         Pick the one you care most about and let's start there.</p>
+      <h2>Ask me about any line above</h2>
+      <p>Each entry says how much I've used it, and I'm happy to be tested on any of them. Pick the one you
+         care about most and we'll start there.</p>
       <div class="btn-row">
         <a class="btn btn--primary" data-mail="akshaydixits96|gmail.com" href="contact">Get in touch</a>
         <a class="btn" href="work">See it applied in the case studies</a>
@@ -271,8 +268,8 @@
       </div>
     </div>
     <div class="foot__bot">
-      <span>© <span class="mono">2026</span> {{name}} — built from scratch, no template, no tracker.</span>
-      <span>Static site · strict CSP · zero third-party JavaScript</span>
+      <span>© <span class="mono">2026</span> {{name}}. I built this site by hand, without a template.</span>
+      <span>Plain HTML, CSS and a little JavaScript. No framework.</span>
     </div>
   </div>
 </footer>

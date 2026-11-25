@@ -8,15 +8,15 @@
 <meta name="color-scheme" content="dark light">
 <meta name="theme-color" content="#06080b" media="(prefers-color-scheme: dark)">
 <meta name="theme-color" content="#fbfaf8" media="(prefers-color-scheme: light)">
-<title>Hilti — multi-region firestop compliance in .NET MAUI | {{name}}</title>
+<title>Hilti: firestop compliance for three regions in .NET MAUI | {{name}}</title>
 <meta name="description" content=".NET MAUI architecture for Hilti's Firestop Selector and Volume Calculator: three regional code variants from one codebase, an offline approvals library of 1,000+ digitised UL/ETA/DIN approvals, role-based project sharing and cross-entity global search.">
 <link rel="canonical" href="{{siteUrl}}/case-hilti">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hilti — multi-region firestop compliance in .NET MAUI">
+<meta property="og:title" content="Hilti: firestop compliance for three regions in .NET MAUI">
 <meta property="og:description" content="One codebase, three regulatory regions, an offline approvals library, and a permission model that has to survive intermittent jobsite connectivity.">
 <meta property="og:image" content="{{siteUrl}}/assets/og.png">
 <meta property="og:url" content="{{siteUrl}}/case-hilti.html">
-<meta name="twitter:title" content="Hilti — multi-region firestop compliance in .NET MAUI">
+<meta name="twitter:title" content="Hilti: firestop compliance for three regions in .NET MAUI">
 <meta name="twitter:description" content="One codebase, three regulatory regions, an offline approvals library, and a permission model that has to survive intermittent jobsite connectivity.">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
@@ -49,14 +49,14 @@
         {
           "@type": "ListItem",
           "position": 3,
-          "name": "Hilti — multi-region firestop compliance in .NET MAUI",
+          "name": "Hilti: firestop compliance for three regions in .NET MAUI",
           "item": "{{siteUrl}}/case-hilti.html"
         }
       ]
     },
     {
       "@type": "TechArticle",
-      "headline": "Hilti — multi-region firestop compliance in .NET MAUI",
+      "headline": "Hilti: firestop compliance for three regions in .NET MAUI",
       "description": ".NET MAUI architecture for Hilti's Firestop Selector and Volume Calculator: three regional code variants from one codebase, an offline approvals library of 1,000+ digitised UL/ETA/DIN approvals, role-based project sharing and cross-entity global search.",
       "inLanguage": "en",
       "mainEntityOfPage": {
@@ -112,29 +112,28 @@
     <span class="eyebrow mt-s">{{co_c}} · {{co_c_desc}}</span>
     <h1>Multi-region firestop compliance software in .NET MAUI</h1>
     <p class="case-hero__sub">
-      Passive fire protection is a code-compliance problem before it is a product problem. Specify the
-      wrong firestop system for a penetration and the building fails inspection — so the app a contractor
-      pulls out on a jobsite has to be authoritative, current, regionally correct, and usable in a
-      basement riser with no signal.
+      Firestopping is about meeting building code first. If a contractor picks the wrong firestop system
+      for a penetration, the building fails inspection. So the app they open on a jobsite has to be
+      accurate, up to date and correct for their region, and it has to work in a basement riser with no
+      signal.
     </p>
 
     <div class="twoclick">
       <a class="btn btn--primary btn--sm" href="{{c_live}}" target="_blank" rel="noopener noreferrer">
         <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M6 10 10 6M7 3.5 8.6 2a3.4 3.4 0 1 1 4.8 4.8L11.8 8.4M9 12.5 7.4 14a3.4 3.4 0 0 1-4.8-4.8L4.2 7.6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-        {{c_live_name}} — App Store
+        {{c_live_name}} on the App Store
       </a>
       <a class="btn btn--sm" href="{{c_live2}}" target="_blank" rel="noopener noreferrer">
         <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M6 10 10 6M7 3.5 8.6 2a3.4 3.4 0 1 1 4.8 4.8L11.8 8.4M9 12.5 7.4 14a3.4 3.4 0 0 1-4.8-4.8L4.2 7.6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-        {{c_live2_name}} — App Store
+        {{c_live2_name}} on the App Store
       </a>
       <a class="btn btn--ghost btn--sm" href="#blueprint">↓ Architecture blueprint</a>
     </div>
 
     <div class="note">
-      <p><strong>On source code:</strong> both applications are Hilti AG products and the source is
-      assigned IP — there is no public repository, and there should not be. Everything below is my own
-      architectural description of work I did, written from scratch. Happy to go deeper in a technical
-      conversation, or to whiteboard any of it.</p>
+      <p><strong>About the source code:</strong> both apps are Hilti AG products and the code belongs to
+      Hilti, so there's no public repository. Everything below is my own description of the work I did,
+      in my own words. I'm happy to go deeper on a call or sketch any of it on a whiteboard.</p>
     </div>
 
     <dl class="case-meta">
@@ -155,39 +154,36 @@
       <div class="block__h"><span class="block__n">01</span><h2>Context &amp; Scope</h2></div>
       <div class="prose">
         <p>
-          The Firestop Selector exists to answer one question quickly and defensibly: <em>for this
-          penetration, through this barrier, with this service passing through it — which Hilti firestop
-          system is approved, and what is the approval document that proves it?</em> The answer is
-          jurisdiction-specific. A UL-listed system in the United States is not the same artefact as an
-          ETA in the wider European market, which is not the same as a German DIN approval, and the
-          product ranges, terminology, guided-selection logic and even the legally required outputs differ
-          across all three.
+          The Firestop Selector answers one question, quickly and in a way that holds up: <em>for this
+          penetration, through this barrier, with this pipe or cable going through it, which Hilti firestop
+          system is approved, and which approval document proves it?</em> The answer depends on where you
+          are. A UL listing in the US, an ETA in the wider European market and a German DIN approval are
+          different documents. The product ranges, the terminology, the guided selection and even the
+          outputs the law requires are different in all three.
         </p>
         <p>
-          That is the defining architectural constraint of the product, and it is what the case study is
-          really about. The app is not one application localised three ways. It is
-          <strong>one codebase producing three regulatory variants</strong>, each with its own approvals
-          corpus, its own selection flow, and its own feature set that ships on its own schedule —
-          material estimation, for instance, went live for the DIN region without touching UL or ETA.
+          That shaped the whole architecture, and it's what this case study is about. The app is <strong>one codebase that produces three regulatory
+          variants</strong>. Each has its own approvals data, its own selection flow and its own features
+          on its own release schedule. For example, material estimation went live for the DIN region without
+          any change to the UL or ETA builds.
         </p>
         <p>
-          Alongside it I worked on the <strong>Volume Calculator</strong>, a long-lived jobsite reference
-          tool for computing material quantities. The two are complementary in exactly the way the domain
-          demands: one tells a contractor which system is approved, the other tells them how much product
-          to order for it — and the material-estimation work in the Selector grew directly out of that
-          adjacency.
+          I also worked on the <strong>Volume Calculator</strong>, a jobsite tool for working out material
+          quantities that has been on the App Store for years. The two apps fit together: one tells a
+          contractor which system is approved, and the other tells them how much product to order. The
+          material estimation feature in the Selector came straight out of that overlap.
         </p>
         <h3>Constraints</h3>
         <ul class="bullets">
-          <li><strong>Compliance data must be correct or the feature is worse than useless.</strong> A stale approval shown with confidence is a liability. Freshness, versioning and provenance of the approvals corpus are correctness requirements, not caching preferences.</li>
-          <li><strong>Jobsite connectivity is unreliable by default.</strong> Firestop work happens in risers, shafts, basements and partially built structures. The library and the user's saved projects have to be usable with no network at all.</li>
-          <li><strong>Enterprise guardrails.</strong> Product-company release trains, formal review gates, security and compliance review, and a codebase expected to live for years across a growing regional footprint.</li>
-          <li><strong>A large document corpus on a phone.</strong> {{f_approvals}} digitised approvals plus {{f_typicals}} abbreviated summaries and simplified trade details — an install that has to stay searchable and fast on mid-tier hardware.</li>
+          <li><strong>The compliance data has to be right.</strong> An out-of-date approval shown as current is worse than showing nothing. Knowing how fresh each document is, which version it is and where it came from is part of being correct.</li>
+          <li><strong>Jobsites usually have bad connectivity.</strong> Firestop work happens in risers, shafts, basements and half-built structures. The library and the user's saved projects have to work with no network at all.</li>
+          <li><strong>Enterprise process.</strong> Scheduled release trains, formal review gates, security and compliance reviews, and a codebase that has to last for years as more regions are added.</li>
+          <li><strong>A lot of documents on a phone.</strong> {{f_approvals}} digitised approvals plus {{f_typicals}} abbreviated summaries and simplified trade details. Search has to stay fast on mid-range phones.</li>
         </ul>
       </div>
 
       <figure class="blueprint">
-        <figcaption class="blueprint__bar">SCREENS — <b>{{c_live_name}}</b></figcaption>
+        <figcaption class="blueprint__bar">SCREENS · <b>{{c_live_name}}</b></figcaption>
         <div class="blueprint__body shots">
           <img src="assets/shots/firestop-selector/01-guided-search.webp" width="460" height="995" loading="lazy" decoding="async" alt="Firestop Selector home screen: a search field over the approvals library, with a Guided Search entry point.">
           <img src="assets/shots/firestop-selector/02-filter-by-product.webp" width="460" height="995" loading="lazy" decoding="async" alt="Search results filtered by product, with a matched approval detail sheet open showing the penetration diagram and a saved-solutions action bar.">
@@ -197,7 +193,7 @@
       </figure>
 
       <figure class="blueprint">
-        <figcaption class="blueprint__bar">SCREENS — <b>{{c_live2_name}}</b></figcaption>
+        <figcaption class="blueprint__bar">SCREENS · <b>{{c_live2_name}}</b></figcaption>
         <div class="blueprint__body shots">
           <img src="assets/shots/volume-calculator/01-base-material.webp" width="460" height="996" loading="lazy" decoding="async" alt="Volume Calculator base-material selection screen with block, brick and reinforced options.">
           <img src="assets/shots/volume-calculator/02-anchor-size.webp" width="460" height="996" loading="lazy" decoding="async" alt="Volume Calculator step 4 of the guided input flow, selecting anchor size against a diagram.">
@@ -212,42 +208,42 @@
       <div class="block__h"><span class="block__n">02</span><h2>Architectural Blueprint</h2></div>
       <div class="prose">
         <p>
-          Region is a first-class dimension of the architecture, resolved at build time, not a runtime
-          <code>if</code> scattered through the codebase. The domain layer is written against region
-          abstractions — an approvals provider, a selection ruleset, a compliance-output formatter — and
-          each region supplies its own implementation. A UL-only feature cannot leak into a DIN build,
-          because the DIN build never compiles the code.
+          The region is chosen when the app is built. There are no runtime <code>if</code> checks for it
+          spread through the code. The domain layer works against a few region interfaces (an approvals
+          provider, a set of selection rules, and a formatter for compliance output), and each region
+          provides its own implementation. A UL-only feature can't end up in a DIN build, because the DIN
+          build never compiles that code.
         </p>
       </div>
 
       <figure class="blueprint">
         <figcaption class="blueprint__bar">
-          <b>FIG 1.0</b> — REGIONAL VARIANT RESOLUTION &amp; OFFLINE APPROVALS PIPELINE
+          <b>FIG 1.0</b> · REGIONAL VARIANT RESOLUTION &amp; OFFLINE APPROVALS PIPELINE
         </figcaption>
         <div class="blueprint__body">
           <svg viewBox="0 0 900 490" width="900" height="490" role="img" aria-label="Architecture diagram: a shared .NET MAUI core with region abstractions resolves at build time into UL, ETA and DIN variants, backed by an offline approvals corpus with a versioned sync pipeline, project store and permission model.">
-            <text class="d-l" x="26" y="26">SHARED CORE — REGION-AGNOSTIC</text>
+            <text class="d-l" x="26" y="26">SHARED CORE · REGION-AGNOSTIC</text>
             <text class="d-l" x="620" y="26">RESOLVED VARIANTS</text>
 
             <rect class="d-box" x="20" y="40" width="300" height="66" rx="9"/>
-            <text class="d-t" x="36" y="64">PRESENTATION — XAML + MVVM Toolkit</text>
+            <text class="d-t" x="36" y="64">PRESENTATION · XAML + MVVM Toolkit</text>
             <text class="d-s" x="36" y="82">guided search · solution detail · project views</text>
             <text class="d-s" x="36" y="96">compiled bindings, x:DataType everywhere</text>
 
             <rect class="d-box-hi" x="20" y="120" width="300" height="80" rx="9"/>
-            <text class="d-t" x="36" y="144">DOMAIN — region abstractions</text>
+            <text class="d-t" x="36" y="144">DOMAIN · region abstractions</text>
             <text class="d-s" x="36" y="162">IApprovalsProvider · ISelectionRuleset</text>
             <text class="d-s" x="36" y="176">IComplianceFormatter · IEstimationEngine</text>
             <text class="d-s" x="36" y="192">zero references to any concrete region</text>
 
             <rect class="d-box" x="20" y="214" width="300" height="80" rx="9"/>
-            <text class="d-t" x="36" y="238">PERSISTENCE — offline corpus</text>
+            <text class="d-t" x="36" y="238">PERSISTENCE · offline corpus</text>
             <text class="d-s" x="36" y="256">SQLite + FTS index over approvals</text>
             <text class="d-s" x="36" y="270">versioned corpus, provenance per document</text>
             <text class="d-s" x="36" y="286">PDF cache with eviction policy</text>
 
             <rect class="d-box" x="20" y="308" width="300" height="80" rx="9"/>
-            <text class="d-t" x="36" y="332">PROJECTS — cloud-backed, offline-first</text>
+            <text class="d-t" x="36" y="332">PROJECTS · cloud-backed, offline-first</text>
             <text class="d-s" x="36" y="350">saved solutions · folders · EJ requests</text>
             <text class="d-s" x="36" y="364">role model: Owner / Editor / Viewer</text>
             <text class="d-s" x="36" y="378">local writes queue, reconcile on reconnect</text>
@@ -255,7 +251,7 @@
             <rect class="d-box-cy" x="20" y="402" width="300" height="70" rx="9"/>
             <text class="d-t" x="36" y="426">GLOBAL SEARCH</text>
             <text class="d-s" x="36" y="444">one index across projects, solutions, EJs</text>
-            <text class="d-s" x="36" y="458">served locally — no round trip required</text>
+            <text class="d-s" x="36" y="458">served locally · no round trip required</text>
 
             <!-- resolution spine -->
             <rect class="d-box-hi" x="366" y="180" width="190" height="120" rx="9"/>
@@ -273,28 +269,28 @@
 
             <!-- variants -->
             <rect class="d-box" x="602" y="70" width="278" height="84" rx="9"/>
-            <text class="d-t" x="618" y="94">UL — United States</text>
+            <text class="d-t" x="618" y="94">UL · United States</text>
             <text class="d-s" x="618" y="112">UL-listed systems corpus</text>
             <text class="d-s" x="618" y="126">engineering judgment (EJ) requests</text>
             <text class="d-s" x="618" y="142">US product range + terminology</text>
 
             <rect class="d-box" x="602" y="170" width="278" height="84" rx="9"/>
-            <text class="d-t" x="618" y="194">ETA — Europe</text>
+            <text class="d-t" x="618" y="194">ETA · Europe</text>
             <text class="d-s" x="618" y="212">European Technical Assessments</text>
             <text class="d-s" x="618" y="226">folder-based organisation model</text>
             <text class="d-s" x="618" y="242">EU product range + terminology</text>
 
             <rect class="d-box" x="602" y="270" width="278" height="84" rx="9"/>
-            <text class="d-t" x="618" y="294">DIN — Germany</text>
+            <text class="d-t" x="618" y="294">DIN · Germany</text>
             <text class="d-s" x="618" y="312">DIN approvals corpus</text>
             <text class="d-s" x="618" y="326">material estimation (region-only)</text>
             <text class="d-s" x="618" y="342">DE product range + terminology</text>
 
             <rect class="d-box-cy" x="602" y="370" width="278" height="102" rx="9"/>
-            <text class="d-t" x="618" y="394">DELIVERY — one pipeline, N builds</text>
+            <text class="d-t" x="618" y="394">DELIVERY · one pipeline, N builds</text>
             <text class="d-s" x="618" y="412">App Center build + signing per variant</text>
-            <text class="d-s" x="618" y="428">Firebase App Distribution — QA rings</text>
-            <text class="d-s" x="618" y="444">TestFlight — regional beta groups</text>
+            <text class="d-s" x="618" y="428">Firebase App Distribution · QA rings</text>
+            <text class="d-s" x="618" y="444">TestFlight · regional beta groups</text>
             <text class="d-s" x="618" y="460">Crashlytics gates rollout promotion</text>
 
             <path class="d-line-hi" d="M556 220 L578 220 L578 112 L602 112"/>
@@ -304,20 +300,20 @@
           </svg>
         </div>
         <p class="blueprint__cap">
-          Amber = the region resolution path. The point of the build-time spine is that a regional
-          feature is physically absent from the builds it does not belong to.
+          Amber is the path the region takes through the build. Because the region is picked at build time,
+          a regional feature simply isn't in the builds it doesn't belong to.
         </p>
       </figure>
 
       <div class="prose">
-        <h3>Decisions worth defending</h3>
+        <h3>The main decisions</h3>
         <ul class="bullets">
-          <li><strong>Build-time variants over runtime flags.</strong> Runtime region switching would have meant every build carrying every region's rules, every corpus schema and every UI branch — with the compliance risk that a misconfigured flag shows a German approval to a US contractor. Resolving at build time makes that failure mode structurally impossible and keeps each installed app smaller.</li>
-          <li><strong>The domain layer never names a region.</strong> Adding a fourth regulatory market is implementing a set of known interfaces and registering them, not auditing the codebase for places that assumed three. This is dependency inversion earning its keep on a real business requirement rather than as an architectural ornament.</li>
-          <li><strong>The approvals corpus is versioned, with provenance.</strong> Each document carries its source, revision and validity, and the local store is a versioned snapshot rather than an opportunistic cache. When the corpus updates, the app can tell the user what changed and what they are looking at — which matters when the output is used to justify a compliance decision.</li>
-          <li><strong>Full-text search runs locally.</strong> Global search spans saved projects, solutions and EJ requests, and it is served from a local index. A search that fails in a basement is a search that fails exactly when the contractor needs it.</li>
-          <li><strong>Sharing is a permission model, not a feature toggle.</strong> Owner / Editor / Viewer roles are enforced in the domain layer and re-validated server-side, so an offline device holding a stale role cannot be used to escalate. Client-side role checks are UX; the server check is the security boundary.</li>
-          <li><strong>Compiled bindings and MVVM Toolkit source generators throughout.</strong> <code>x:DataType</code> on every view and template turns a broken binding into a build error instead of a silent empty cell — non-negotiable on screens that display compliance data.</li>
+          <li><strong>Build-time variants instead of runtime flags.</strong> Switching region at runtime would mean every build carries every region's rules, data schemas and UI branches. It would also mean one wrong flag could show a German approval to a US contractor. Choosing the region at build time rules that out, and each installed app is smaller.</li>
+          <li><strong>The domain layer never mentions a region.</strong> To add a fourth market, you implement a known set of interfaces and register them. You don't have to search the code for places that assumed there were three. This was dependency inversion solving a real business problem.</li>
+          <li><strong>The approvals data is versioned and traceable.</strong> Every document records its source, revision and validity dates. The local copy is a versioned snapshot instead of a loose cache. When the data updates, the app can show the user what changed, which matters when they rely on it for a compliance decision.</li>
+          <li><strong>Full-text search runs on the device.</strong> Global search covers saved projects, solutions and EJ requests from a local index. If search failed in a basement, it would fail at the exact moment the contractor needed it.</li>
+          <li><strong>Sharing uses real permissions.</strong> Owner, Editor and Viewer roles are enforced in the domain layer and checked again on the server, so an offline phone with an out-of-date role can't be used to gain access. The checks in the app are for the user's convenience. The server check is the one that keeps data safe.</li>
+          <li><strong>Compiled bindings and MVVM Toolkit source generators everywhere.</strong> With <code>x:DataType</code> on every view and template, a broken binding fails the build. Without it you get an empty cell and no error, which I wasn't willing to accept on screens that show compliance data.</li>
         </ul>
       </div>
     </div>
@@ -326,60 +322,60 @@
     <div class="block rv">
       <div class="block__h"><span class="block__n">03</span><h2>Engineering Breakthrough</h2></div>
       <div class="prose">
-        <h3>Making a regional feature genuinely independent</h3>
+        <h3>Shipping a feature to one region only</h3>
         <p>
-          The clearest demonstration that the variant architecture worked is that features shipped to one
-          region without disturbing the others. Material estimation went live for the German DIN region —
-          letting a user estimate required product volume for better planning and less waste — while the
-          UL and ETA builds shipped unrelated work on their own cadence. Global search landed across all
-          three, but with different entity sets per region because the ETA organisational model uses
-          folders where UL surfaces engineering judgments.
+          The best proof that the variant setup worked is that we shipped features to one region without
+          affecting the others. Material estimation, which lets a user estimate how much product they need
+          so they can plan better and waste less, went live for the German DIN region. Meanwhile the UL and
+          ETA builds shipped unrelated work on their own schedules. Global search went out to all three, but
+          each region searches different things, because ETA organises work in folders and UL shows
+          engineering judgments.
         </p>
         <p>
-          Doing that on a branch-per-region codebase means three merges, three regression passes and a
-          slow drift into three products. Doing it on a runtime-flagged monolith means every build carries
-          every region's risk. The build-time variant spine is what let a regional feature be genuinely
-          regional — and it is the decision I would defend hardest in an interview.
+          With a branch per region, that would have meant three merges, three rounds of regression testing,
+          and three products slowly drifting apart. With one app full of runtime flags, every build would
+          carry every region's risk. Picking the region at build time is what let a regional feature stay
+          regional. It's the decision I'd defend hardest in an interview.
         </p>
 
         <div class="callout">
-          <div class="callout__t">The transferable idea</div>
+          <div class="callout__t">What I'd reuse elsewhere</div>
           <p>
-            When a difference between customers is <em>regulatory</em> rather than cosmetic, resolve it as
-            early in the build as you can. Cosmetic differences are fine as configuration. Differences that
-            carry legal consequence should be impossible to get wrong at runtime, because eventually
-            someone will get them wrong at runtime.
+            If customers differ for <em>regulatory</em> reasons, handle that difference as early in the build
+            as you can. Cosmetic differences are fine as configuration. If getting a difference wrong has
+            legal consequences, make it impossible to get wrong at runtime, because sooner or later someone
+            will.
           </p>
         </div>
 
-        <h3>Search that has to work offline, over a corpus that keeps growing</h3>
+        <h3>Offline search over a library that keeps growing</h3>
         <p>
-          Introducing global search across saved projects, solutions, folders and EJ requests meant one
-          query surface over several entity types with different shapes, different lifecycles and
-          different sync states — some fully synced, some pending upload, some shared in from another
-          user. Getting fast, correct results without a network round trip required treating search as a
-          local index maintained alongside the data rather than as an API call, and being explicit about
-          how pending local writes appear in results. A user who just saved a solution offline expects to
-          find it immediately; anything else reads as data loss.
+          Global search covers saved projects, solutions, folders and EJ requests. Those are different
+          kinds of records with different shapes and lifecycles, and they're in different sync states. Some
+          are fully synced, some are waiting to upload, and some were shared by another user. To get fast,
+          correct results without a network call, I kept a local search index updated alongside the data
+          instead of calling an API, and decided exactly how unsynced local changes show up in results. If
+          someone saves a solution offline, they expect to find it straight away. If they can't, it looks
+          like the app lost their data.
         </p>
 
         <h3>Performance on a document-heavy install</h3>
         <p>
-          A compliance app that carries thousands of approval documents and their PDFs is fighting install
-          size, memory and launch time simultaneously. The levers that mattered were the standard .NET
-          MAUI ones applied deliberately rather than switched on blindly: ahead-of-time compilation with a
-          curated trimming configuration and explicit preserve descriptors for the reflection surface that
-          genuinely needed it, lazy DI registration so the container builds factories at startup rather
-          than materialising services an inspector may never open, compiled bindings to remove reflection
-          from binding resolution, and deferring non-critical startup I/O until after first frame so the
-          UI renders from local state immediately.
+          An app that carries thousands of approval documents and their PDFs has to watch install size,
+          memory and launch time all at once. What helped were the usual .NET MAUI tools, each configured
+          on purpose:
         </p>
+        <ul class="bullets">
+          <li>Ahead-of-time compilation with a hand-tuned trimming setup, and preserve rules only for the code that really used reflection.</li>
+          <li>Lazy DI registration, so at startup the container only sets up factories and doesn't create services an inspector might never open.</li>
+          <li>Compiled bindings, so binding resolution doesn't use reflection.</li>
+          <li>Moving non-critical startup I/O until after the first frame, so the UI draws from local data straight away.</li>
+        </ul>
         <div class="note">
-          <p><strong>A note on numbers:</strong> the work above cut cold start by roughly
-          <strong>{{m_c_coldstart}}</strong> — an approximate figure from my own before/after
-          measurements, not a rigorously instrumented benchmark. I am publishing it as an estimate, not
-          a result. Ask me in an interview and I will tell you what I measured, how, and how confident I
-          am in it.</p>
+          <p><strong>About the number:</strong> this work cut cold start by roughly
+          <strong>{{m_c_coldstart}}</strong>. That comes from my own before and after measurements, and I
+          didn't run a formal benchmark, so treat it as an estimate. If you ask, I'll tell you what I
+          measured, how I measured it, and how sure I am.</p>
         </div>
       </div>
     </div>
@@ -389,10 +385,10 @@
       <div class="block__h"><span class="block__n">04</span><h2>Leadership &amp; Delivery</h2></div>
       <div class="prose">
         <ul class="bullets">
-          <li><strong>One pipeline, every variant.</strong> A single merge produces signed builds for each regional variant with its own bundle identity and signing configuration — App Center for build and signing, Firebase App Distribution for internal QA rings, TestFlight for regional beta groups. Release engineering is a pipeline, not a person.</li>
-          <li><strong>Telemetry-gated promotion.</strong> Crashlytics and analytics gate rollout advancement, so promotion is a data decision rather than a calendar decision — which matters more, not less, when three variants are moving on different schedules.</li>
-          <li><strong>Review against a published rubric.</strong> Layer boundaries, region-abstraction compliance, threading and lifetime, testability, failure behaviour. Reviewing against a written standard rather than personal taste means a junior engineer can predict the review before requesting it, which is what actually shortens the cycle.</li>
-          <li><strong>Reference implementations over documentation.</strong> For each recurring shape — a new region implementation, a new synced entity, a new use case — there is an annotated canonical example in the codebase. New engineers copy a correct shape instead of inventing one under deadline.</li>
+          <li><strong>One pipeline for every variant.</strong> One merge produces a signed build for each regional variant, each with its own bundle ID and signing setup. App Center handles build and signing, Firebase App Distribution goes to internal QA groups, and TestFlight goes to regional beta groups. Releases don't depend on one person knowing the steps.</li>
+          <li><strong>Crash data decides rollouts.</strong> A rollout only moves forward if Crashlytics and analytics look healthy, whatever the calendar says. With three variants on different schedules, that mattered even more.</li>
+          <li><strong>Code review against a written checklist.</strong> It covers layer boundaries, use of the region interfaces, threading and object lifetimes, testability and failure behaviour. Because the standard was written down, a junior engineer could predict my review before asking for it, and that's what made reviews faster.</li>
+          <li><strong>Example code instead of long docs.</strong> For each common task, like adding a region, a synced entity or a use case, there's an annotated example in the codebase. New engineers copy a correct pattern instead of inventing one under deadline.</li>
           <li><strong>Mentorship.</strong> I mentored {{m_c_engineers}} engineers and interns on the architecture, the review standard and the release process.</li>
         </ul>
       </div>
@@ -402,22 +398,22 @@
     <div class="block rv">
       <div class="block__h"><span class="block__n">05</span><h2>Scope &amp; Impact</h2></div>
       <dl class="metrics">
-        <div><dt>{{f_regions}}</dt><dd>Regulatory regions — UL (US), ETA (Europe), DIN (Germany) — served from a single unforked codebase.</dd></div>
+        <div><dt>{{f_regions}}</dt><dd>Regulatory regions (UL for the US, ETA for Europe, DIN for Germany) built from one codebase with no forks.</dd></div>
         <div><dt>{{f_approvals}}</dt><dd>Digitised UL, ETA and DIN approvals in the searchable offline library.</dd></div>
         <div><dt>{{f_typicals}}</dt><dd>Abbreviated summaries and simplified trade details available alongside the full approvals.</dd></div>
-        <div><dt>2</dt><dd>Publicly listed Hilti applications worked on — Firestop Selector and Volume Calculator.</dd></div>
+        <div><dt>2</dt><dd>Hilti apps I worked on that are on the App Store: Firestop Selector and Volume Calculator.</dd></div>
       </dl>
       <div class="prose mt-m">
         <p class="dim mono">
-          Every figure above is verifiable from the public App Store listings linked at the top of this page.
-          Nothing here is estimated.
+          You can check every number above on the App Store listings linked at the top of this page. None of
+          them are estimates.
         </p>
       </div>
     </div>
 
     <div class="pagenav">
-      <a class="btn btn--ghost btn--sm" href="case-averiq">← AverIQ — current role</a>
-      <a class="btn btn--sm" href="case-smartsite">Infosys — SmartSite SGRE →</a>
+      <a class="btn btn--ghost btn--sm" href="case-averiq">← AverIQ: current role</a>
+      <a class="btn btn--sm" href="case-smartsite">Infosys: SmartSite SGRE →</a>
     </div>
 
   </div>
@@ -448,8 +444,8 @@
       </div>
     </div>
     <div class="foot__bot">
-      <span>© <span class="mono">2026</span> {{name}} — built from scratch, no template, no tracker.</span>
-      <span>Static site · strict CSP · zero third-party JavaScript</span>
+      <span>© <span class="mono">2026</span> {{name}}. I built this site by hand, without a template.</span>
+      <span>Plain HTML, CSS and a little JavaScript. No framework.</span>
     </div>
   </div>
 </footer>

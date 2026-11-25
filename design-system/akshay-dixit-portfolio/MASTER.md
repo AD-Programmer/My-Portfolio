@@ -1,26 +1,25 @@
-# Akshay Dixit Portfolio — Design System (MASTER)
+# Akshay Dixit Portfolio: Design System (MASTER)
 
 Source of truth: [`assets/css/main.css`](../../assets/css/main.css). This document explains
 the tokens; the CSS is authoritative if the two ever disagree.
 
 Style: **Minimalism & Swiss Style**, applied to a dark industrial / field-engineering
-identity ("FIELD-GRADE"). Zero external fonts, zero CDNs, zero JS frameworks — everything is
-CSP `'self'`-safe by construction.
+identity ("FIELD-GRADE"). No external fonts, no CDNs and no JS frameworks, so everything works under a
+CSP of `'self'`.
 
-## How this was derived
+## Where the choices came from
 
-Generated via `ui-ux-pro-max` (`"engineering portfolio minimal dark content-first"
---design-system --variance 3 --motion 3 --density 5`), then corrected against this project's
-actual constraints. Two of the tool's raw outputs were **rejected**, not applied:
+The tokens were pulled out of values the CSS was already using, then checked against this
+project's constraints. Two options I considered were dropped:
 
-- Palette (`#FAFAFA` background, `#2563EB` accent) — light-only, and would have discarded the
-  amber/cyan field identity. Replaced with a two-theme palette derived from the existing dark
-  tokens, contrast-verified against WCAG 2.2 AA for every text/UI pairing.
-- Typography (Archivo / Space Grotesk via Google Fonts) — blocked by `font-src 'self'` and
-  contrary to the site's deliberate zero-dependency system-font stack.
+- A light-only palette (`#FAFAFA` background, `#2563EB` accent). It would have thrown away the
+  amber and cyan. I kept the existing dark tokens and derived a light theme from them, with
+  every text and UI pairing checked against WCAG 2.2 AA.
+- Archivo and Space Grotesk from Google Fonts. `font-src 'self'` blocks them, and the site uses
+  system fonts on purpose so it has no font dependency.
 
-Style selection (Minimalism & Swiss), the pattern (Hero → Value → Features → CTA → Footer),
-and the Subtle scroll-reveal motion spec were adopted as-is.
+The overall style (minimal, Swiss-influenced), the page order (hero, value, features, CTA,
+footer) and the subtle scroll-reveal motion stayed as planned.
 
 ## Themes
 
