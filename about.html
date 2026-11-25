@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://vitals.vercel-insights.com; form-action 'none'; base-uri 'self'; object-src 'none'; upgrade-insecure-requests">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="color-scheme" content="dark light">
+<meta name="theme-color" content="#06080b" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#fbfaf8" media="(prefers-color-scheme: light)">
+
+<title>About {{name}} — Senior Mobile Engineer, Jaipur</title>
+<meta name="description" content="Who {{name}} is: {{years}} years of offline-first field software in .NET MAUI and Xamarin, working remotely from {{location}}.">
+<link rel="canonical" href="{{siteUrl}}/about">
+<meta property="og:type" content="profile">
+<meta property="og:title" content="About {{name}} — Senior Mobile Engineer, Jaipur">
+<meta property="og:description" content="Who {{name}} is: {{years}} years of offline-first field software in .NET MAUI and Xamarin, working remotely from {{location}}.">
+<meta property="og:url" content="{{siteUrl}}/about">
+<meta property="og:image" content="{{siteUrl}}/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="About {{name}} — Senior Mobile Engineer, Jaipur">
+<meta name="twitter:description" content="Who {{name}} is: {{years}} years of offline-first field software in .NET MAUI and Xamarin, working remotely from {{location}}.">
+<link rel="alternate" type="application/rss+xml" title="{{name}} — Writing" href="/feed.xml">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<script src="assets/js/theme.js"></script>
+<link rel="stylesheet" href="assets/css/main.css">
+<script defer src="assets/js/site.js"></script>
+<script>
+  window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+</script>
+<script defer src="/_vercel/speed-insights/script.js"></script>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  "url": "{{siteUrl}}/about",
+  "mainEntity": {
+    "@type": "Person",
+    "name": "{{name}}",
+    "jobTitle": "{{role}}",
+    "url": "{{siteUrl}}/",
+    "sameAs": ["{{github}}", "{{linkedin}}"],
+    "address": { "@type": "PostalAddress", "addressLocality": "Jaipur", "addressCountry": "IN" }
+  }
+}
+</script>
+</head>
+<body>
+<div class="field-bg"></div><div class="field-grid"></div>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav">
+  <div class="nav__in">
+    <a class="nav__brand" href="/"><span class="nav__dot"></span>{{name}}<span class="dim"> / mobile architecture</span></a>
+    <button class="theme-toggle" type="button" aria-label="Switch theme" aria-pressed="false">
+      <svg class="i-moon" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M17 10.8A7.5 7.5 0 0 1 9.2 3 7.5 7.5 0 1 0 17 10.8Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+      <svg class="i-sun" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="3.6" stroke="currentColor" stroke-width="1.5"/><path d="M10 1.8v2M10 16.2v2M18.2 10h-2M3.8 10h-2M15.6 4.4l-1.4 1.4M5.8 14.2l-1.4 1.4M15.6 15.6l-1.4-1.4M5.8 5.8 4.4 4.4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </button>
+    <button class="nav__burger" type="button" aria-label="Toggle navigation" aria-expanded="false">
+      <svg viewBox="0 0 20 20" width="18" height="18" aria-hidden="true"><path d="M2 5h16M2 10h16M2 15h16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" fill="none"/></svg>
+    </button>
+    <nav class="nav__links" aria-label="Primary">
+      <a href="/">Home</a>
+      <a href="work">Case Studies</a>
+      <a href="playbook">SME Playbook</a>
+      <a href="stack">Stack</a>
+      <a href="writing">Writing</a>
+      <a href="about">About</a>
+      <a href="contact">Availability</a>
+      <a class="nav__cta" href="{{resume}}" target="_blank" rel="noopener noreferrer">Résumé ↗</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+<section class="case-hero">
+  <div class="wrap">
+    <div class="person">
+      <!-- if:photo --><div class="person__media">{{slot_photo}}</div><!-- /if:photo -->
+      <div class="person__text">
+        <span class="eyebrow">About</span>
+        <h1>{{name}}</h1>
+        <p class="case-hero__sub">{{role}}, working remotely from {{location}}.</p>
+        <div class="prose mt-m">
+          <p>I've spent {{years}} years on one platform lineage, Xamarin.iOS to Xamarin.Forms to .NET MAUI, and
+             almost all of it on software for people who work away from a desk and a reliable network:
+             construction contractors, wind farm crews and field sales teams.</p>
+          <p>The thread through that work is offline-first correctness. A crew saves a timesheet at the base
+             of a turbine with no signal, and it has to be there, exactly once, when the phone next reaches a
+             server. Most of what I've learned is about making that kind of guarantee structural rather than
+             hopeful.</p>
+          <p>Today I'm at <strong>{{co_d}}</strong>. Before that I spent two years at <strong>{{co_c_short}}</strong>
+             on multi-region firestop compliance software, worked through <strong>{{co_b_short}}</strong> on
+             Siemens Gamesa's wind farm reporting app, and started at an early-stage startup building field
+             sales software for E. &amp; J. Gallo Winery.</p>
+          <p>I write code, review it against a standard I've written down, and mentor the engineers who
+             extend it. I'd rather be the person who writes the reference implementation than the one who
+             draws the diagram and leaves.</p>
+        </div>
+        <div class="btn-row mt-m">
+          <a class="btn btn--primary" href="work">Read the case studies</a>
+          <a class="btn" href="writing">Writing</a>
+          <a class="btn btn--ghost" href="{{linkedin}}" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+          <a class="btn btn--ghost" href="{{github}}" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- if:proof -->
+<section class="section section--tight">
+  <div class="wrap">
+    <div class="section-head rv">
+      <span class="eyebrow eyebrow--cyan">In other people's words</span>
+      <h2>What colleagues and users say</h2>
+      <p>Every quote links to where it was originally written. Ratings are the App Store's own figures, dated
+         when they were read.</p>
+    </div>
+    <!-- if:ratings --><div class="ratings rv">{{slot_ratings}}</div><!-- /if:ratings -->
+    <!-- if:testimonials --><div class="quotes rv">{{slot_testimonials}}</div><!-- /if:testimonials -->
+  </div>
+</section>
+<!-- /if:proof -->
+
+<!-- if:latest_posts -->
+<section class="section section--tight">
+  <div class="wrap wrap--prose">
+    <div class="section-head rv">
+      <span class="eyebrow">Latest writing</span>
+      <h2>Recent posts</h2>
+    </div>
+    <ol class="post-list rv">{{slot_latest_posts}}</ol>
+  </div>
+</section>
+<!-- /if:latest_posts -->
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot__in">
+      <div class="foot__col">
+        <h2>{{name}}</h2>
+        <p class="dim">{{role}}</p>
+        <p class="dim">{{location}} · {{overlap}} overlap with {{overlapZones}}</p>
+      </div>
+      <div class="foot__col">
+        <h2>Site</h2>
+        <a href="work">Case Studies</a>
+        <a href="playbook">SME Playbook</a>
+        <a href="stack">Tech Stack</a>
+        <a href="writing">Writing</a>
+        <a href="about">About</a>
+        <a href="contact">Availability</a>
+      </div>
+      <div class="foot__col">
+        <h2>Direct</h2>
+        <a data-mail="akshaydixits96|gmail.com" data-mail-text href="#">email</a>
+        <a href="{{github}}" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+        <a href="{{linkedin}}" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+        <a href="{{resume}}" target="_blank" rel="noopener noreferrer">Résumé (PDF) ↗</a>
+      </div>
+    </div>
+    <div class="foot__bot">
+      <span>© <span class="mono">2026</span> {{name}} — built from scratch, no template, no tracker.</span>
+      <span>Static site · strict CSP · zero third-party JavaScript</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

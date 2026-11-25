@@ -36,6 +36,7 @@
     // "/work" and "/work.html" all resolve to a bare slug ("" means home).
     var here = location.pathname.replace(/\/+$/, "").split("/").pop().replace(/\.html$/, "");
     if (here === "index") here = "";
+    if (/^\/writing\//.test(location.pathname)) here = "writing";   // a post lights up "Writing"
     var as = document.querySelectorAll(".nav__links a[href]");
     for (var i = 0; i < as.length; i++) {
       var href = as[i].getAttribute("href");

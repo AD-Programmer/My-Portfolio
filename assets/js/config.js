@@ -87,7 +87,41 @@ window.SITE = {
   m_b_offline:     "~64%",       // SmartSite timesheets submitted while offline, if known
   m_a_regions:     "~5",         // Gallo Gateway markets/regions supported
 
-  /* ---------- 7. PERSONAL PROJECTS — "Also built" strip ----------
+  /* ---------- 7. OUTSIDE PROOF ----------
+     What the best developer portfolios all carry and this one can't
+     write for itself: a face, other people's words, users' ratings.
+     Every block below is HIDDEN until it has a real value, so an
+     empty list costs nothing. Never paraphrase, never estimate.
+
+     photo       path under assets/, square, ~480px+. WebP or JPEG.
+                 Shown on /about and under every post.          */
+  photo:           "",                 // e.g. "assets/photo.webp"
+  photoAlt:        "",                 // e.g. "Akshay Dixit at his desk in Jaipur"
+
+  /* testimonials: copy the words exactly, with the person's OK.
+     source must link to the original (a LinkedIn recommendation
+     is ideal) — the build fails without it, so every quote can
+     be checked by the person reading it.                         */
+  testimonials: [
+    // {
+    //   quote:    "Exact words, unedited.",
+    //   name:     "Full Name",
+    //   title:    "Engineering Manager, Company",
+    //   relation: "Managed Akshay on the Firestop Selector team",
+    //   source:   "https://www.linkedin.com/in/akshaydixit96/details/recommendations/",
+    //   sourceLabel: "LinkedIn recommendation"
+    // }
+  ],
+
+  /* appRatings: the App Store's own numbers, read on asOf.
+     Get current values with:  node scripts/app-ratings.js
+     app is the store-link key from section 4 (c_live, b_live …).
+     The build warns once a reading is more than 6 months old.    */
+  appRatings: [
+    // { app: "c_live", rating: "4.6", count: "120", asOf: "2026-11-25", store: "US" }
+  ],
+
+  /* ---------- 8. PERSONAL PROJECTS — "Also built" strip ----------
      Add or remove entries freely. Keep them honest and short.
      type: "mobile" | "web" | "tool"
      Delete the whole array to hide the section.                    */

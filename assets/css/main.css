@@ -319,7 +319,12 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .foot__col a:focus-visible,
 .proj__link:focus-visible,
 .crumb a:focus-visible,
-.storelinks a:focus-visible {
+.storelinks a:focus-visible,
+.post-item__link:focus-visible,
+.rating:focus-visible,
+.quote__src:focus-visible,
+.prose a:focus-visible,
+.author a:focus-visible {
   outline: 2px solid var(--focus); outline-offset: 2px; border-radius: var(--r-1);
 }
 .btn--primary {
@@ -654,6 +659,93 @@ table.cmp tbody tr:last-child th, table.cmp tbody tr:last-child td { border-bott
 .storelinks { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 8px; margin: 12px 0 4px; }
 
 
+/* ---------- writing ---------- */
+.wrap--prose { max-width: 820px; }
+.post-list { display: grid; gap: var(--sp-3); }
+.post-item__link {
+  display: grid; gap: 6px; padding: 22px 24px;
+  border: 1px solid var(--line); border-radius: var(--r-lg);
+  background: linear-gradient(168deg, var(--bg-2), var(--bg-1));
+  transition: border-color var(--dur-2) var(--ease), transform var(--dur-2) var(--ease);
+}
+.post-item__date, .post-item__meta { font: 500 12px/1.4 var(--mono); color: var(--ink-3); letter-spacing: .06em; }
+.post-item__date { color: var(--sig-ink); }
+.post-item__title { font-size: var(--fs-6); font-weight: 620; letter-spacing: -0.02em; line-height: 1.25; color: var(--ink); text-wrap: balance; }
+.post-item__desc { color: var(--ink-2); font-size: var(--fs-3); line-height: 1.6; }
+@media (min-width: 900px) {
+  .post-list--home { grid-template-columns: repeat(3, 1fr); }
+}
+
+.post__head { margin: 22px 0 40px; padding-bottom: 28px; border-bottom: 1px solid var(--line); }
+.post__head h1 { font-size: clamp(30px, 5vw, 46px); text-wrap: balance; margin-bottom: 18px; }
+.post__lede { font-size: 18px; color: var(--ink-2); max-width: 64ch; }
+.post__meta { font: 500 12.5px/1.5 var(--mono); color: var(--ink-3); margin-top: 16px; }
+.post__meta a, .author a, .person a:not(.btn) { text-decoration: underline; text-underline-offset: 2px; }
+.post__body p { font-size: 17px; line-height: 1.75; max-width: 68ch; }
+.post__body h2 { font-size: clamp(21px, 2.6vw, 26px); margin: 44px 0 14px; text-wrap: balance; }
+.post__body h3 { font-size: 18px; margin: 32px 0 10px; }
+.post__body ul, .post__body ol { display: grid; gap: 10px; margin: 0 0 20px; padding-left: 22px; max-width: 66ch; }
+.post__body ul { list-style: disc; }
+.post__body ol { list-style: decimal; }
+.post__body li { color: var(--ink-2); font-size: 16.5px; line-height: 1.7; padding-left: 4px; }
+.post__body li::marker { color: var(--sig-ink); }
+.post__body blockquote {
+  margin: 26px 0; padding: 18px 22px;
+  border-left: 3px solid var(--sig2-ink); border-radius: 0 var(--r) var(--r) 0;
+  background: linear-gradient(100deg, #4dd8c00c, transparent 60%);
+}
+.post__body blockquote p { margin: 0; color: var(--ink); }
+.post__body pre {
+  margin: 0 0 22px; padding: 18px 20px; overflow-x: auto; overscroll-behavior-x: contain;
+  background: var(--bg-1); border: 1px solid var(--line); border-radius: var(--r);
+  font: 400 13.5px/1.6 var(--mono); color: var(--ink);
+}
+.post__body pre code { font: inherit; color: inherit; background: none; border: 0; padding: 0; }
+.post__tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 36px; }
+
+.author {
+  display: flex; gap: 18px; align-items: flex-start;
+  margin-top: 40px; padding: 24px; border: 1px solid var(--line); border-radius: var(--r-lg); background: var(--bg-1);
+}
+.author__photo { width: 64px; height: 64px; border-radius: 50%; object-fit: cover; flex: none; }
+.author__name { font-weight: 620; color: var(--ink); }
+.author__bio { color: var(--ink-2); font-size: var(--fs-3); margin-top: 4px; }
+.author__links { font: 500 12.5px/1.5 var(--mono); color: var(--ink-3); margin-top: 10px; }
+
+/* ---------- about / person ---------- */
+.person { display: grid; gap: var(--sp-7); align-items: start; }
+.person:has(.person__media) { grid-template-columns: minmax(0, 300px) minmax(0, 1fr); }
+.person__photo { width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; border-radius: var(--r-lg); border: 1px solid var(--line); }
+.person__text h1 { font-size: clamp(32px, 5vw, 52px); margin: 18px 0 14px; }
+@media (max-width: 760px) {
+  .person:has(.person__media) { grid-template-columns: 1fr; }
+  .person__media { max-width: 220px; }
+}
+
+/* ---------- outside proof ---------- */
+.ratings { display: grid; gap: var(--sp-3); grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr)); margin-bottom: var(--sp-5); }
+.rating {
+  display: grid; gap: 4px; padding: 18px 20px;
+  border: 1px solid var(--line); border-radius: var(--r); background: var(--bg-1);
+  transition: border-color var(--dur-2) var(--ease);
+}
+.rating__app { font: 600 12px/1.4 var(--mono); color: var(--ink-3); letter-spacing: .06em; }
+.rating__score { font-size: var(--fs-7); font-weight: 680; color: var(--ink); font-variant-numeric: tabular-nums; }
+.rating__score [aria-hidden] { color: var(--sig-ink); }
+.rating__count { font-size: var(--fs-2); color: var(--ink-3); }
+.quotes { display: grid; gap: var(--sp-4); grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr)); }
+.quote {
+  margin: 0; padding: 26px; display: flex; flex-direction: column; gap: 18px;
+  border: 1px solid var(--line); border-radius: var(--r-lg);
+  background: linear-gradient(168deg, var(--bg-2), var(--bg-1));
+}
+.quote blockquote { margin: 0; }
+.quote blockquote p { color: var(--ink); font-size: 16px; line-height: 1.65; }
+.quote figcaption { display: grid; gap: 2px; margin-top: auto; padding-top: 16px; border-top: 1px solid var(--line); }
+.quote__name { font-weight: 620; color: var(--ink); }
+.quote__title, .quote__rel { font-size: var(--fs-2); color: var(--ink-3); }
+.quote__src { font: 600 12px/1 var(--mono); color: var(--sig-ink); text-decoration: underline; text-underline-offset: 2px; margin-top: 10px; display: inline-flex; min-height: 24px; align-items: center; }
+
 /* ---------- pointer-dependent states ----------
    Hover is gated on a real pointer: on touch, :hover sticks after a tap and
    leaves the last-tapped control looking permanently focused. Touch gets
@@ -670,6 +762,8 @@ table.cmp tbody tr:last-child th, table.cmp tbody tr:last-child td { border-bott
   .case-card:hover { border-color: #ffb34740; transform: translateY(-3px); }
   .stack-item:hover { border-color: var(--line-int); background: var(--bg-2); }
   .proj:hover { border-color: var(--line-int); }
+  .post-item__link:hover { border-color: #ffb34745; transform: translateY(-2px); }
+  .rating:hover { border-color: var(--line-int); }
   .foot__col a:hover { color: var(--sig-ink); }
   .crumb a:hover { color: var(--sig-ink); }
 }
