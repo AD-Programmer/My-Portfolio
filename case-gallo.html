@@ -80,12 +80,11 @@
 </script>
 </head>
 <body>
-<div class="field-bg"></div><div class="field-grid"></div>
 <a class="skip" href="#main">Skip to content</a>
 
 <header class="nav">
   <div class="nav__in">
-    <a class="nav__brand" href="/"><span class="nav__dot"></span>{{name}}<span class="dim"> / mobile architecture</span></a>
+    <a class="nav__brand" href="/">{{avatar}}<span>{{name}}</span></a>
     <button class="theme-toggle" type="button" aria-label="Switch theme" aria-pressed="false">
       <svg class="i-moon" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M17 10.8A7.5 7.5 0 0 1 9.2 3 7.5 7.5 0 1 0 17 10.8Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
       <svg class="i-sun" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="3.6" stroke="currentColor" stroke-width="1.5"/><path d="M10 1.8v2M10 16.2v2M18.2 10h-2M3.8 10h-2M15.6 4.4l-1.4 1.4M5.8 14.2l-1.4 1.4M15.6 15.6l-1.4-1.4M5.8 5.8 4.4 4.4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
@@ -126,6 +125,15 @@
       <a class="btn btn--ghost btn--sm" href="#blueprint">↓ Architecture blueprint</a>
     </div>
 
+    <figure class="gallery gallery--case">
+      <div class="gallery__row">
+      <img src="assets/shots/gallo/01-onboarding.webp" width="460" height="996" decoding="async" alt="Gallo Gateway onboarding screen introducing easy access to sales and marketing materials.">
+      <img src="assets/shots/gallo/02-brands.webp" width="460" height="996" decoding="async" alt="Wines and Spirits brand directory with a searchable, alphabetised brand list.">
+      <img src="assets/shots/gallo/03-accolade-filters.webp" width="460" height="996" decoding="async" alt="Accolade filter screen for narrowing 653 results by brand, country, publication, rating and varietal.">
+      </div>
+      <figcaption>{{a_live_name}}. App Store listing screenshots.</figcaption>
+    </figure>
+
     <div class="note">
       <p><strong>On source code:</strong> Gallo Gateway is an E. &amp; J. Gallo Winery product, delivered
       while I was at {{co_a}}. Client IP, no public repository. The architecture description below is
@@ -139,6 +147,7 @@
       <div><dt>Client</dt><dd>E. &amp; J. Gallo Winery</dd></div>
       <div><dt>Users</dt><dd>Field sales representatives</dd></div>
     </dl>
+
   </div>
 </section>
 
@@ -173,15 +182,6 @@
         </ul>
       </div>
 
-      <figure class="blueprint">
-        <figcaption class="blueprint__bar">SCREENS — <b>{{a_live_name}}</b></figcaption>
-        <div class="blueprint__body shots">
-          <img src="assets/shots/gallo/01-onboarding.webp" width="460" height="996" loading="lazy" decoding="async" alt="Gallo Gateway onboarding screen introducing easy access to sales and marketing materials.">
-          <img src="assets/shots/gallo/02-brands.webp" width="460" height="996" loading="lazy" decoding="async" alt="Wines and Spirits brand directory with a searchable, alphabetised brand list.">
-          <img src="assets/shots/gallo/03-accolade-filters.webp" width="460" height="996" loading="lazy" decoding="async" alt="Accolade filter screen for narrowing 653 results by brand, country, publication, rating and varietal.">
-        </div>
-        <p class="blueprint__cap">App Store listing screenshots.</p>
-      </figure>
     </div>
 
     <!-- 02 -->

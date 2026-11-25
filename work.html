@@ -29,12 +29,11 @@
 <script defer src="/_vercel/speed-insights/script.js"></script>
 </head>
 <body>
-<div class="field-bg"></div><div class="field-grid"></div>
 <a class="skip" href="#main">Skip to content</a>
 
 <header class="nav">
   <div class="nav__in">
-    <a class="nav__brand" href="/"><span class="nav__dot"></span>{{name}}<span class="dim"> / mobile architecture</span></a>
+    <a class="nav__brand" href="/">{{avatar}}<span>{{name}}</span></a>
     <button class="theme-toggle" type="button" aria-label="Switch theme" aria-pressed="false">
       <svg class="i-moon" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M17 10.8A7.5 7.5 0 0 1 9.2 3 7.5 7.5 0 1 0 17 10.8Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
       <svg class="i-sun" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="3.6" stroke="currentColor" stroke-width="1.5"/><path d="M10 1.8v2M10 16.2v2M18.2 10h-2M3.8 10h-2M15.6 4.4l-1.4 1.4M5.8 14.2l-1.4 1.4M15.6 15.6l-1.4-1.4M5.8 5.8 4.4 4.4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
@@ -66,6 +65,21 @@
       <strong>Engineering Breakthrough</strong>, <strong>Scope &amp; Impact</strong> — with a real
       architecture diagram.
     </p>
+  </div>
+</section>
+
+<section class="section section--tight">
+  <div class="wrap">
+
+    <figure class="gallery rv">
+      <div class="gallery__row">
+        <img src="assets/shots/firestop-selector/02-filter-by-product.webp" width="460" height="995" loading="lazy" decoding="async" alt="Hilti Firestop Selector: search results filtered by product with an approval detail sheet open.">
+        <img src="assets/shots/volume-calculator/03-mortar-result.webp" width="460" height="996" loading="lazy" decoding="async" alt="Hilti Volume Calculator: mortar volume calculation result for 100 anchors.">
+        <img src="assets/shots/smartsite/02-report-status.webp" width="460" height="996" loading="lazy" decoding="async" alt="SmartSite SGRE reporting screen grouped by Unsubmitted, Rejected and Validated status.">
+        <img src="assets/shots/gallo/03-accolade-filters.webp" width="460" height="996" loading="lazy" decoding="async" alt="Gallo Gateway accolade filter screen narrowing 653 results.">
+      </div>
+      <figcaption>App Store listing screenshots. All four apps are live.</figcaption>
+    </figure>
     <div class="note">
       <p><strong>Why there are no repository links on these.</strong> All four are employer or client
       products and the source is assigned IP. Publishing it would be a breach, so I don't. What I can
@@ -75,107 +89,91 @@
   </div>
 </section>
 
-<section class="section section--tight">
+<section class="section">
   <div class="wrap">
+    <div class="work-list">
 
-    <figure class="blueprint rv">
-      <figcaption class="blueprint__bar">SCREENS — <b>all four, live on the App Store</b></figcaption>
-      <div class="blueprint__body shots">
-        <img src="assets/shots/firestop-selector/02-filter-by-product.webp" width="460" height="995" loading="lazy" decoding="async" alt="Hilti Firestop Selector: search results filtered by product with an approval detail sheet open.">
-        <img src="assets/shots/volume-calculator/03-mortar-result.webp" width="460" height="996" loading="lazy" decoding="async" alt="Hilti Volume Calculator: mortar volume calculation result for 100 anchors.">
-        <img src="assets/shots/smartsite/02-report-status.webp" width="460" height="996" loading="lazy" decoding="async" alt="SmartSite SGRE reporting screen grouped by Unsubmitted, Rejected and Validated status.">
-        <img src="assets/shots/gallo/03-accolade-filters.webp" width="460" height="996" loading="lazy" decoding="async" alt="Gallo Gateway accolade filter screen narrowing 653 results.">
-      </div>
-      <p class="blueprint__cap">App Store listing screenshots.</p>
-    </figure>
-
-    <!-- FLAGSHIP -->
-    <a class="case-card rv" href="case-hilti">
-      <span class="case-card__no">FLAGSHIP · {{co_c_dates}}</span>
-      <h2>Hilti — multi-region firestop compliance in .NET MAUI</h2>
-      <p class="case-card__role">{{co_c}} — {{co_c_desc}}<br>Senior Developer &amp; Mentor</p>
-      <p>
-        One codebase resolving into {{f_regions}} regulatory variants — UL (US), ETA (Europe),
-        DIN (Germany) — each with its own approvals corpus, selection logic and independently shipped
-        features. Backed by an offline library of {{f_approvals}} digitised approvals with local
-        full-text search, cloud-backed projects with an Owner/Editor/Viewer permission model, and
-        engineering judgment requests submitted from the jobsite. Two shipped Hilti apps.
-      </p>
-      <div class="case-card__stack">
-        <span class="stack-tag">.NET MAUI</span><span class="stack-tag">C#</span>
-        <span class="stack-tag">MVVM Toolkit</span><span class="stack-tag">SQLite + FTS</span>
-        <span class="stack-tag">Build-time variants</span><span class="stack-tag">App Center · TestFlight</span>
-      </div>
-    </a>
-    <div class="storelinks">
-      <a class="btn btn--sm" href="{{c_live}}" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M6 10 10 6M7 3.5 8.6 2a3.4 3.4 0 1 1 4.8 4.8L11.8 8.4M9 12.5 7.4 14a3.4 3.4 0 0 1-4.8-4.8L4.2 7.6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>{{c_live_name}} — App Store</a>
-      <a class="btn btn--sm" href="{{c_live2}}" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M6 10 10 6M7 3.5 8.6 2a3.4 3.4 0 1 1 4.8 4.8L11.8 8.4M9 12.5 7.4 14a3.4 3.4 0 0 1-4.8-4.8L4.2 7.6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>{{c_live2_name}} — App Store</a>
-    </div>
-
-    <div class="grid-2 mt-m">
-
-      <div class="case-cell">
-      <a class="case-card rv" href="case-smartsite">
-        <span class="case-card__no">{{co_b_dates}}</span>
-        <h2>SmartSite SGRE — offline-first labour reporting for wind farms</h2>
-        <p class="case-card__role">{{co_b}} — {{co_b_desc}}<br>Mobile Engineer · client delivery</p>
-        <p>
-          Subcontractor crews reporting timesheets and construction progress from wind farm sites with no
-          coverage. Full offline create, edit and delete over a nested activity/task/timeframe model,
-          reconciled through an ordered change journal with client-keyed idempotency — retrofitted into a
-          live, already-deployed product. Plus a single-factor to multi-factor authentication upgrade
-          that had to not break offline users.
-        </p>
-        <div class="case-card__stack">
-          <span class="stack-tag">Xamarin.Forms</span><span class="stack-tag">C#</span>
-          <span class="stack-tag">SQLite</span><span class="stack-tag">Offline sync</span>
-          <span class="stack-tag">MFA</span>
+      <!-- FLAGSHIP -->
+      <article class="work-item rv">
+        <a class="work-item__media" href="case-hilti" tabindex="-1" aria-hidden="true">
+          <img src="assets/shots/firestop-selector/01-guided-search.webp" width="460" height="995" loading="lazy" decoding="async" alt="">
+          <img src="assets/shots/volume-calculator/02-anchor-size.webp" width="460" height="996" loading="lazy" decoding="async" alt="">
+        </a>
+        <div>
+          <p class="work-item__meta">Flagship · {{co_c_dates}}</p>
+          <h2><a href="case-hilti">Hilti — multi-region firestop compliance in .NET MAUI</a></h2>
+          <p class="work-item__role">{{co_c}} — {{co_c_desc}}<br>Senior Developer &amp; Mentor</p>
+          <p class="desc">
+            One codebase resolving into {{f_regions}} regulatory variants — UL (US), ETA (Europe),
+            DIN (Germany) — each with its own approvals corpus, selection logic and independently shipped
+            features. Backed by an offline library of {{f_approvals}} digitised approvals with local
+            full-text search, cloud-backed projects with an Owner/Editor/Viewer permission model, and
+            engineering judgment requests submitted from the jobsite. Two shipped Hilti apps.
+          </p>
+          <p class="tags">.NET MAUI · C# · MVVM Toolkit · SQLite + FTS · Build-time variants · App Center · TestFlight</p>
+          <p class="work-item__links"><a href="case-hilti">Read the case study →</a><a href="{{c_live}}" target="_blank" rel="noopener noreferrer">{{c_live_name}} ↗</a><a href="{{c_live2}}" target="_blank" rel="noopener noreferrer">{{c_live2_name}} ↗</a></p>
         </div>
-      </a>
-      <div class="storelinks">
-        <a class="btn btn--sm" href="{{b_live}}" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M6 10 10 6M7 3.5 8.6 2a3.4 3.4 0 1 1 4.8 4.8L11.8 8.4M9 12.5 7.4 14a3.4 3.4 0 0 1-4.8-4.8L4.2 7.6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>{{b_live_name}} — App Store</a>
-      </div>
-      </div>
+      </article>
 
-      <div class="case-cell">
-      <a class="case-card rv" href="case-gallo">
-        <span class="case-card__no">{{co_a_dates}}</span>
-        <h2>Gallo Gateway — field sales enablement in Xamarin.iOS</h2>
-        <p class="case-card__role">{{co_a}} — {{co_a_desc}}<br>Mobile Engineer · client delivery</p>
-        <p>
-          A long-lived enterprise iOS app putting E. &amp; J. Gallo Winery's full sales and training
-          library in a rep's hand, with a bounded offline favourites tier that has to be complete in a
-          retailer's back room. Shipped through a full major-version redesign, international market
-          rollout, iBeacon in-market triggers, and a live migration of sign-in to Microsoft Azure.
-        </p>
-        <div class="case-card__stack">
-          <span class="stack-tag">Xamarin.iOS</span><span class="stack-tag">UIKit</span>
-          <span class="stack-tag">C#</span><span class="stack-tag">iBeacon</span>
-          <span class="stack-tag">Azure identity</span>
+      <article class="work-item rv">
+        <a class="work-item__media" href="case-smartsite" tabindex="-1" aria-hidden="true">
+          <img src="assets/shots/smartsite/01-sites.webp" width="460" height="996" loading="lazy" decoding="async" alt="">
+          <img src="assets/shots/smartsite/03-task-hours.webp" width="460" height="996" loading="lazy" decoding="async" alt="">
+        </a>
+        <div>
+          <p class="work-item__meta">{{co_b_dates}}</p>
+          <h2><a href="case-smartsite">SmartSite SGRE — offline-first labour reporting for wind farms</a></h2>
+          <p class="work-item__role">{{co_b}} — {{co_b_desc}}<br>Mobile Engineer · client delivery</p>
+          <p class="desc">
+            Subcontractor crews reporting timesheets and construction progress from wind farm sites with no
+            coverage. Full offline create, edit and delete over a nested activity/task/timeframe model,
+            reconciled through an ordered change journal with client-keyed idempotency — retrofitted into a
+            live, already-deployed product. Plus a single-factor to multi-factor authentication upgrade
+            that had to not break offline users.
+          </p>
+          <p class="tags">Xamarin.Forms · C# · SQLite · Offline sync · MFA</p>
+          <p class="work-item__links"><a href="case-smartsite">Read the case study →</a><a href="{{b_live}}" target="_blank" rel="noopener noreferrer">{{b_live_name}} ↗</a></p>
         </div>
-      </a>
-      <div class="storelinks">
-        <a class="btn btn--sm" href="{{a_live}}" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M6 10 10 6M7 3.5 8.6 2a3.4 3.4 0 1 1 4.8 4.8L11.8 8.4M9 12.5 7.4 14a3.4 3.4 0 0 1-4.8-4.8L4.2 7.6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>{{a_live_name}} — App Store</a>
-      </div>
-      </div>
+      </article>
 
-      <div class="case-cell">
-      <a class="case-card rv" href="case-averiq">
-        <span class="case-card__no">CURRENT · {{co_d_dates}}</span>
-        <h2>AverIQ — owning the mobile surface</h2>
-        <p class="case-card__role">{{co_d}} — {{co_d_desc}}<br>Senior IC · fully remote</p>
-        <p>
-          Current role. Enterprise inventory management, construction and fleet products in .NET MAUI,
-          with no engineer above me on the mobile layer. Deliberately written as scope and ownership
-          rather than a deep case study — I have not been here long enough to have earned one, and
-          pretending otherwise would be the wrong signal.
-        </p>
-        <div class="case-card__stack">
-          <span class="stack-tag">.NET MAUI</span><span class="stack-tag">C#</span>
-          <span class="stack-tag">Offline-first</span><span class="stack-tag">Remote / async</span>
+      <article class="work-item rv">
+        <a class="work-item__media" href="case-gallo" tabindex="-1" aria-hidden="true">
+          <img src="assets/shots/gallo/01-onboarding.webp" width="460" height="996" loading="lazy" decoding="async" alt="">
+          <img src="assets/shots/gallo/02-brands.webp" width="460" height="996" loading="lazy" decoding="async" alt="">
+        </a>
+        <div>
+          <p class="work-item__meta">{{co_a_dates}}</p>
+          <h2><a href="case-gallo">Gallo Gateway — field sales enablement in Xamarin.iOS</a></h2>
+          <p class="work-item__role">{{co_a}} — {{co_a_desc}}<br>Mobile Engineer · client delivery</p>
+          <p class="desc">
+            A long-lived enterprise iOS app putting E. &amp; J. Gallo Winery's full sales and training
+            library in a rep's hand, with a bounded offline favourites tier that has to be complete in a
+            retailer's back room. Shipped through a full major-version redesign, international market
+            rollout, iBeacon in-market triggers, and a live migration of sign-in to Microsoft Azure.
+          </p>
+          <p class="tags">Xamarin.iOS · UIKit · C# · iBeacon · Azure identity</p>
+          <p class="work-item__links"><a href="case-gallo">Read the case study →</a><a href="{{a_live}}" target="_blank" rel="noopener noreferrer">{{a_live_name}} ↗</a></p>
         </div>
-      </a>
-      </div>
+      </article>
+
+      <article class="work-item rv">
+        <a class="work-item__media work-item__media--text" href="case-averiq" tabindex="-1" aria-hidden="true">
+          <span>{{co_d}}<br>Current role · no public build yet</span>
+        </a>
+        <div>
+          <p class="work-item__meta">Current · {{co_d_dates}}</p>
+          <h2><a href="case-averiq">AverIQ — owning the mobile surface</a></h2>
+          <p class="work-item__role">{{co_d}} — {{co_d_desc}}<br>Senior IC · fully remote</p>
+          <p class="desc">
+            Current role. Enterprise inventory management, construction and fleet products in .NET MAUI,
+            with no engineer above me on the mobile layer. Deliberately written as scope and ownership
+            rather than a deep case study — I have not been here long enough to have earned one, and
+            pretending otherwise would be the wrong signal.
+          </p>
+          <p class="tags">.NET MAUI · C# · Offline-first · Remote / async</p>
+          <p class="work-item__links"><a href="case-averiq">Read about the role →</a></p>
+        </div>
+      </article>
 
     </div>
   </div>
@@ -236,7 +234,7 @@
 <section class="section">
   <div class="wrap">
     <div class="cta rv">
-      <span class="eyebrow eyebrow--plain">{{availability}}</span>
+      <span class="eyebrow">{{availability}}</span>
       <h2>Pick any one of these and go deep.</h2>
       <p>Download the app, read the release history, then ask me the hardest question you have about
          how it works. That's the interview I want.</p>

@@ -80,12 +80,11 @@
 </script>
 </head>
 <body>
-<div class="field-bg"></div><div class="field-grid"></div>
 <a class="skip" href="#main">Skip to content</a>
 
 <header class="nav">
   <div class="nav__in">
-    <a class="nav__brand" href="/"><span class="nav__dot"></span>{{name}}<span class="dim"> / mobile architecture</span></a>
+    <a class="nav__brand" href="/">{{avatar}}<span>{{name}}</span></a>
     <button class="theme-toggle" type="button" aria-label="Switch theme" aria-pressed="false">
       <svg class="i-moon" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M17 10.8A7.5 7.5 0 0 1 9.2 3 7.5 7.5 0 1 0 17 10.8Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
       <svg class="i-sun" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="3.6" stroke="currentColor" stroke-width="1.5"/><path d="M10 1.8v2M10 16.2v2M18.2 10h-2M3.8 10h-2M15.6 4.4l-1.4 1.4M5.8 14.2l-1.4 1.4M15.6 15.6l-1.4-1.4M5.8 5.8 4.4 4.4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
@@ -130,6 +129,15 @@
       <a class="btn btn--ghost btn--sm" href="#blueprint">↓ Architecture blueprint</a>
     </div>
 
+    <figure class="gallery gallery--case">
+      <div class="gallery__row">
+      <img src="assets/shots/firestop-selector/01-guided-search.webp" width="460" height="995" decoding="async" alt="Firestop Selector home screen: a search field over the approvals library, with a Guided Search entry point.">
+      <img src="assets/shots/firestop-selector/02-filter-by-product.webp" width="460" height="995" decoding="async" alt="Search results filtered by product, with a matched approval detail sheet open showing the penetration diagram and a saved-solutions action bar.">
+      <img src="assets/shots/firestop-selector/03-typicals-approvals.webp" width="460" height="995" decoding="async" alt="Typical Info screen for an approved system, with downloadable typical and approval PDF files.">
+      </div>
+      <figcaption>{{c_live_name}}. App Store listing screenshots.</figcaption>
+    </figure>
+
     <div class="note">
       <p><strong>On source code:</strong> both applications are Hilti AG products and the source is
       assigned IP — there is no public repository, and there should not be. Everything below is my own
@@ -144,6 +152,7 @@
       <div><dt>Regions</dt><dd>UL (US) · ETA (Europe) · DIN (Germany)</dd></div>
       <div><dt>Users</dt><dd>Firestop specialists, contractors, designers</dd></div>
     </dl>
+
   </div>
 </section>
 
@@ -186,24 +195,13 @@
         </ul>
       </div>
 
-      <figure class="blueprint">
-        <figcaption class="blueprint__bar">SCREENS — <b>{{c_live_name}}</b></figcaption>
-        <div class="blueprint__body shots">
-          <img src="assets/shots/firestop-selector/01-guided-search.webp" width="460" height="995" loading="lazy" decoding="async" alt="Firestop Selector home screen: a search field over the approvals library, with a Guided Search entry point.">
-          <img src="assets/shots/firestop-selector/02-filter-by-product.webp" width="460" height="995" loading="lazy" decoding="async" alt="Search results filtered by product, with a matched approval detail sheet open showing the penetration diagram and a saved-solutions action bar.">
-          <img src="assets/shots/firestop-selector/03-typicals-approvals.webp" width="460" height="995" loading="lazy" decoding="async" alt="Typical Info screen for an approved system, with downloadable typical and approval PDF files.">
+      <figure class="gallery">
+        <div class="gallery__row">
+        <img src="assets/shots/volume-calculator/01-base-material.webp" width="460" height="996" loading="lazy" decoding="async" alt="Volume Calculator base-material selection screen with block, brick and reinforced options.">
+        <img src="assets/shots/volume-calculator/02-anchor-size.webp" width="460" height="996" loading="lazy" decoding="async" alt="Volume Calculator step 4 of the guided input flow, selecting anchor size against a diagram.">
+        <img src="assets/shots/volume-calculator/03-mortar-result.webp" width="460" height="996" loading="lazy" decoding="async" alt="Mortar volume calculation result: injection mortar, anchor, embedment depth and dosage-dial setting for 100 anchors.">
         </div>
-        <p class="blueprint__cap">App Store listing screenshots.</p>
-      </figure>
-
-      <figure class="blueprint">
-        <figcaption class="blueprint__bar">SCREENS — <b>{{c_live2_name}}</b></figcaption>
-        <div class="blueprint__body shots">
-          <img src="assets/shots/volume-calculator/01-base-material.webp" width="460" height="996" loading="lazy" decoding="async" alt="Volume Calculator base-material selection screen with block, brick and reinforced options.">
-          <img src="assets/shots/volume-calculator/02-anchor-size.webp" width="460" height="996" loading="lazy" decoding="async" alt="Volume Calculator step 4 of the guided input flow, selecting anchor size against a diagram.">
-          <img src="assets/shots/volume-calculator/03-mortar-result.webp" width="460" height="996" loading="lazy" decoding="async" alt="Mortar volume calculation result: injection mortar, anchor, embedment depth and dosage-dial setting for 100 anchors.">
-        </div>
-        <p class="blueprint__cap">App Store listing screenshots.</p>
+        <figcaption>{{c_live2_name}}. App Store listing screenshots.</figcaption>
       </figure>
     </div>
 
