@@ -30,6 +30,7 @@
   window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
 </script>
 <script defer src="/_vercel/speed-insights/script.js"></script>
+<link rel="alternate" type="application/rss+xml" title="{{name}} — Writing" href="/feed.xml">
 
 <script type="application/ld+json">
 {
@@ -79,6 +80,8 @@
       <a href="work">Case Studies</a>
       <a href="playbook">SME Playbook</a>
       <a href="stack">Stack</a>
+      <a href="writing">Writing</a>
+      <a href="about">About</a>
       <a href="contact">Availability</a>
       <a class="nav__cta" href="{{resume}}" target="_blank" rel="noopener noreferrer">Résumé ↗</a>
     </nav>
@@ -253,6 +256,36 @@
   </div>
 </section>
 
+<!-- ══════════════ OUTSIDE PROOF (hidden until config has real entries) ══════════════ -->
+<!-- if:proof -->
+<section class="section section--tight">
+  <div class="wrap">
+    <div class="section-head rv">
+      <span class="eyebrow eyebrow--cyan">In other people's words</span>
+      <h2>Not just my account of it.</h2>
+      <p>Each quote links to where it was originally written. Ratings are the App Store's own figures, dated
+         when they were read.</p>
+    </div>
+    <!-- if:ratings --><div class="ratings rv">{{slot_ratings}}</div><!-- /if:ratings -->
+    <!-- if:testimonials --><div class="quotes rv">{{slot_testimonials}}</div><!-- /if:testimonials -->
+  </div>
+</section>
+<!-- /if:proof -->
+
+<!-- ══════════════ LATEST WRITING (hidden until a post is published) ══════════════ -->
+<!-- if:latest_posts -->
+<section class="section section--tight">
+  <div class="wrap">
+    <div class="section-head rv">
+      <span class="eyebrow">Writing</span>
+      <h2>The parts the case studies only summarise.</h2>
+    </div>
+    <ol class="post-list post-list--home rv">{{slot_latest_posts}}</ol>
+    <div class="btn-row mt-m"><a class="btn" href="writing">All writing →</a> <a class="btn btn--ghost" href="/feed.xml">RSS</a></div>
+  </div>
+</section>
+<!-- /if:latest_posts -->
+
 <!-- ══════════════ PLAYBOOK TEASER ══════════════ -->
 <section class="section">
   <div class="wrap">
@@ -327,6 +360,8 @@
         <a href="work">Case Studies</a>
         <a href="playbook">SME Playbook</a>
         <a href="stack">Tech Stack</a>
+        <a href="writing">Writing</a>
+        <a href="about">About</a>
         <a href="contact">Availability</a>
       </div>
       <div class="foot__col">

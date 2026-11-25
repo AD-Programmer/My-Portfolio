@@ -125,6 +125,35 @@ JavaScript — LinkedIn, Slack, X, WhatsApp, Bing, ChatGPT. 🤖
 
 ---
 
+## ✍️ Writing and outside proof
+
+**Posts** are Markdown files in `writing/`, named `YYYY-MM-DD-slug.md`:
+
+```markdown
+---
+title: A deleted row can't tell the server it was deleted
+date: 2026-11-25
+description: One sentence, shown in lists, RSS and link previews.
+tags: offline-first, sync
+draft: true        # optional — skipped by the build until removed
+updated: 2026-12-01  # optional
+---
+
+Body in a small Markdown subset: ## headings, lists, > quotes, ``` code, **bold**, *italic*, [links](/case-hilti).
+```
+
+`node build.js` turns each into `/writing/<slug>`, rebuilds the `/writing` index, the home page's
+"Latest writing" strip, `feed.xml` (RSS) and the sitemap. `node build.js --drafts` previews drafts
+locally. Publish by deleting `draft: true` and setting `date` to the day it goes out.
+
+**Outside proof** lives in section 7 of `assets/js/config.js`: `photo`, `testimonials` and
+`appRatings`. Each block on the page stays hidden until its list has a real entry. The build
+fails on a testimonial without an `https` link to the original, or a rating without the date it
+was read. `node scripts/app-ratings.js` prints the App Store's current numbers for every linked
+app, ready to paste.
+
+---
+
 ## 🚀 Quick start
 
 ```bash
@@ -252,6 +281,12 @@ Not a checkbox pass — the failures were found and fixed. 💪
 ├── playbook.html           🧭 SME philosophy + MAUI vs RN vs Native
 ├── stack.html              🧰 Tech stack, annotated by honest depth of use
 ├── contact.html            📬 Availability, work auth, timezone, screening Q&A
+├── about.html              🙋 Bio, photo, quotes and ratings (hidden until real)
+├── writing.html            ✍️ Dated posts index
+├── writing/*.md            ✍️ Posts, Markdown + front matter
+├── templates/post.html     ✍️ Page shell for every post
+├── build/content.js        🔧 Markdown, RSS, proof slots
+├── scripts/app-ratings.js  ⭐ Prints current App Store ratings to paste
 ├── 404.html                🕳️ Styled not-found page
 │
 ├── assets/

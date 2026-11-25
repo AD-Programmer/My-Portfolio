@@ -4,6 +4,7 @@
 
      node build.js      # writes dist/ , exits 1 if any
                         # [BRACKET] placeholder is still unset
+     node build.js --drafts   # also builds posts marked draft: true
 
    Deploy dist/, never the project root. config.js is the source
    of truth at build time and is NOT copied to the output, so it
@@ -14,8 +15,11 @@
 const fs = require("node:fs");
 const path = require("node:path");
 
+const content = require("./build/content.js");
+
 const SRC = __dirname;
 const OUT = path.join(SRC, "dist");
+const DRAFTS = process.argv.includes("--drafts");   // local preview of draft posts
 
 /* ---------- 1. load config without a parser ---------- */
 // config.js assigns window.SITE — hand it a fake window and read it back.
@@ -73,6 +77,20 @@ fs.mkdirSync(OUT, { recursive: true });
 const pages = fs.readdirSync(SRC).filter((f) => f.endsWith(".html"));
 const projects = projectsHtml();
 
+// writing + outside proof (build/content.js). Each slot is "" when empty,
+// and an empty slot removes its whole <!-- if:name --> block.
+const { posts, errors: postErrors, skipped: draftPosts } = content.loadPosts(path.join(SRC, "writing"), { drafts: DRAFTS });
+const proofErrors = content.checkProof(CFG, SRC);
+const slots = {
+  posts: content.postListHtml(posts),
+  latest_posts: content.postListHtml(posts, { limit: 3 }),
+  testimonials: content.testimonialsHtml(CFG),
+  ratings: content.ratingsHtml(CFG),
+  photo: content.photoHtml(CFG, "person__photo"),
+  author_photo: content.photoHtml(CFG, "author__photo"),
+};
+slots.proof = slots.testimonials || slots.ratings;
+
 for (const page of pages) {
   let html = fs.readFileSync(path.join(SRC, page), "utf8");
 
@@ -83,8 +101,18 @@ for (const page of pages) {
       : html.replace(/<section\b[^>]*>(?:(?!<\/section>)[\s\S])*data-projects[\s\S]*?<\/section>/, "");
   }
 
-  fs.writeFileSync(path.join(OUT, page), resolve(html));
+  fs.writeFileSync(path.join(OUT, page), resolve(content.applySlots(html, slots)));
 }
+
+// one page per post, from templates/post.html
+const postTpl = fs.readFileSync(path.join(SRC, "templates/post.html"), "utf8");
+fs.mkdirSync(path.join(OUT, "writing"), { recursive: true });
+for (const p of posts) {
+  const t = content.postTokens(p);
+  const html = content.applySlots(postTpl, slots).replace(TOKEN, (whole, key) => (key in t ? t[key] : whole));
+  fs.writeFileSync(path.join(OUT, "writing", p.slug + ".html"), resolve(html));
+}
+fs.writeFileSync(path.join(OUT, "feed.xml"), content.feedXml(posts, CFG));
 
 /* ---------- 4. copy what belongs (never config.js / README / .DS_Store) ---------- */
 const ASSETS = [
@@ -98,6 +126,7 @@ const ASSETS = [
   "_headers",
   "vercel.json",
 ];
+if (CFG.photo) ASSETS.push(CFG.photo);
 for (const rel of ASSETS) {
   const dest = path.join(OUT, rel);
   fs.mkdirSync(path.dirname(dest), { recursive: true });
@@ -120,7 +149,13 @@ const sitemap = fs
     if (!fs.existsSync(file)) return whole;
     const day = fs.statSync(file).mtime.toISOString().slice(0, 10);
     return `${whole}<lastmod>${day}</lastmod>`;
-  });
+  })
+  .replace(
+    "</urlset>",
+    posts
+      .map((p) => `  <url><loc>${CFG.siteUrl}/writing/${p.slug}</loc><lastmod>${p.updated || p.date}</lastmod><priority>0.7</priority></url>\n`)
+      .join("") + "</urlset>"
+  );
 fs.writeFileSync(path.join(OUT, "sitemap.xml"), sitemap);
 
 /* ---------- 6. gate: nothing unverified ships ---------- */
@@ -132,12 +167,32 @@ const pending = Object.keys(CFG).filter((k) => isPlaceholder(CFG[k]));
 );
 
 const unresolved = new Set();
-for (const page of fs.readdirSync(OUT).filter((f) => f.endsWith(".html"))) {
+const builtPages = [
+  ...fs.readdirSync(OUT).filter((f) => f.endsWith(".html")),
+  ...fs.readdirSync(path.join(OUT, "writing")).map((f) => "writing/" + f),
+];
+for (const page of builtPages) {
   const m = fs.readFileSync(path.join(OUT, page), "utf8").match(TOKEN);
   if (m) m.forEach((t) => unresolved.add(`${t} (${page})`));
 }
 
-console.log(`built ${pages.length} pages -> dist/`);
+console.log(`built ${pages.length} pages + ${posts.length} post(s) -> dist/`);
+if (draftPosts.length) console.log(`skipped ${draftPosts.length} draft(s): ${draftPosts.join(", ")}  (preview with: node build.js --drafts)`);
+
+// not errors: what the site is still missing that only a real person can supply
+const missing = [];
+if (!CFG.photo) missing.push("photo (config.js → photo)");
+if (!(CFG.testimonials || []).length) missing.push("testimonials (config.js → testimonials)");
+if (!(CFG.appRatings || []).length) missing.push("App Store ratings (node scripts/app-ratings.js)");
+if (!posts.length) missing.push("a published post (writing/*.md)");
+if (missing.length) console.log(`proof still to add, hidden until it exists: ${missing.join("; ")}`);
+content.staleRatings(CFG, new Date().toISOString().slice(0, 10)).forEach((w) => console.warn("WARN: " + w));
+
+const contentErrors = [...postErrors, ...proofErrors];
+if (contentErrors.length) {
+  console.error(`\nERROR: ${contentErrors.length} writing / proof problem(s):`);
+  contentErrors.forEach((e) => console.error("  " + e));
+}
 if (unresolved.size) {
   console.error(`\nERROR: ${unresolved.size} token(s) have no value in config.js:`);
   unresolved.forEach((t) => console.error("  " + t));
@@ -146,7 +201,7 @@ if (pending.length) {
   console.error(`\nERROR: ${pending.length} placeholder value(s) still unset in assets/js/config.js:`);
   pending.forEach((k) => console.error("  " + k));
 }
-if (unresolved.size || pending.length) {
+if (unresolved.size || pending.length || contentErrors.length) {
   console.error("\ndist/ was written for local preview, but this build must not deploy.");
   process.exit(1);
 }
